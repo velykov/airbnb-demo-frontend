@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'Circular';
+    font-weight: normal;
+    font-style: regular;
+    src: local('Circular_Air-Book'),
+    url(./fonts/Circular_Air-Book.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Circular';
+    font-weight: bold;
+    font-style: regular;
+    src: local('Circular_Air-Bold'),
+    url(./fonts/Circular_Air-Bold.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Circular';
+    font-weight: lighter;
+    font-style: book;
+    src: local('Circular_Air-Light'),
+    url(./fonts/Circular_Air-Light.woff) format('woff');
+}
