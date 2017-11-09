@@ -41,4 +41,10 @@ const Hr = styled.hr`
   margin-bottom: ${props => (props.margin_bottom ? props.margin_bottom : 0)}px;
 `;
 
-export { Container, Row, Column, Offset, Img, Link, Hr };
+const CardGroupRow = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+`;
+
+export { Container, Row, Column, Offset, Img, Link, Hr, CardGroupRow };
