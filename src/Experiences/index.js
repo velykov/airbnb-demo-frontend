@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Container, Column } from "../commons/styled";
+import { Container, CardGroupRow, Column } from "../commons/styled";
 import SeeAllLink from "../commons/seeAllLink";
-import NextButton from "../commons/nextLink";
+import NextLink from "../commons/nextLink";
 
 import Card from "./card";
 
@@ -16,12 +16,6 @@ const Row = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-`;
-
-const CardGroupRow = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
 `;
 
 const Title = styled.h2`
@@ -78,7 +72,7 @@ export default function() {
             reviews="44"
           />
         </Column>
-        <NextButton top="163" />
+        <NextLink top="163" />
       </CardGroupRow>
     </Container>
   );
