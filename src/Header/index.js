@@ -3,11 +3,7 @@ import styled from "styled-components";
 import logo from "./logo.svg";
 import search from "./search.svg";
 
-const Container = styled.div`
-  width: 976px;
-  margin: 0 auto;
-  margin-bottom: 16px;
-`;
+import { Container, Column, Img, Hr, Link } from "../commons/styled";
 
 const Row = styled.div`
   display: flex;
@@ -15,17 +11,6 @@ const Row = styled.div`
   align-items: center;
   box-sizing: border-box;
   margin-top: 16px;
-`;
-
-const Column = styled.div`
-  box-sizing: border-box;
-  flex-basis: ${props => (props.size ? props.size / 12 * 100 : 8.33333333)}%;
-  padding: 0px 8px;
-`;
-
-const Img = styled.img`
-  height: ${props => (props.height ? props.height : "auto")};
-  width: ${props => (props.width ? props.width : "auto")};
 `;
 
 const Logo = styled(Img)`
@@ -65,21 +50,6 @@ const Navigation = styled.nav`
   justify-content: space-around;
   align-items: center;
   color: #383838;
-`;
-
-const Link = styled.a`
-  box-sizing: border-box;
-  color: ${props => (props.color ? props.color : "inherit")};
-  text-align: center;
-  text-decoration: None;
-`;
-
-const Hr = styled.hr`
-  border: 0;
-  height: 1px;
-  background: #484848;
-  mix-blend-mode: normal;
-  opacity: 0.25;
 `;
 
 export default function() {
