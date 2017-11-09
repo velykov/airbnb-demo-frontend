@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import Header from "./Header";
 import Footer from "./Footer";
+import Explore from './Explore';
 
 const PageWrapper = styled.section`
   font-family: Circular, Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -13,7 +14,10 @@ class App extends Component {
     return (
       <PageWrapper>
         <Header />
-        <main>{/* TODO */}</main>
+        <main>
+        <Explore/>
+        {/* TODO */}
+        </main>
         <Footer />
       </PageWrapper>
     );
