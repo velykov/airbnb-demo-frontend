@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Img } from "../commons/styled";
 
-const Card = styled.div`
+const Container = styled.div`
   display: flex;
   align-items: center;
   background: #fff;
@@ -13,17 +13,14 @@ const Card = styled.div`
 
 const Title = styled.h2`
   padding-left: 24px;
-  font-family: Circular;
-  font-size: 17px;
-  font-weight: bold;
-  color: #383838;
+  font: bold 17px/20px Circular_Air-Bold;
 `;
 
 export default function(props) {
   return (
-    <Card>
+    <Container>
       <Img src={props.img} alt={props.alt} />
       <Title>{props.title}</Title>
-    </Card>
+    </Container>
   );
 }

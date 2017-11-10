@@ -10,11 +10,8 @@ const Container = styled.div`
 `;
 
 const Title = styled.div`
-  font-weight: bold;
-  line-height: normal;
+  font: bold 15px/18px Circular_Air-Bold;
   margin: 8px 0px 0px;
-  font-size: 15px;
-  color: #383838;
 `;
 
 export default function(props) {

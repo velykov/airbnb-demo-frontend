@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Rating from "../commons/rating";
-import { Img } from "../commons/styled";
+import { Img, Reviews, Review } from "../commons/styled";
 
 const Card = styled.div`
   display: flex;
@@ -14,28 +14,11 @@ const Card = styled.div`
 
 const Title = styled.span`
   margin: 8px 0px 6px;
-  font-size: 15px;
-  line-height: 18px;
-  color: #383838;
-`;
-
-const ReviewsContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-`;
-
-const Reviews = styled.div`
-  font-family: Circular;
-  font-style: Book;
-  font-size: 12px;
-  line-height: 14px;
-  text-align: left;
-  color: #383838;
+  font: lighter 15px/18px Circular_Air-Light;
 `;
 
 const Price = styled.span`
-  font-weight: bold;
+  font: bold 15px/18px Circular_Air-Bold;
 `;
 
 export default function(props) {
@@ -45,12 +28,12 @@ export default function(props) {
       <Title>
         <Price>${props.price}</Price> {props.title}
       </Title>
-      <ReviewsContainer>
+      <Reviews>
         <Rating>
           <Rating />
         </Rating>
-        <Reviews>{props.reviews} reviews</Reviews>
-      </ReviewsContainer>
+        <Review>{props.reviews} reviews</Review>
+      </Reviews>
     </Card>
   );
 }

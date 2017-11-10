@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Img } from '../commons/styled';
+import React from "react";
+import styled from "styled-components";
+import { Img } from "../commons/styled";
 
 const Container = styled.div`
   display: flex;
@@ -11,32 +11,21 @@ const Container = styled.div`
   background: #fff;
 `;
 
-const Category = styled.div`
-  font-weight: bold;
-  line-height: normal;
+const Label = styled.div`
+  font: bold 10px/12px Circular_Air-Bold;
   margin: 8px 0 2px;
-  font-size: 10px;
   text-transform: uppercase;
-  color: #383838;
 `;
 
 const Title = styled.div`
-  font-weight: bold;
-  line-height: normal;
+  font: bold 18px/21px Circular_Air-Bold;
   margin: 0 0 4px;
-  font-size: 18px;
-  color: #383838;
 `;
 
 const Description = styled.div`
-  font-family: Circular;
+  font: lighter 18px/21px Circular_Air-Light;
   margin-bottom: 6px;
-  line-height: normal;
-  font-size: 12px;
-  text-align: center;
-  font-size: 18px;
-
-  color: #383838;
+  text-align: left;
   mix-blend-mode: normal;
   opacity: 0.9;
 `;
@@ -45,7 +34,7 @@ export default function(props) {
   return (
     <Container>
       <Img src={props.img} alt={props.alt} />
-      <Category>{props.category}</Category>
+      <Label>{props.category}</Label>
       <Title>{props.title}</Title>
       <Description>About ${props.price} per person</Description>
     </Container>
