@@ -12,7 +12,8 @@ const Container = styled.div`
 const NextLink = styled.a`
   position: absolute;
   right: 0px;
-  top: ${props => (props.top ? props.top : "auto")}px;
+  top: ${props => (props.top ? props.top : 0)}px;
+  bottom: ${props => (props.bottom ? props.bottom : 0)}px;
 
   width: 20px;
   height: 20px;
