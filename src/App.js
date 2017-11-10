@@ -9,8 +9,9 @@ import Reservations from "./Reservations";
 import Destinations from "./Destinations";
 
 const PageWrapper = styled.section`
-  font-family: Circular, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: Circular_Air-Light, Helvetica Neue, Helvetica, Arial, sans-serif;
   padding-bottom: 24px;
+  color: #383838;
 `;
 
 class App extends Component {
@@ -24,7 +25,6 @@ class App extends Component {
           <Homes />
           <Reservations />
           <Destinations />
-          {/* TODO */}
         </main>
         <Footer />
       </PageWrapper>
