@@ -35,9 +35,8 @@ const LocationInput = styled.input`
   line-height: 24px;
   border: 0px;
   width: 100%;
-  color: #383838;
   opacity: 0.64;
-  font-family: inherit;
+  font-family: Circular_Air-Book;
   padding-left: 54px;
   outline: none;
   background: url('${search}') 16px center no-repeat;
@@ -49,23 +48,22 @@ const Navigation = styled.nav`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  color: #383838;
 `;
 
 export default function() {
   return (
     <Container>
       <Row>
-        <Column size="1">
+        <Column size={1}>
           <Logo src={logo} alt="logo" />
         </Column>
-        <Column size="5">
+        <Column size={5}>
           <Location>
             <LocationInput type="text" placeholder="Try “Miami”" />
           </Location>
         </Column>
-        <Offset size="2" />
-        <Column size="4">
+        <Offset size={2} />
+        <Column size={4}>
           <Navigation>
             <Link href="#">Become a host</Link>
             <Link href="#">Help</Link>
@@ -75,7 +73,7 @@ export default function() {
         </Column>
       </Row>
       <Row>
-        <Column size="12">
+        <Column size={12}>
           <Hr />
         </Column>
       </Row>

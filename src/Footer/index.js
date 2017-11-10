@@ -9,25 +9,17 @@ import facebook from "./facebook.svg";
 import instagram from "./instagram.svg";
 import twitter from "./twitter.svg";
 
-const BottomRow = styled(Row)`
-  align-items: center;
-  color: #636363;
-`;
-
 const List = styled.ul`
   font-size: 15px;
   padding: 0;
   margin: 0;
   list-style-type: none;
   list-style-position: inside;
-  color: #383838;
 `;
 
 const ListTitle = styled.div`
-  font-size: 15px;
-  color: #383838;
+  font: bold 15px/18px Circular_Air-Bold;
   margin-bottom: 8px;
-  font-weight: bold;
 `;
 
 const ListItem = styled.li`
@@ -45,10 +37,7 @@ const Selector = styled.select`
   padding: 0 40px 0 13px;
   border: 1px solid rgba(72, 72, 72, 0.2);
   border-radius: 4px;
-  font-family: inherit;
-  font-size: 19px;
-  line-height: 24px;
-  color: #383838;
+  font: lighter 18px/21px Circular_Air-Light;
   outline: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -66,26 +55,27 @@ const Credits = styled.div`
 
 const CreditsText = styled.span`
   margin-left: 12px;
-  font-size: 15px;
+  font: normal 15px/18px Circular_Air-Book;
+  color: #636363;
 `;
 
 const Navigation = styled.nav`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  font-size: 15px;
+  font: normal 15px/18px Circular_Air-Book;
 `;
 
 export default function() {
   return (
     <Container>
       <Row>
-        <Column size="12">
-          <Hr margin_top="64" margin_bottom="48" />
+        <Column size={12}>
+          <Hr marginTop={64} marginBottom={48} />
         </Column>
       </Row>
       <Row>
-        <Column size="3">
+        <Column size={3}>
           <Dropdown>
             <Selector name="language">
               <option value="en">English</option>
@@ -99,7 +89,7 @@ export default function() {
             </Selector>
           </Dropdown>
         </Column>
-        <Column size="2">
+        <Column size={2}>
           <ListTitle>Airbnb</ListTitle>
           <List>
             <ListItem>
@@ -122,7 +112,7 @@ export default function() {
             </ListItem>
           </List>
         </Column>
-        <Column size="2">
+        <Column size={2}>
           <ListTitle>Discover</ListTitle>
           <List>
             <ListItem>
@@ -148,7 +138,7 @@ export default function() {
             </ListItem>
           </List>
         </Column>
-        <Column size="2">
+        <Column size={2}>
           <ListTitle>Hosting</ListTitle>
           <List>
             <ListItem>
@@ -167,18 +157,18 @@ export default function() {
         </Column>
       </Row>
       <Row>
-        <Column size="12">
-          <Hr margin_top="48" margin_bottom="34" />
+        <Column size={12}>
+          <Hr marginTop={48} marginBottom={34} />
         </Column>
       </Row>
-      <BottomRow>
-        <Column size="2">
+      <Row>
+        <Column size={2}>
           <Credits>
             <Img src={logo} alt="logo" />
             <CreditsText>© Airbnb Inc.</CreditsText>
           </Credits>
         </Column>
-        <Column size="4">
+        <Column size={4}>
           <Navigation>
             <Link href="#">Terms</Link>
             <Link href="#">Privacy</Link>
@@ -194,7 +184,7 @@ export default function() {
             </Link>
           </Navigation>
         </Column>
-      </BottomRow>
+      </Row>
     </Container>
   );
 }
