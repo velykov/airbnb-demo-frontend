@@ -1,10 +1,11 @@
-import React from 'react';
-import star from './star.svg';
-import { Img } from './styled';
-import styled from 'styled-components';
+import React from "react";
+import star from "./star.svg";
+import { Img } from "./styled";
+import styled from "styled-components";
 
 const Container = styled.div`
   display: flex;
+  margin-right: 4px;
 `;
 
 const Star = styled(Img)`
