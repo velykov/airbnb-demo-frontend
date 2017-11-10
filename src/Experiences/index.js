@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Container, CardGroupRow, Column } from "../commons/styled";
+import { Container, CardGroupRow, Column, Title } from "../commons/styled";
 import SeeAllLink from "../commons/seeAllLink";
 import NextLink from "../commons/nextLink";
 
-import Card from "./card";
+import Card from "./cardComponent";
 
 import forest from "./forest.png";
 import whale from "./whale.png";
@@ -16,12 +16,6 @@ const Row = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-`;
-
-const Title = styled.h2`
-  line-height: 34px;
-  font-size: 32px;
-  color: #383838;
 `;
 
 export default function() {
