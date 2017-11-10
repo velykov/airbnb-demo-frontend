@@ -10,14 +10,11 @@ const Container = styled.div`
 
 const Link = styled.a`
   position: relative;
-  font-family: CircularAir;
-  line-height: 24px;
-  font-size: 14px;
+  font: normal 14px/24px Circular_Air-Book;
   text-align: right;
   border: 0;
   outline: none;
   cursor: pointer;
-  color: #383838;
 `;
 
 const Arrow = styled.div`
