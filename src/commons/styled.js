@@ -8,8 +8,9 @@ const Container = styled.div`
 
 const Row = styled.div`
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: ${props =>
+    props.justify ? props.justify : "space-between"};
+  align-items: ${props => (props.align ? props.align : "flex-start")};
 `;
 
 const Column = styled.div`
@@ -30,15 +31,18 @@ const Link = styled.a`
   color: ${props => (props.color ? props.color : "inherit")};
   text-align: center;
   text-decoration: none;
+  font-family: "Circular_Air-Book";
+  font-size: 14px;
+  line-height: 24px;
 `;
 
 const Hr = styled.hr`
+  margin-top: ${props => (props.marginTop ? props.marginTop : 0)}px;
+  margin-bottom: ${props => (props.marginBottom ? props.marginBottom : 0)}px;
   border: 0;
   height: 1px;
   background: #484848;
   opacity: 0.25;
-  margin-top: ${props => (props.margin_top ? props.margin_top : 0)}px;
-  margin-bottom: ${props => (props.margin_bottom ? props.margin_bottom : 0)}px;
 `;
 
 const CardGroupRow = styled.div`
@@ -47,4 +51,31 @@ const CardGroupRow = styled.div`
   align-items: flex-start;
 `;
 
-export { Container, Row, Column, Offset, Img, Link, Hr, CardGroupRow };
+const Title = styled.h1`
+  font: bold 32px/34px "Circular_Air-Bold";
+`;
+
+const Reviews = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
+const Review = styled.div`
+  font: normal 12px/14px Circular_Air-Book;
+  text-align: left;
+`;
+
+export {
+  Container,
+  Row,
+  Column,
+  Offset,
+  Img,
+  Link,
+  Hr,
+  CardGroupRow,
+  Title,
+  Reviews,
+  Review
+};
