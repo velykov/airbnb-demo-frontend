@@ -10,22 +10,9 @@ import facebook from "./facebook.svg";
 import instagram from "./instagram.svg";
 import twitter from "./twitter.svg";
 
-const List = styled.ul`
-  font-size: 15px;
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-  list-style-position: inside;
-`;
-
-const FooterTitle = styled.b`
+const Title = styled.b`
   font: bold 15px/18px Circular_Air-Bold;
   margin-bottom: 8px;
-`;
-
-const ListItem = styled.li`
-  padding-top: 8px;
-  color: #636363;
 `;
 
 const Dropdown = styled.div`
@@ -39,22 +26,27 @@ const Selector = styled.select`
   border: 1px solid rgba(72, 72, 72, 0.2);
   border-radius: 4px;
   
-  
   -webkit-appearance: none;
   -moz-appearance: none;
   background: #fff url('${arrow}') no-repeat;
   background-size: 20px;
   background-position: right 10px center;
-  @screen(min-width:320px) {
-  font: lighter 15px/18px Circular_Air-Light;
+  
+  @media (min-width:320px) {
+    font: lighter 12px/14px Circular_Air-Light;
   }
-  @screen(min-width:768px) {
-  font: lighter 18px/21px Circular_Air-Light;
+
+  @media (min-width:768px) {
+    font: lighter 15px/18px Circular_Air-Light;
+  }
+
+  @media (min-width:992px) {
+    font: lighter 18px/21px Circular_Air-Light;
   }
   
- &:focus{
-   outline:0;
-}
+  &:focus{
+    outline:0;
+  }
 `;
 
 const Credits = styled.div`
@@ -72,8 +64,7 @@ const Copyright = styled.span`
 
 const FooterNav = styled.nav`
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  margin-top: 12px;
   font: normal 15px/18px Circular_Air-Book;
 `;
 
@@ -88,6 +79,41 @@ const FooterLinks = styled(Col)`
   }
 `;
 
+const FooterLink = styled(Link)`
+  text-align: left;
+
+  @media (min-width: 768px) {
+    font: normal 12px/14px Circular_Air-Book;
+    margin-bottom: 11px;
+  }
+
+  @media (min-width: 992px) {
+    font: normal 15px/18px Circular_Air-Book;
+    margin-bottom: 8px;
+  }
+`;
+
+const FooterHr = styled(Hr)`
+  @media (min-width: 320px) {
+    margin-top: 24px;
+    margin-bottom: 18px;
+  }
+
+  @media (min-width: 768px) {
+    margin-top: 38px;
+    margin-bottom: 36px;
+  }
+
+  @media (min-width: 992px) {
+    margin-top: 38px;
+    margin-bottom: 36px;
+  }
+`;
+
+const NavLink = styled(Link)`
+  margin-right: 12px;
+`;
+
 export default function() {
   return (
     <footer>
@@ -99,112 +125,78 @@ export default function() {
         </Row>
         <Row>
           <Col xs={12} md={3} lg={3}>
-            <Dropdown>
-              <Selector name="language">
-                <option value="en">English</option>
-                <option value="ru">Russian</option>
-              </Selector>
-            </Dropdown>
-            <Dropdown>
-              <Selector name="currency">
-                <option value="usd">United States Dollar</option>
-                <option value="rub">Russian Rouble</option>
-              </Selector>
-            </Dropdown>
+            <Grid>
+              <Row>
+                <Col xs={6} md={12} lg={12}>
+                  <Dropdown>
+                    <Selector name="language">
+                      <option value="en">English</option>
+                      <option value="ru">Russian</option>
+                    </Selector>
+                  </Dropdown>
+                </Col>
+                <Col xs={6} md={12} lg={12}>
+                  <Dropdown>
+                    <Selector name="currency">
+                      <option value="usd">United States Dollar</option>
+                      <option value="rub">Russian Rouble</option>
+                    </Selector>
+                  </Dropdown>
+                </Col>
+              </Row>
+            </Grid>
           </Col>
-          <FooterLinks md={2} mdOffset={1} xs={2}>
-            <FooterTitle>Airbnb</FooterTitle>
-            <List>
-              <ListItem>
-                <Link href="#">About us</Link>
-              </ListItem>
-              <ListItem>
-                <Link href="#">Careers</Link>
-              </ListItem>
-              <ListItem>
-                <Link href="#">Press</Link>
-              </ListItem>
-              <ListItem>
-                <Link href="#">Policies</Link>
-              </ListItem>
-              <ListItem>
-                <Link href="#">Help</Link>
-              </ListItem>
-              <ListItem>
-                <Link href="#">Diversity & Belonging</Link>
-              </ListItem>
-            </List>
+          <FooterLinks md={2} mdOffset={1} xs={2} start="xs">
+            <Title>Airbnb</Title>
+            <FooterLink href="#">About us</FooterLink>
+            <FooterLink href="#">Careers</FooterLink>
+            <FooterLink href="#">Press</FooterLink>
+            <FooterLink href="#">Policies</FooterLink>
+            <FooterLink href="#">Help</FooterLink>
+            <FooterLink href="#">Diversity & Belonging</FooterLink>
           </FooterLinks>
-          <FooterLinks md={2} mdOffset={1} xs={2}>
-            <FooterTitle>Discover</FooterTitle>
-            <List>
-              <ListItem>
-                <Link href="#">Trust & Safety</Link>
-              </ListItem>
-              <ListItem>
-                <Link href="#">Travel Credit</Link>
-              </ListItem>
-              <ListItem>
-                <Link href="#">Gift Cards</Link>
-              </ListItem>
-              <ListItem>
-                <Link href="#">Airbnb Citizen</Link>
-              </ListItem>
-              <ListItem>
-                <Link href="#">Business Travel</Link>
-              </ListItem>
-              <ListItem>
-                <Link href="#">Guidebooks</Link>
-              </ListItem>
-              <ListItem>
-                <Link href="#">Airbnbmag</Link>
-              </ListItem>
-            </List>
+          <FooterLinks md={2} mdOffset={1} xs={2} start="xs">
+            <Title>Discover</Title>
+            <FooterLink href="#">Trust & Safety</FooterLink>
+            <FooterLink href="#">Travel Credit</FooterLink>
+            <FooterLink href="#">Gift Cards</FooterLink>
+            <FooterLink href="#">Airbnb Citizen</FooterLink>
+            <FooterLink href="#">Business Travel</FooterLink>
+            <FooterLink href="#">Guidebooks</FooterLink>
+            <FooterLink href="#">Airbnbmag</FooterLink>
           </FooterLinks>
-          <FooterLinks md={2} mdOffset={1} xs={2}>
-            <FooterTitle>Hosting</FooterTitle>
-            <List>
-              <ListItem>
-                <Link href="#">Why Host</Link>
-              </ListItem>
-              <ListItem>
-                <Link href="#">Hospitality</Link>
-              </ListItem>
-              <ListItem>
-                <Link href="#">Responsible Hosting</Link>
-              </ListItem>
-              <ListItem>
-                <Link href="#">Community Center</Link>
-              </ListItem>
-            </List>
+          <FooterLinks md={2} mdOffset={1} xs={2} start="xs">
+            <Title>Hosting</Title>
+            <FooterLink href="#">Why Host</FooterLink>
+            <FooterLink href="#">Hospitality</FooterLink>
+            <FooterLink href="#">Responsible Hosting</FooterLink>
+            <FooterLink href="#">Community Center</FooterLink>
           </FooterLinks>
         </Row>
-        <Row>
-          <Col size={12}>
-            <Hr marginTop={48} marginBottom={34} />
-          </Col>
-        </Row>
-        <Row>
-          <Col xs={12}>
+      </Grid>
+      <FooterHr />
+      <Grid>
+        <Row middle="xs">
+          <Col xs={12} md={3} lg={2}>
             <Credits>
               <Img src={logo} alt="logo" />
               <Copyright>© Airbnb Inc.</Copyright>
             </Credits>
           </Col>
-          <Col xs={12}>
+          <Col xs={12} md={5} mdOffset={4} lg={4} lgOffset={6}>
             <FooterNav>
-              <Link href="#">Terms</Link>
-              <Link href="#">Privacy</Link>
-              <Link href="#">Site map</Link>
-              <Link href="#">
+              <NavLink href="#">Terms</NavLink>
+              <NavLink href="#">Privacy</NavLink>
+              <NavLink href="#">Site map</NavLink>
+              <NavLink href="#">
                 <Img src={facebook} alt="facebook" />
-              </Link>
-              <Link href="#">
+              </NavLink>
+              <NavLink href="#">
                 <Img src={twitter} alt="twitter" />
-              </Link>
-              <Link href="#">
+              </NavLink>
+              <NavLink href="#">
                 <Img src={instagram} alt="instagram" />
-              </Link>
+              </NavLink>
             </FooterNav>
           </Col>
         </Row>
