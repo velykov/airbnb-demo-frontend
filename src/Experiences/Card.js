@@ -5,29 +5,39 @@ import { Img, Reviews, Review } from "../commons/styled";
 
 const Card = styled.div`
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  box-sizing: border-box;
   flex-direction: column;
   background: #fff;
 `;
 
-const Title = styled.span`
+const CardTitle = styled.h4`
   margin: 8px 0px 6px;
-  font: lighter 15px/18px Circular_Air-Light;
+
+  @media (min-width: 320px) {
+    font: lighter 13px/15px Circular_Air-Light;
+  }
+
+  @media (min-width: 768px) {
+    font: lighter 15px/18px Circular_Air-Light;
+  }
 `;
 
 const Price = styled.span`
-  font: bold 15px/18px Circular_Air-Bold;
+  @media (min-width: 320px) {
+    font: bold 13px/15px Circular_Air-Bold;
+  }
+
+  @media (min-width: 768px) {
+    font: bold 15px/18px Circular_Air-Bold;
+  }
 `;
 
 export default function(props) {
   return (
     <Card>
       <Img src={props.img} alt={props.alt} width="100%" />
-      <Title>
+      <CardTitle>
         <Price>${props.price}</Price> {props.title}
-      </Title>
+      </CardTitle>
       <Reviews>
         <Rating>
           <Rating />
