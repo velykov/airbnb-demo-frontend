@@ -1,29 +1,40 @@
 import React from "react";
-import { Container, Row, Column, Title } from "../commons/styled";
-import Card from "./cardComponent";
-import homes from "./homes.png";
-import experiences from "./experiences.png";
-import restaurants from "./restaurants.png";
+import { Grid, Row, Col } from "react-flexbox-grid";
+import { Slider, Slide, SectionTitle } from "../commons/styled";
+import Card from "./Category";
+import homes from "./homes2.png";
+import experiences from "./experiences2.png";
+import restaurants from "./restaurants2.png";
 
 export default function() {
   return (
-    <Container>
-      <Row>
-        <Column size={12}>
-          <Title>Explore Airbnb</Title>
-        </Column>
-      </Row>
-      <Row>
-        <Column size={4}>
-          <Card title="Homes" img={homes} alt="Homes image" />
-        </Column>
-        <Column size={4}>
-          <Card title="Experiences" img={experiences} alt="Experiences image" />
-        </Column>
-        <Column size={4}>
-          <Card title="Restaurants" img={restaurants} alt="Restaurants image" />
-        </Column>
-      </Row>
-    </Container>
+    <section>
+      <Grid>
+        <Row>
+          <Col xs md lg>
+            <SectionTitle>Explore Airbnb</SectionTitle>
+          </Col>
+        </Row>
+        <Slider>
+          <Slide xs={6} md={5} lg={4}>
+            <Card title="Homes" img={homes} alt="Homes image" />
+          </Slide>
+          <Slide xs={6} md={5} lg={4}>
+            <Card
+              title="Experiences"
+              img={experiences}
+              alt="Experiences image"
+            />
+          </Slide>
+          <Slide xs={6} md={5} lg={4}>
+            <Card
+              title="Restaurants"
+              img={restaurants}
+              alt="Restaurants image"
+            />
+          </Slide>
+        </Slider>
+      </Grid>
+    </section>
   );
 }
