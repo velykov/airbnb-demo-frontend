@@ -2,24 +2,33 @@ import React from "react";
 import styled from "styled-components";
 import arrow from "./arrow.svg";
 
-const Container = styled.div`
+const Container = styled.span`
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: flex-end;
+  margin: 0 -2px 0 -8px;
 `;
 
 const Link = styled.a`
   position: relative;
-  font: normal 14px/24px Circular_Air-Book;
+
   text-align: right;
   border: 0;
-  outline: none;
   cursor: pointer;
-`;
 
-const Arrow = styled.div`
+  @media (min-width: 320px) {
+    font: normal 12px/24px Circular_Air-Book;
+  }
+
+  @media (min-width: 768px) {
+    font: normal 14px/24px Circular_Air-Book;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
   &:after {
-    position: absolute;
     display: inline-block;
     content: url("${arrow}");
     transform: rotate(-90deg);
@@ -30,9 +39,7 @@ const Arrow = styled.div`
 export default function() {
   return (
     <Container>
-      <Link>
-        <Arrow>See all</Arrow>
-      </Link>
+      <Link>See all</Link>
     </Container>
   );
 }
