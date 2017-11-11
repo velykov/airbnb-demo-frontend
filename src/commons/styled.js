@@ -1,27 +1,8 @@
+import { Row, Col } from "react-flexbox-grid";
 import styled from "styled-components";
 
-const Container = styled.div`
-  width: 976px;
-  margin: 0 auto;
-  margin-bottom: 16px;
-`;
-
-const Row = styled.div`
-  display: flex;
-  justify-content: ${props =>
-    props.justify ? props.justify : "space-between"};
-  align-items: ${props => (props.align ? props.align : "flex-start")};
-`;
-
-const Column = styled.div`
-  box-sizing: border-box;
-  padding: 0px 8px;
-  flex-basis: ${props => (props.size ? props.size / 12 * 100 : "8.33333333")}%;
-`;
-
-const Offset = styled(Column)``;
-
 const Img = styled.img`
+  object-fit: cover;
   height: ${props => (props.height ? props.height : "auto")};
   width: ${props => (props.width ? props.width : "auto")};
 `;
@@ -45,14 +26,13 @@ const Hr = styled.hr`
   opacity: 0.25;
 `;
 
-const CardGroupRow = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-`;
-
-const Title = styled.h1`
-  font: bold 32px/34px "Circular_Air-Bold";
+const SectionTitle = styled.h2`
+  @media (min-width: 320px) {
+    font: bold 24px/28px "Circular_Air-Bold";
+  }
+  @media (min-width: 768px) {
+    font: bold 32px/34px "Circular_Air-Bold";
+  }
 `;
 
 const Reviews = styled.div`
@@ -66,16 +46,26 @@ const Review = styled.div`
   text-align: left;
 `;
 
+const Slider = styled(Row)`
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+const Slide = styled(Col)`
+  flex: 0 0 1;
+`;
+
 export {
-  Container,
-  Row,
-  Column,
-  Offset,
+  Slider,
+  Slide,
   Img,
   Link,
   Hr,
-  CardGroupRow,
-  Title,
+  SectionTitle,
   Reviews,
   Review
 };
