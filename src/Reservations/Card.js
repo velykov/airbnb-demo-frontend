@@ -33,7 +33,7 @@ const CardTitle = styled.div`
   }
 `;
 
-const Description = styled.div`
+const Description = styled.p`
   margin-bottom: 6px;
   text-align: left;
   mix-blend-mode: normal;
