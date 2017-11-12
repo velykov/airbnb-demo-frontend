@@ -13,8 +13,19 @@ const PageWrapper = styled.section`
   font-family: Circular_Air-Light, Helvetica Neue, Helvetica, Arial, sans-serif;
   padding-bottom: 24px;
   color: #383838;
-  max-width: 966px;
   margin: 0 auto;
+
+  @media (min-width: 320px) {
+    max-width: 320px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 768px;
+  }
+
+  @media (min-width: 992px) {
+    max-width: 966px;
+  }
 `;
 
 class App extends Component {
