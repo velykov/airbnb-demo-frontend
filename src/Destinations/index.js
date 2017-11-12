@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Row, Col } from "react-flexbox-grid";
+import { Grid } from "react-flexbox-grid";
 import { Slider, Slide, SectionTitle } from "../commons/styled";
 import NextLink from "../commons/NextLink";
 import Card from "./Card";
