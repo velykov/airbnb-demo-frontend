@@ -21,13 +21,17 @@ const Arrow = styled.a`
     align-self: center;
     flex-direction: row;
     
-    @media (max-width: 992px) {
+    &:after {
+      content: url("${arrow}") ;
+      width: 6px;
+      margin-left: 8px;
+      transform: rotate(0);
+      transform: translate(-50%);
+    }
+
+    @media (min-width: 992px) {
       &:after {
-        content: url("${arrow}") ;
-        width: 6px;
-        margin-left: 8px;
-        transform: rotate(0);
-        transform: translate(-50%);
+        display: none;
       }
     }
 `;
