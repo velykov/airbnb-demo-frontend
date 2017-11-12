@@ -15,37 +15,65 @@ const Title = styled.b`
   margin-bottom: 8px;
 `;
 
-const Dropdown = styled.div`
+const Language = styled.div`
   margin-bottom: 16px;
+  margin-left: -8px;
+
+  @media (min-width: 768px) {
+    margin-right: -8px;
+  }
+
+  @media (min-width: 992px) {
+    margin-right: -12px;
+  }
+`;
+
+const Currency = styled.div`
+  margin-right: -10px;
+
+  @media (min-width: 768px) {
+    margin-left: -8px;
+    margin-right: -8px;
+  }
+
+  @media (min-width: 992px) {
+    margin-right: -12px;
+  }
 `;
 
 const Selector = styled.select`
   width: 100%;
-  height: 48px;
-  padding: 0 40px 0 13px;
+  
   border: 1px solid rgba(72, 72, 72, 0.2);
   border-radius: 4px;
   
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  appearance: none;
+  &::-ms-expand {
+    display: none;
+  }
   background: #fff url('${arrow}') no-repeat;
   background-size: 20px;
   background-position: right 10px center;
   
-  @media (min-width:320px) {
+  @media (min-width: 320px) {
     font: lighter 12px/14px Circular_Air-Light;
+    padding: 12px 8px;
+    height: 40px;
   }
 
-  @media (min-width:768px) {
+  @media (min-width: 768px) {
     font: lighter 15px/18px Circular_Air-Light;
+    padding: 14px 8px 15px;
+    height: 48px;
   }
 
-  @media (min-width:992px) {
+  @media (min-width: 992px) {
     font: lighter 18px/21px Circular_Air-Light;
+    padding: 12px 16px;
   }
   
-  &:focus{
-    outline:0;
+  &:focus {
+    outline: 0;
   }
 `;
 
@@ -68,7 +96,7 @@ const FooterNav = styled.nav`
   font: normal 15px/18px Circular_Air-Book;
 `;
 
-const FooterLinks = styled(Col)`
+const Group = styled.div`
   @media (min-width: 320px) {
     display: none;
   }
@@ -117,61 +145,63 @@ const NavLink = styled(Link)`
 export default function() {
   return (
     <footer>
+      <Hr marginTop={64} marginBottom={48} />
       <Grid>
-        <Row>
-          <Col xs>
-            <Hr marginTop={64} marginBottom={48} />
-          </Col>
-        </Row>
         <Row>
           <Col xs={12} md={3} lg={3}>
             <Grid>
               <Row>
-                <Col xs={6} md={12} lg={12}>
-                  <Dropdown>
+                <Col xs={6} md={12} lg={12} start="xs">
+                  <Language>
                     <Selector name="language">
                       <option value="en">English</option>
                       <option value="ru">Russian</option>
                     </Selector>
-                  </Dropdown>
+                  </Language>
                 </Col>
-                <Col xs={6} md={12} lg={12}>
-                  <Dropdown>
+                <Col xs={6} md={12} lg={12} end="xs">
+                  <Currency>
                     <Selector name="currency">
                       <option value="usd">United States Dollar</option>
                       <option value="rub">Russian Rouble</option>
                     </Selector>
-                  </Dropdown>
+                  </Currency>
                 </Col>
               </Row>
             </Grid>
           </Col>
-          <FooterLinks md={2} mdOffset={1} xs={2} start="xs">
-            <Title>Airbnb</Title>
-            <FooterLink href="#">About us</FooterLink>
-            <FooterLink href="#">Careers</FooterLink>
-            <FooterLink href="#">Press</FooterLink>
-            <FooterLink href="#">Policies</FooterLink>
-            <FooterLink href="#">Help</FooterLink>
-            <FooterLink href="#">Diversity & Belonging</FooterLink>
-          </FooterLinks>
-          <FooterLinks md={2} mdOffset={1} xs={2} start="xs">
-            <Title>Discover</Title>
-            <FooterLink href="#">Trust & Safety</FooterLink>
-            <FooterLink href="#">Travel Credit</FooterLink>
-            <FooterLink href="#">Gift Cards</FooterLink>
-            <FooterLink href="#">Airbnb Citizen</FooterLink>
-            <FooterLink href="#">Business Travel</FooterLink>
-            <FooterLink href="#">Guidebooks</FooterLink>
-            <FooterLink href="#">Airbnbmag</FooterLink>
-          </FooterLinks>
-          <FooterLinks md={2} mdOffset={1} xs={2} start="xs">
-            <Title>Hosting</Title>
-            <FooterLink href="#">Why Host</FooterLink>
-            <FooterLink href="#">Hospitality</FooterLink>
-            <FooterLink href="#">Responsible Hosting</FooterLink>
-            <FooterLink href="#">Community Center</FooterLink>
-          </FooterLinks>
+          <Col xs={2} md={2} mdOffset={1} lg={2} start="xs">
+            <Group>
+              <Title>Airbnb</Title>
+              <FooterLink href="#">About us</FooterLink>
+              <FooterLink href="#">Careers</FooterLink>
+              <FooterLink href="#">Press</FooterLink>
+              <FooterLink href="#">Policies</FooterLink>
+              <FooterLink href="#">Help</FooterLink>
+              <FooterLink href="#">Diversity & Belonging</FooterLink>
+            </Group>
+          </Col>
+          <Col xs={2} md={2} mdOffset={1} lg={2} start="xs">
+            <Group>
+              <Title>Discover</Title>
+              <FooterLink href="#">Trust & Safety</FooterLink>
+              <FooterLink href="#">Travel Credit</FooterLink>
+              <FooterLink href="#">Gift Cards</FooterLink>
+              <FooterLink href="#">Airbnb Citizen</FooterLink>
+              <FooterLink href="#">Business Travel</FooterLink>
+              <FooterLink href="#">Guidebooks</FooterLink>
+              <FooterLink href="#">Airbnbmag</FooterLink>
+            </Group>
+          </Col>
+          <Col xs={2} md={2} mdOffset={1} lg={2} start="xs">
+            <Group>
+              <Title>Hosting</Title>
+              <FooterLink href="#">Why Host</FooterLink>
+              <FooterLink href="#">Hospitality</FooterLink>
+              <FooterLink href="#">Responsible Hosting</FooterLink>
+              <FooterLink href="#">Community Center</FooterLink>
+            </Group>
+          </Col>
         </Row>
       </Grid>
       <FooterHr />
