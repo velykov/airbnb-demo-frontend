@@ -23,7 +23,7 @@ const PageWrapper = styled.section`
     max-width: 768px;
   }
 
-  @media (min-width: 992px) {
+  @media (min-width: 966px) {
     max-width: 966px;
   }
 `;
