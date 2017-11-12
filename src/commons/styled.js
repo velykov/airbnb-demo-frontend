@@ -50,6 +50,7 @@ const Slider = styled(Row)`
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
+  overflow-y: hidden;
   &::-webkit-scrollbar {
     display: none;
   }
@@ -59,13 +60,4 @@ const Slide = styled(Col)`
   flex: 0 0 1;
 `;
 
-export {
-  Slider,
-  Slide,
-  Img,
-  Link,
-  Hr,
-  SectionTitle,
-  Reviews,
-  Review
-};
+export { Slider, Slide, Img, Link, Hr, SectionTitle, Reviews, Review };
