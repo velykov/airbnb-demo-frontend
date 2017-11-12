@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Row, Col } from "react-flexbox-grid";
 import { Slider, Slide, SectionTitle } from "../commons/styled";
-import NextLink from "../commons/nextLink";
+import NextLink from "../commons/NextLink";
 import Card from "./Card";
 
 import paris from "./paris.png";
@@ -15,11 +15,7 @@ export default function() {
   return (
     <section>
       <Grid>
-        <Row middle="xs">
-          <Col xs>
-            <SectionTitle>Feature destinations</SectionTitle>
-          </Col>
-        </Row>
+        <SectionTitle>Feature destinations</SectionTitle>
         <Slider>
           <Slide xs={4} md={3} lg={2}>
             <Card title="Paris" img={paris} alt="Paris" />

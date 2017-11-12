@@ -2,8 +2,8 @@ import React from "react";
 import { Grid, Row, Col } from "react-flexbox-grid";
 
 import { Slider, Slide, SectionTitle } from "../commons/styled";
-import SeeAllLink from "../commons/seeAllLink";
-import NextLink from "../commons/nextLink";
+import SeeAllLink from "../commons/SeeAllLink";
+import NextLink from "../commons/NextLink";
 
 import Card from "./Card";
 
