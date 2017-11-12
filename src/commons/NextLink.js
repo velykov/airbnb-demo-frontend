@@ -35,9 +35,10 @@ const NextLink = styled.a`
   box-sizing: border-box;
   transform: rotate(-90deg) scale(2, 2);
   
-  &:focus{
-   outline:0;
-}`;
+  &:focus {
+    outline: 0;
+  }
+`;
 
 export default function(props) {
   return (
