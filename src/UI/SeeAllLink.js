@@ -11,10 +11,11 @@ const Container = styled.span`
 
 const Link = styled.a`
   position: relative;
-
+color: #686868;
   text-align: right;
   border: 0;
   cursor: pointer;
+  text-decoration: none;
 
   @media (min-width: 320px) {
     font: normal 12px/24px Circular_Air-Book;
@@ -36,10 +37,10 @@ const Link = styled.a`
   }
 `;
 
-export default function() {
+export default function(props) {
   return (
     <Container>
-      <Link>See all</Link>
+      <Link href={props.href ? props.href : "#"}>See all</Link>
     </Container>
   );
 }

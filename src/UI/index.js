@@ -1,4 +1,4 @@
-import { Row, Col } from "react-flexbox-grid";
+import { Col } from "react-flexbox-grid";
 import styled from "styled-components";
 
 const Img = styled.img`
