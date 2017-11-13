@@ -1,6 +1,6 @@
 import React from "react";
 import star from "./star.svg";
-import { Img } from "./styled";
+import { Img } from "./index";
 import styled from "styled-components";
 
 const Container = styled.div`
