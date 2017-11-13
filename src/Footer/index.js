@@ -2,7 +2,7 @@ import React from "react";
 import { Grid, Row, Col } from "react-flexbox-grid";
 import styled from "styled-components";
 
-import { Img, Hr } from "../commons/styled";
+import { Img, Hr } from "../UI";
 
 import arrow from "./arrow.svg";
 import logo from "./logo.svg";

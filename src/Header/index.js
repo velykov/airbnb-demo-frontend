@@ -3,8 +3,8 @@ import { Grid, Row, Col } from "react-flexbox-grid";
 import styled from "styled-components";
 import logo from "./logo.svg";
 import search from "./search.svg";
-import arrow from "./../commons/arrow.svg";
-import { Img, Hr, Link } from "../commons/styled";
+import arrow from "../UI/arrow.svg";
+import { Img, Link } from "../UI";
 
 const Header = styled.header`
   padding: 16px 0;
@@ -49,7 +49,8 @@ const LocationInput = styled.input`
   line-height: 24px;
   border: 0px;
   width: 100%;
-  opacity: 0.64;
+  color: #383838;
+  opacity: ${props => (props.value ? 1 : 0.64)};
   font-family: Circular_Air-Book;
   padding-left: 54px;
   background: url('${search}') 16px center no-repeat;
@@ -67,7 +68,7 @@ const Navigation = styled.nav`
   }
 `;
 
-export default function() {
+export default function(props) {
   return (
     <Header>
       <Grid>
@@ -79,7 +80,11 @@ export default function() {
           </Col>
           <Col xs={10} md={7} lg={5}>
             <Location>
-              <LocationInput type="text" placeholder="Try “Miami”" />
+              <LocationInput
+                type="text"
+                placeholder="Try “Miami”"
+                value={props.value ? props.value : undefined}
+              />
             </Location>
           </Col>
           <Col lgOffset={2} lg={4}>
@@ -92,7 +97,6 @@ export default function() {
           </Col>
         </Row>
       </Grid>
-      <Hr marginTop={16} marginBottom={16} />
     </Header>
   );
 }
