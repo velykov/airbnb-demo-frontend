@@ -1,12 +1,8 @@
 import React, { Component } from "react";
+import { BrowserRouter, Route } from "react-router-dom";
 import styled from "styled-components";
-import Header from "./Header";
-import Footer from "./Footer";
-import Explore from "./Explore";
-import Experiences from "./Experiences";
+import Main from "./Main";
 import Homes from "./Homes";
-import Reservations from "./Reservations";
-import Destinations from "./Destinations";
 import "normalize.css";
 
 const PageWrapper = styled.section`
@@ -31,17 +27,12 @@ const PageWrapper = styled.section`
 class App extends Component {
   render() {
     return (
-      <PageWrapper>
-        <Header />
-        <main>
-          <Explore />
-          <Experiences />
-          <Homes />
-          <Reservations />
-          <Destinations />
-        </main>
-        <Footer />
-      </PageWrapper>
+      <BrowserRouter>
+        <PageWrapper>
+          <Route path="/" exact component={Main} />
+          <Route path="/homes" component={Homes} />
+        </PageWrapper>
+      </BrowserRouter>
     );
   }
 }
