@@ -2,7 +2,7 @@ import React from "react";
 import { Grid, Row, Col } from "react-flexbox-grid";
 import styled from "styled-components";
 
-import { Img, Hr, Link } from "../commons/styled";
+import { Img, Hr } from "../commons/styled";
 
 import arrow from "./arrow.svg";
 import logo from "./logo.svg";
@@ -15,30 +15,8 @@ const Title = styled.b`
   margin-bottom: 8px;
 `;
 
-const Language = styled.div`
-  margin-bottom: 16px;
-  margin-left: -8px;
-
-  @media (min-width: 768px) {
-    margin-right: -8px;
-  }
-
-  @media (min-width: 992px) {
-    margin-right: -12px;
-  }
-`;
-
-const Currency = styled.div`
-  margin-right: -10px;
-
-  @media (min-width: 768px) {
-    margin-left: -8px;
-    margin-right: -8px;
-  }
-
-  @media (min-width: 992px) {
-    margin-right: -12px;
-  }
+const DropDown = styled.div`
+  margin: 0 -4px 16px -8px;
 `;
 
 const Selector = styled.select`
@@ -107,8 +85,10 @@ const Group = styled.div`
   }
 `;
 
-const FooterLink = styled(Link)`
+const Link = styled.a`
   text-align: left;
+  color: ${props => (props.color ? props.color : "inherit")};
+  text-decoration: none;
 
   @media (min-width: 768px) {
     font: normal 12px/14px Circular_Air-Book;
@@ -152,54 +132,54 @@ export default function() {
             <Grid>
               <Row>
                 <Col xs={6} md={12} lg={12} start="xs">
-                  <Language>
+                  <DropDown>
                     <Selector name="language">
                       <option value="en">English</option>
                       <option value="ru">Russian</option>
                     </Selector>
-                  </Language>
+                  </DropDown>
                 </Col>
                 <Col xs={6} md={12} lg={12} end="xs">
-                  <Currency>
+                  <DropDown>
                     <Selector name="currency">
                       <option value="usd">United States Dollar</option>
                       <option value="rub">Russian Rouble</option>
                     </Selector>
-                  </Currency>
+                  </DropDown>
                 </Col>
               </Row>
             </Grid>
           </Col>
-          <Col xs={2} md={2} mdOffset={1} lg={2} start="xs">
+          <Col xs={2} mdOffset={1} start="xs">
             <Group>
               <Title>Airbnb</Title>
-              <FooterLink href="#">About us</FooterLink>
-              <FooterLink href="#">Careers</FooterLink>
-              <FooterLink href="#">Press</FooterLink>
-              <FooterLink href="#">Policies</FooterLink>
-              <FooterLink href="#">Help</FooterLink>
-              <FooterLink href="#">Diversity & Belonging</FooterLink>
+              <Link href="#">About us</Link>
+              <Link href="#">Careers</Link>
+              <Link href="#">Press</Link>
+              <Link href="#">Policies</Link>
+              <Link href="#">Help</Link>
+              <Link href="#">Diversity & Belonging</Link>
             </Group>
           </Col>
-          <Col xs={2} md={2} mdOffset={1} lg={2} start="xs">
+          <Col xs={2} mdOffset={1} start="xs">
             <Group>
               <Title>Discover</Title>
-              <FooterLink href="#">Trust & Safety</FooterLink>
-              <FooterLink href="#">Travel Credit</FooterLink>
-              <FooterLink href="#">Gift Cards</FooterLink>
-              <FooterLink href="#">Airbnb Citizen</FooterLink>
-              <FooterLink href="#">Business Travel</FooterLink>
-              <FooterLink href="#">Guidebooks</FooterLink>
-              <FooterLink href="#">Airbnbmag</FooterLink>
+              <Link href="#">Trust & Safety</Link>
+              <Link href="#">Travel Credit</Link>
+              <Link href="#">Gift Cards</Link>
+              <Link href="#">Airbnb Citizen</Link>
+              <Link href="#">Business Travel</Link>
+              <Link href="#">Guidebooks</Link>
+              <Link href="#">Airbnbmag</Link>
             </Group>
           </Col>
-          <Col xs={2} md={2} mdOffset={1} lg={2} start="xs">
+          <Col xs={2} mdOffset={1} start="xs">
             <Group>
               <Title>Hosting</Title>
-              <FooterLink href="#">Why Host</FooterLink>
-              <FooterLink href="#">Hospitality</FooterLink>
-              <FooterLink href="#">Responsible Hosting</FooterLink>
-              <FooterLink href="#">Community Center</FooterLink>
+              <Link href="#">Why Host</Link>
+              <Link href="#">Hospitality</Link>
+              <Link href="#">Responsible Hosting</Link>
+              <Link href="#">Community Center</Link>
             </Group>
           </Col>
         </Row>
