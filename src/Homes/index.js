@@ -22,42 +22,44 @@ export default function() {
             <SeeAllLink />
           </Col>
         </Row>
-        <Slider>
-          <Slide xs={8} md={5} lg={4}>
-            <Card
-              title="La Salentina, see, nature & relax"
-              img={left}
-              alt="La Salentina, see, nature & relax"
-              price={82}
-              type="Entire house"
-              beds="9 beds"
-              reviews={97}
-            />
-          </Slide>
-          <Slide xs={8} md={5} lg={4}>
-            <Card
-              title="Your private 3 bedr. riad and exclusi..."
-              img={middle}
-              alt="Your private 3 bedr. riad and exclusi..."
-              price={82}
-              type="Entire house"
-              beds="5 beds"
-              reviews={161}
-            />
-          </Slide>
-          <Slide xs={8} md={5} lg={4}>
-            <Card
-              title="Dreamy Tropical Tree House"
-              img={right}
-              alt="Dreamy Tropical Tree House"
-              price={200}
-              type="Entire treehouse"
-              beds="1 bed"
-              reviews={364}
-            />
-          </Slide>
-          <NextLink top={35} />
-        </Slider>
+        <Row>
+          <Slider>
+            <Slide xs={8} md={5} lg={4}>
+              <Card
+                title="La Salentina, see, nature & relax"
+                img={left}
+                alt="La Salentina, see, nature & relax"
+                price={82}
+                type="Entire house"
+                beds="9 beds"
+                reviews={97}
+              />
+            </Slide>
+            <Slide xs={8} md={5} lg={4}>
+              <Card
+                title="Your private 3 bedr. riad and exclusi..."
+                img={middle}
+                alt="Your private 3 bedr. riad and exclusi..."
+                price={82}
+                type="Entire house"
+                beds="5 beds"
+                reviews={161}
+              />
+            </Slide>
+            <Slide xs={8} md={5} lg={4}>
+              <Card
+                title="Dreamy Tropical Tree House"
+                img={right}
+                alt="Dreamy Tropical Tree House"
+                price={200}
+                type="Entire treehouse"
+                beds="1 bed"
+                reviews={364}
+              />
+            </Slide>
+            <NextLink top={35} />
+          </Slider>
+        </Row>
       </Grid>
     </section>
   );

@@ -46,12 +46,14 @@ const Review = styled.div`
   text-align: left;
 `;
 
-const Slider = styled(Row)`
+const Slider = styled.div`
   display: flex;
   position: relative;
   flex-wrap: nowrap;
   overflow-x: auto;
   overflow-y: hidden;
+  width: 100%;
+  height: 100%;
   &::-webkit-scrollbar {
     display: none;
   }
