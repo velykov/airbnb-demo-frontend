@@ -2,8 +2,8 @@ import React from "react";
 import { Grid, Row, Col } from "react-flexbox-grid";
 
 import { Slider, Slide, SectionTitle } from "../commons/styled";
-import SeeAllLink from "../commons/seeAllLink";
-import NextLink from "../commons/nextLink";
+import SeeAllLink from "../commons/SeeAllLink";
+import NextLink from "../commons/NextLink";
 
 import Card from "./Card";
 
@@ -24,45 +24,47 @@ export default function() {
             <SeeAllLink />
           </Col>
         </Row>
-        <Slider>
-          <Slide xs={6} md={4} lg={3}>
-            <Card
-              title="Chumley's"
-              img={chumley}
-              alt="Chumley's"
-              category="speakeasy"
-              price={60}
-            />
-          </Slide>
-          <Slide xs={6} md={4} lg={3}>
-            <Card
-              title="Hanjan"
-              img={hanjan}
-              alt="Hanjan"
-              category="korean gastropub"
-              price={50}
-            />
-          </Slide>
-          <Slide xs={6} md={4} lg={3}>
-            <Card
-              title="Hanjan"
-              img={meats}
-              alt="Prime Meats"
-              category="german american"
-              price={55}
-            />
-          </Slide>
-          <Slide xs={6} md={4} lg={3}>
-            <Card
-              title="Seaprice"
-              img={seaprice}
-              alt="Seaprice"
-              category="fine seafood"
-              price={70}
-            />
-          </Slide>
-          <NextLink top={30} />
-        </Slider>
+        <Row>
+          <Slider>
+            <Slide xs={6} md={4} lg={3}>
+              <Card
+                title="Chumley's"
+                img={chumley}
+                alt="Chumley's"
+                category="speakeasy"
+                price={60}
+              />
+            </Slide>
+            <Slide xs={6} md={4} lg={3}>
+              <Card
+                title="Hanjan"
+                img={hanjan}
+                alt="Hanjan"
+                category="korean gastropub"
+                price={50}
+              />
+            </Slide>
+            <Slide xs={6} md={4} lg={3}>
+              <Card
+                title="Hanjan"
+                img={meats}
+                alt="Prime Meats"
+                category="german american"
+                price={55}
+              />
+            </Slide>
+            <Slide xs={6} md={4} lg={3}>
+              <Card
+                title="Seaprice"
+                img={seaprice}
+                alt="Seaprice"
+                category="fine seafood"
+                price={70}
+              />
+            </Slide>
+            <NextLink top={30} />
+          </Slider>
+        </Row>
       </Grid>
     </section>
   );

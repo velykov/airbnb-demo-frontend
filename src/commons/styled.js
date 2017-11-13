@@ -46,10 +46,14 @@ const Review = styled.div`
   text-align: left;
 `;
 
-const Slider = styled(Row)`
+const Slider = styled.div`
   display: flex;
+  position: relative;
   flex-wrap: nowrap;
   overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+  height: 100%;
   &::-webkit-scrollbar {
     display: none;
   }
@@ -59,13 +63,4 @@ const Slide = styled(Col)`
   flex: 0 0 1;
 `;
 
-export {
-  Slider,
-  Slide,
-  Img,
-  Link,
-  Hr,
-  SectionTitle,
-  Reviews,
-  Review
-};
+export { Slider, Slide, Img, Link, Hr, SectionTitle, Reviews, Review };

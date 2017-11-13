@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Rating from "../commons/rating";
+import Rating from "../commons/Rating";
 import { Img, Reviews, Review } from "../commons/styled";
 
 const Card = styled.div`
@@ -21,7 +21,7 @@ const CardTitle = styled.h4`
   }
 `;
 
-const Description = styled.div`
+const Description = styled.p`
   margin-bottom: 6px;
   text-align: left;
 

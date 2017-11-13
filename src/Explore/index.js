@@ -15,25 +15,27 @@ export default function() {
             <SectionTitle>Explore Airbnb</SectionTitle>
           </Col>
         </Row>
-        <Slider>
-          <Slide xs={6} md={5} lg={4}>
-            <Card title="Homes" img={homes} alt="Homes image" />
-          </Slide>
-          <Slide xs={6} md={5} lg={4}>
-            <Card
-              title="Experiences"
-              img={experiences}
-              alt="Experiences image"
-            />
-          </Slide>
-          <Slide xs={6} md={5} lg={4}>
-            <Card
-              title="Restaurants"
-              img={restaurants}
-              alt="Restaurants image"
-            />
-          </Slide>
-        </Slider>
+        <Row>
+          <Slider>
+            <Slide xs={6} md={5} lg={4}>
+              <Card title="Homes" img={homes} alt="Homes image" />
+            </Slide>
+            <Slide xs={6} md={5} lg={4}>
+              <Card
+                title="Experiences"
+                img={experiences}
+                alt="Experiences image"
+              />
+            </Slide>
+            <Slide xs={6} md={5} lg={4}>
+              <Card
+                title="Restaurants"
+                img={restaurants}
+                alt="Restaurants image"
+              />
+            </Slide>
+          </Slider>
+        </Row>
       </Grid>
     </section>
   );

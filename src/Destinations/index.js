@@ -1,7 +1,7 @@
 import React from "react";
-import { Grid, Row, Col } from "react-flexbox-grid";
+import { Grid, Row } from "react-flexbox-grid";
 import { Slider, Slide, SectionTitle } from "../commons/styled";
-import NextLink from "../commons/nextLink";
+import NextLink from "../commons/NextLink";
 import Card from "./Card";
 
 import paris from "./paris.png";
@@ -15,32 +15,30 @@ export default function() {
   return (
     <section>
       <Grid>
-        <Row middle="xs">
-          <Col xs>
-            <SectionTitle>Feature destinations</SectionTitle>
-          </Col>
+        <SectionTitle>Feature destinations</SectionTitle>
+        <Row>
+          <Slider>
+            <Slide xs={4} md={3} lg={2}>
+              <Card title="Paris" img={paris} alt="Paris" />
+            </Slide>
+            <Slide xs={4} md={3} lg={2}>
+              <Card title="Miami" img={miami} alt="Miami" />
+            </Slide>
+            <Slide xs={4} md={3} lg={2}>
+              <Card title="Tokyo" img={tokyo} alt="Tokyo" />
+            </Slide>
+            <Slide xs={4} md={3} lg={2}>
+              <Card title="Cape Town" img={capetown} alt="Cape Town" />
+            </Slide>
+            <Slide xs={4} md={3} lg={2}>
+              <Card title="Seoul" img={seoul} alt="Seoul" />
+            </Slide>
+            <Slide xs={4} md={3} lg={2}>
+              <Card title="Los Angeles" img={la} alt="Los Angeles" />
+            </Slide>
+            <NextLink top={40} />
+          </Slider>
         </Row>
-        <Slider>
-          <Slide xs={4} md={3} lg={2}>
-            <Card title="Paris" img={paris} alt="Paris" />
-          </Slide>
-          <Slide xs={4} md={3} lg={2}>
-            <Card title="Miami" img={miami} alt="Miami" />
-          </Slide>
-          <Slide xs={4} md={3} lg={2}>
-            <Card title="Tokyo" img={tokyo} alt="Tokyo" />
-          </Slide>
-          <Slide xs={4} md={3} lg={2}>
-            <Card title="Cape Town" img={capetown} alt="Cape Town" />
-          </Slide>
-          <Slide xs={4} md={3} lg={2}>
-            <Card title="Seoul" img={seoul} alt="Seoul" />
-          </Slide>
-          <Slide xs={4} md={3} lg={2}>
-            <Card title="Los Angeles" img={la} alt="Los Angeles" />
-          </Slide>
-          <NextLink top={40} />
-        </Slider>
       </Grid>
     </section>
   );
