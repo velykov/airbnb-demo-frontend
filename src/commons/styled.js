@@ -48,6 +48,7 @@ const Review = styled.div`
 
 const Slider = styled(Row)`
   display: flex;
+  position: relative;
   flex-wrap: nowrap;
   overflow-x: auto;
   overflow-y: hidden;
