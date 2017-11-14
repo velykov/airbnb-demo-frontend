@@ -1,18 +1,17 @@
 import React from "react";
-import Header from "../Header";
+import MainHeader from "./MainHeader";
 import Footer from "../Footer";
 import Explore from "./Explore";
 import Experiences from "./Experiences";
 import Homes from "./Homes";
 import Reservations from "./Reservations";
 import Destinations from "./Destinations";
-import { Hr } from "../UI";
+import { ContentWrapper } from "../UI";
 
 export default () => {
   return (
-    <div>
-      <Header />
-      <Hr marginTop={16} marginBottom={16} />
+    <ContentWrapper>
+      <MainHeader />
       <main>
         <Explore />
         <Experiences />
@@ -21,6 +20,6 @@ export default () => {
         <Destinations />
       </main>
       <Footer />
-    </div>
+    </ContentWrapper>
   );
 };
