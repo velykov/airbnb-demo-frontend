@@ -1,25 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Rating from "../../UI/Rating";
-import { Img, Reviews, Review } from "../../UI";
-
-const Card = styled.div`
-  display: flex;
-  flex-direction: column;
-  background: #fff;
-`;
-
-const CardTitle = styled.h4`
-  margin: 8px 0px 6px;
-
-  @media (min-width: 320px) {
-    font: bold 13px/15px Circular_Air-Bold;
-  }
-
-  @media (min-width: 768px) {
-    font: bold 15px/18px Circular_Air-Bold;
-  }
-`;
+import Rating from "../UI/Rating";
+import { Card, CardImg, CardTitle, Reviews, Review } from "../UI";
 
 const Description = styled.p`
   margin: 0 0 6px 0;
@@ -37,8 +19,8 @@ const Description = styled.p`
 export default function(props) {
   return (
     <Card>
-      <Img src={props.img} alt={props.alt} width="100%" />
-      <CardTitle>
+      <CardImg src={props.img} alt={props.alt} width="100%" />
+      <CardTitle marginBottom={4}>
         ${props.price} {props.title}
       </CardTitle>
       <Description>
