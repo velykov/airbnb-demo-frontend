@@ -1,11 +1,11 @@
 import React from "react";
-import { Grid, Row, Col } from "react-flexbox-grid";
-import { Slider, Slide, SectionTitle } from "../../UI";
+import { Grid, Row } from "react-flexbox-grid";
+import { Slider, Slide, Section, SectionTitle } from "../../UI";
 import SeeAllLink from "../../UI/SeeAllLink";
 import NextLink from "../../UI/NextLink";
 import styled from "styled-components";
 
-import Card from "./Card";
+import Card from "../../Homes/Card";
 
 import left from "./homes1.png";
 import middle from "./homes2.png";
@@ -18,18 +18,11 @@ const Link = styled.a`
 
 export default function() {
   return (
-    <section>
+    <Section>
       <Grid>
-        <Row middle="xs">
-          <Col xs={6} md={6}>
-            <SectionTitle>
-              <Link href="/homes">Homes</Link>
-            </SectionTitle>
-          </Col>
-          <Col xs={3} xsOffset={3} md={2} mdOffset={4}>
-            <SeeAllLink href="/homes" />
-          </Col>
-        </Row>
+        <SectionTitle>
+          <Link href="/homes">Homes</Link> <SeeAllLink href="/homes" />
+        </SectionTitle>
         <Row>
           <Slider>
             <Slide xs={8} md={5} lg={4}>
@@ -69,6 +62,6 @@ export default function() {
           </Slider>
         </Row>
       </Grid>
-    </section>
+    </Section>
   );
 }

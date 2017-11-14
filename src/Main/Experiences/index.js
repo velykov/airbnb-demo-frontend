@@ -1,7 +1,7 @@
 import React from "react";
-import { Grid, Row, Col } from "react-flexbox-grid";
+import { Grid, Row } from "react-flexbox-grid";
 
-import { Slider, Slide, SectionTitle } from "../../UI";
+import { Slider, Slide, Section, SectionTitle } from "../../UI";
 import SeeAllLink from "../../UI/SeeAllLink";
 import NextLink from "../../UI/NextLink";
 
@@ -14,16 +14,11 @@ import salsa from "./salsa.png";
 
 export default function() {
   return (
-    <section>
+    <Section>
       <Grid>
-        <Row middle="xs">
-          <Col xs={6} md={6}>
-            <SectionTitle>Experiences</SectionTitle>
-          </Col>
-          <Col xs={3} xsOffset={3} md={2} mdOffset={4}>
-            <SeeAllLink />
-          </Col>
-        </Row>
+        <SectionTitle>
+          Experiences <SeeAllLink />
+        </SectionTitle>
         <Row>
           <Slider>
             <Slide xs={6} md={4} lg={3}>
@@ -66,6 +61,6 @@ export default function() {
           </Slider>
         </Row>
       </Grid>
-    </section>
+    </Section>
   );
 }

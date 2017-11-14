@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, Row } from "react-flexbox-grid";
-import { Slider, Slide, SectionTitle } from "../../UI";
+import { Section, Slider, Slide, SectionTitle } from "../../UI";
 import NextLink from "../../UI/NextLink";
 import Card from "./Card";
 
@@ -13,7 +13,7 @@ import la from "./la.png";
 
 export default function() {
   return (
-    <section>
+    <Section>
       <Grid>
         <SectionTitle>Feature destinations</SectionTitle>
         <Row>
@@ -40,6 +40,6 @@ export default function() {
           </Slider>
         </Row>
       </Grid>
-    </section>
+    </Section>
   );
 }

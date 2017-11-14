@@ -1,6 +1,6 @@
 import React from "react";
-import { Grid, Row, Col } from "react-flexbox-grid";
-import { Slider, Slide, SectionTitle } from "../../UI";
+import { Grid, Row } from "react-flexbox-grid";
+import { Slider, Slide, Section, SectionTitle } from "../../UI";
 import Card from "./Category";
 import homes from "./homes2.png";
 import experiences from "./experiences2.png";
@@ -8,13 +8,9 @@ import restaurants from "./restaurants2.png";
 
 export default function() {
   return (
-    <section>
+    <Section>
       <Grid>
-        <Row>
-          <Col xs md lg>
-            <SectionTitle>Explore Airbnb</SectionTitle>
-          </Col>
-        </Row>
+        <SectionTitle>Explore Airbnb</SectionTitle>
         <Row>
           <Slider>
             <Slide xs={6} md={5} lg={4}>
@@ -37,6 +33,6 @@ export default function() {
           </Slider>
         </Row>
       </Grid>
-    </section>
+    </Section>
   );
 }

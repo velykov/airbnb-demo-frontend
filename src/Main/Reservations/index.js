@@ -1,29 +1,28 @@
 import React from "react";
-import { Grid, Row, Col } from "react-flexbox-grid";
+import { Grid, Row } from "react-flexbox-grid";
 
-import { Slider, Slide, SectionTitle } from "../../UI";
+import { Section, Slider, Slide, SectionTitle } from "../../UI";
 import SeeAllLink from "../../UI/SeeAllLink";
 import NextLink from "../../UI/NextLink";
 
 import Card from "./Card";
-
+import styled from "styled-components";
 import chumley from "./chumley.png";
 import hanjan from "./hanjan.png";
 import meats from "./meats.png";
 import seaprice from "./seaprice.png";
 
+const Title = styled(SectionTitle)`
+  align-items: center;
+`;
+
 export default function() {
   return (
-    <section>
+    <Section>
       <Grid>
-        <Row middle="xs">
-          <Col xs={10} md={10} lg={8}>
-            <SectionTitle>Popular reservations around the world</SectionTitle>
-          </Col>
-          <Col xs={2} md={2} lg={1} lgOffset={3}>
-            <SeeAllLink />
-          </Col>
-        </Row>
+        <Title>
+          Popular reservations around the world <SeeAllLink />
+        </Title>
         <Row>
           <Slider>
             <Slide xs={6} md={4} lg={3}>
@@ -66,6 +65,6 @@ export default function() {
           </Slider>
         </Row>
       </Grid>
-    </section>
+    </Section>
   );
 }

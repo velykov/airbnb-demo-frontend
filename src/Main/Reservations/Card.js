@@ -1,15 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { Img } from "../../UI";
-
-const Card = styled.div`
-  display: flex;
-  flex-direction: column;
-  background: #fff;
-`;
+import { Card, CardImg } from "../../UI";
 
 const Label = styled.span`
-  margin: 8px 0 2px;
+  margin-bottom: 2px;
   text-transform: uppercase;
 
   @media (min-width: 320px) {
@@ -21,7 +15,7 @@ const Label = styled.span`
   }
 `;
 
-const CardTitle = styled.div`
+const CardTitle = styled.h4`
   margin: 0 0 4px;
 
   @media (min-width: 320px) {
@@ -34,6 +28,7 @@ const CardTitle = styled.div`
 `;
 
 const Description = styled.p`
+  margin-top: 0;
   margin-bottom: 6px;
   text-align: left;
   mix-blend-mode: normal;
@@ -46,6 +41,10 @@ const Description = styled.p`
   @media (min-width: 768px) {
     font: lighter 18px/21px Circular_Air-Light;
   }
+`;
+
+const Img = styled(CardImg)`
+  margin-bottom: 7px;
 `;
 
 export default function(props) {

@@ -9,6 +9,8 @@ const Category = styled.div`
   drop-shadow: 4px 0 2px rgba(72, 72, 72, 0.08);
   border: 1px solid rgba(72, 72, 72, 0.2);
   border-radius: 4px;
+  box-sizing: border-box;
+
   @media (min-width: 320px) {
     flex-direction: column;
   }
@@ -20,20 +22,26 @@ const Category = styled.div`
 `;
 
 const CategoryTitle = styled.h2`
-  font: bold 17px/20px Circular_Air-Bold;
   @media (min-width: 320px) {
+    font: bold 12px/14px Circular_Air-Bold;
+    text-align: left;
+    height: 40px;
     padding-left: 12px;
+    display: flex;
+    align-items: center;
+    margin: 0;
   }
 
   @media (min-width: 768px) {
+    font: bold 17px/20px Circular_Air-Bold;
     padding-left: 24px;
   }
 `;
 
-const ImgContainer = styled.div`
-  display: flex;
+const Picture = styled(Img)`
+  // display: flex;
   box-sizing: border-box;
-
+  border-radius: 4px 0 0 0;
   @media (min-width: 320px) {
     max-width: 144px;
     max-height: 78px;
@@ -48,9 +56,7 @@ const ImgContainer = styled.div`
 export default function(props) {
   return (
     <Category>
-      <ImgContainer>
-        <Img src={props.img} alt={props.alt} width="100%" />
-      </ImgContainer>
+      <Picture src={props.img} alt={props.alt} width="100%" />
       <CategoryTitle>{props.title}</CategoryTitle>
     </Category>
   );
