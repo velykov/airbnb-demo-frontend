@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Row, Col } from "react-flexbox-grid";
 import styled from "styled-components";
-import map from "./map.png";
+import map from "./map.svg";
 
 const MapLink = styled.a`
   display: inline-block;
