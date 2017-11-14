@@ -2,18 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import arrow from "./arrow.svg";
 
-const Container = styled.span`
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  margin: 0 -2px 0 -8px;
-`;
-
 const Link = styled.a`
-  position: relative;
-color: #686868;
-  text-align: right;
-  border: 0;
+  color: #686868;
   cursor: pointer;
   text-decoration: none;
 
@@ -28,19 +18,20 @@ color: #686868;
   &:focus {
     outline: 0;
   }
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-width: 50px;
 
   &:after {
-    display: inline-block;
+    display: inline-flex;
     content: url("${arrow}");
     transform: rotate(-90deg);
     right: -16px;
-  }
+  }s
 `;
 
 export default function(props) {
-  return (
-    <Container>
-      <Link href={props.href ? props.href : "#"}>See all</Link>
-    </Container>
-  );
+  return <Link href={props.href ? props.href : "#"}>See all</Link>;
 }
