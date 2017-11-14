@@ -1,12 +1,12 @@
 import React from "react";
 import { Grid, Row, Col } from "react-flexbox-grid";
-import Header from "../Header";
+import { ContentWrapper } from "../UI";
+import HomesHeader from "./HomesHeader";
 import Footer from "./Footer";
 import Paginator from "./Paginator";
 import Filters from "./Filters";
-import { Hr } from "../UI";
-import Card from "../Main/Homes/Card";
-import GoogleMap from "./GoogleMap";
+import Card from "./Card";
+import Map from "./Map";
 import styled from "styled-components";
 import img1 from "./home1.png";
 import img2 from "./home2.png";
@@ -27,11 +27,9 @@ const Wrapper = styled.div`
 
 export default function() {
   return (
-    <div>
-      <Header value="Anywhere · Homes" />
-      <Hr marginTop={16} marginBottom={12} />
+    <ContentWrapper>
+      <HomesHeader value="Anywhere · Homes" />
       <Filters />
-      <Hr marginTop={12} marginBottom={24} />
 
       <Grid>
         <Row>
@@ -125,10 +123,10 @@ export default function() {
             <Footer />
           </Col>
           <Col lg={4}>
-            <GoogleMap />
+            <Map center={{ lat: 47.33333, lng: 13.33333 }} zoom={7} />
           </Col>
         </Row>
       </Grid>
-    </div>
+    </ContentWrapper>
   );
 }
