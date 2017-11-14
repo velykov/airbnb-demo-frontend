@@ -3,6 +3,7 @@ import { Grid, Row, Col } from "react-flexbox-grid";
 import { Slider, Slide, SectionTitle } from "../../UI";
 import SeeAllLink from "../../UI/SeeAllLink";
 import NextLink from "../../UI/NextLink";
+import styled from "styled-components";
 
 import Card from "./Card";
 
@@ -10,13 +11,20 @@ import left from "./homes1.png";
 import middle from "./homes2.png";
 import right from "./homes3.png";
 
+const Link = styled.a`
+  text-decoration: none;
+  color: #383838;
+`;
+
 export default function() {
   return (
     <section>
       <Grid>
         <Row middle="xs">
           <Col xs={6} md={6}>
-            <SectionTitle>Homes</SectionTitle>
+            <SectionTitle>
+              <Link href="/homes">Homes</Link>
+            </SectionTitle>
           </Col>
           <Col xs={3} xsOffset={3} md={2} mdOffset={4}>
             <SeeAllLink href="/homes" />
