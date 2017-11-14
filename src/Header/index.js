@@ -8,6 +8,7 @@ import { Img, Link } from "../UI";
 
 const Header = styled.header`
   padding: 16px 0;
+  box-shadow: 0 0.5px rgba(72, 72, 72, 0.3);
 `;
 
 const Logo = styled(Img)`
@@ -50,7 +51,6 @@ const LocationInput = styled.input`
   border: 0px;
   width: 100%;
   color: #383838;
-  opacity: ${props => (props.value ? 1 : 0.64)};
   font-family: Circular_Air-Book;
   padding-left: 54px;
   background: url('${search}') 16px center no-repeat;
@@ -83,7 +83,7 @@ export default function(props) {
               <LocationInput
                 type="text"
                 placeholder="Try “Miami”"
-                value={props.value ? props.value : undefined}
+                value={props.value}
               />
             </Location>
           </Col>
