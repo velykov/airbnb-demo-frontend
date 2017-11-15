@@ -4,11 +4,17 @@ import styled from "styled-components";
 import logo from "./logo.svg";
 import search from "./search.svg";
 import arrow from "../UI/arrow.svg";
-import { Img, Link } from "../UI";
+import { Img, Link, ContentWrapper } from "../UI";
 
 const Header = styled.header`
   padding: 16px 0;
   box-shadow: 0 0.5px rgba(72, 72, 72, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 100;
 `;
 
 const Logo = styled(Img)`
@@ -37,14 +43,8 @@ const Arrow = styled.a`
     }
 `;
 
-const Location = styled.div`
-  border: 1px solid rgba(72, 72, 72, 0.2);
-  box-shadow: 0px 2px 4px rgba(72, 72, 72, 0.08);
-  border-radius: 4px;
-`;
-
 const LocationInput = styled.input`
-  padding: 0.5em;
+  padding: 11px 0;
   border-radius: 4px;
   font-size: 16px;
   line-height: 24px;
@@ -54,6 +54,10 @@ const LocationInput = styled.input`
   font-family: Circular_Air-Book;
   padding-left: 54px;
   background: url('${search}') 16px center no-repeat;
+  border: 1px solid rgba(72, 72, 72, 0.2);
+  box-shadow: 0px 2px 4px rgba(72, 72, 72, 0.08);
+  border-radius: 4px;
+  box-sizing: border-box;
   &:focus {
    outline: 0;
   }
@@ -71,32 +75,32 @@ const Navigation = styled.nav`
 export default function(props) {
   return (
     <Header>
-      <Grid>
-        <Row start="xs" middle="xs">
-          <Col xs={2} md={1} lg={1}>
-            <Arrow>
-              <Logo src={logo} alt="logo" />
-            </Arrow>
-          </Col>
-          <Col xs={10} md={7} lg={5}>
-            <Location>
+      <ContentWrapper>
+        <Grid>
+          <Row start="xs" middle="xs">
+            <Col xs={2} md={1} lg={1}>
+              <Arrow>
+                <Logo src={logo} alt="logo" />
+              </Arrow>
+            </Col>
+            <Col xs={10} md={7} lg={5}>
               <LocationInput
                 type="text"
                 placeholder="Try “Miami”"
                 value={props.value}
               />
-            </Location>
-          </Col>
-          <Col lgOffset={2} lg={4}>
-            <Navigation>
-              <Link href="#">Become a host</Link>
-              <Link href="#">Help</Link>
-              <Link href="#">Sign up</Link>
-              <Link href="#">Log in</Link>
-            </Navigation>
-          </Col>
-        </Row>
-      </Grid>
+            </Col>
+            <Col lgOffset={2} lg={4}>
+              <Navigation>
+                <Link href="#">Become a host</Link>
+                <Link href="#">Help</Link>
+                <Link href="#">Sign up</Link>
+                <Link href="#">Log in</Link>
+              </Navigation>
+            </Col>
+          </Row>
+        </Grid>
+      </ContentWrapper>
     </Header>
   );
 }
