@@ -14,13 +14,14 @@ export default function() {
         <Row>
           <Slider>
             <Slide xs={6} md={5} lg={4}>
-              <Card title="Homes" img={homes} alt="Homes image" />
+              <Card title="Homes" img={homes} alt="Homes image" href="/homes" />
             </Slide>
             <Slide xs={6} md={5} lg={4}>
               <Card
                 title="Experiences"
                 img={experiences}
                 alt="Experiences image"
+                href="#"
               />
             </Slide>
             <Slide xs={6} md={5} lg={4}>
@@ -28,6 +29,7 @@ export default function() {
                 title="Restaurants"
                 img={restaurants}
                 alt="Restaurants image"
+                href="#"
               />
             </Slide>
           </Slider>
