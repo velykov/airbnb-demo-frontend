@@ -27,6 +27,7 @@ const Wrapper = styled.div`
 
 const Main = styled.main`
   margin-top: 160px;
+  padding-bottom: 25px;
 `;
 
 export default function() {
@@ -42,7 +43,7 @@ export default function() {
                 <main>
                   <Grid>
                     <Row>
-                      <Col xs={12} md={6} lg={4}>
+                      <Col xs={12} md={6}>
                         <Wrapper>
                           <Card
                             title="La Salentina, see, nature & relax"
@@ -55,7 +56,7 @@ export default function() {
                           />
                         </Wrapper>
                       </Col>
-                      <Col xs={12} md={6} lg={4}>
+                      <Col xs={12} md={6}>
                         <Wrapper>
                           <Card
                             title="Your private 3 bedr. riad and exclusi..."
@@ -68,7 +69,7 @@ export default function() {
                           />
                         </Wrapper>
                       </Col>
-                      <Col xs={12} md={6} lg={4}>
+                      <Col xs={12} md={6}>
                         <Wrapper>
                           <Card
                             title="Dreamy Tropical Tree House"
@@ -82,7 +83,7 @@ export default function() {
                           />
                         </Wrapper>
                       </Col>
-                      <Col xs={12} md={6} lg={4}>
+                      <Col xs={12} md={6}>
                         <Wrapper>
                           <Card
                             title="Best location old town luxury loft"
@@ -95,7 +96,7 @@ export default function() {
                           />
                         </Wrapper>
                       </Col>
-                      <Col xs={12} md={6} lg={4}>
+                      <Col xs={12} md={6}>
                         <Wrapper>
                           <Card
                             title="Lussuoso. Vista incantevole."
@@ -108,7 +109,7 @@ export default function() {
                           />
                         </Wrapper>
                       </Col>
-                      <Col xs={12} md={6} lg={4}>
+                      <Col xs={12} md={6}>
                         <Wrapper>
                           <Card
                             title="In the historical center of Lecce"
