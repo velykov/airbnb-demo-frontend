@@ -2,7 +2,7 @@ import React from "react";
 import { Grid, Row, Col } from "react-flexbox-grid";
 import styled from "styled-components";
 
-import { Img } from "../UI";
+import { Img, ContentWrapper } from "../UI";
 
 import arrow from "./arrow.svg";
 import logo from "./logo.svg";
@@ -156,89 +156,91 @@ const Footer = styled.footer`
 export default function() {
   return (
     <Footer>
-      <Grid>
-        <Row>
-          <Col xs={12} md={3} lg={3}>
-            <Grid>
-              <Row>
-                <Col xs={6} md={12} lg={12} start="xs">
-                  <DropDown>
-                    <Selector name="language">
-                      <option value="en">English</option>
-                      <option value="ru">Russian</option>
-                    </Selector>
-                  </DropDown>
-                </Col>
-                <Col xs={6} md={12} lg={12} end="xs">
-                  <DropDown>
-                    <Selector name="currency">
-                      <option value="usd">United States Dollar</option>
-                      <option value="rub">Russian Rouble</option>
-                    </Selector>
-                  </DropDown>
-                </Col>
-              </Row>
-            </Grid>
-          </Col>
-          <Col xs={2} mdOffset={1} start="xs">
-            <Group>
-              <Title>Airbnb</Title>
-              <Link href="#">About us</Link>
-              <Link href="#">Careers</Link>
-              <Link href="#">Press</Link>
-              <Link href="#">Policies</Link>
-              <Link href="#">Help</Link>
-              <Link href="#">Diversity & Belonging</Link>
-            </Group>
-          </Col>
-          <Col xs={2} mdOffset={1} start="xs">
-            <Group>
-              <Title>Discover</Title>
-              <Link href="#">Trust & Safety</Link>
-              <Link href="#">Travel Credit</Link>
-              <Link href="#">Gift Cards</Link>
-              <Link href="#">Airbnb Citizen</Link>
-              <Link href="#">Business Travel</Link>
-              <Link href="#">Guidebooks</Link>
-              <Link href="#">Airbnbmag</Link>
-            </Group>
-          </Col>
-          <Col xs={2} mdOffset={1} start="xs">
-            <Group>
-              <Title>Hosting</Title>
-              <Link href="#">Why Host</Link>
-              <Link href="#">Hospitality</Link>
-              <Link href="#">Responsible Hosting</Link>
-              <Link href="#">Community Center</Link>
-            </Group>
-          </Col>
-        </Row>
-        <FooterHr />
-        <Row middle="xs">
-          <Col xs={12} md={3} lg={2}>
-            <Credits>
-              <Img src={logo} alt="logo" />
-              <Copyright>© Airbnb Inc.</Copyright>
-            </Credits>
-          </Col>
-          <Col xs={12} md={5} mdOffset={4} lg={4} lgOffset={6}>
-            <Credentials>
-              <NavLink href="#">Terms</NavLink>
-              <NavLink href="#">Privacy</NavLink>
-              <NavLink href="#">Site map</NavLink>
-              <NavLink href="#">
-                <Img src={facebook} alt="facebook" />
-              </NavLink>
-              <NavLink href="#">
-                <Img src={twitter} alt="twitter" />
-              </NavLink>
-              <NavLink href="#">
-                <Img src={instagram} alt="instagram" />
-              </NavLink>
-            </Credentials>
-          </Col>
-        </Row>
-      </Grid>
+      <ContentWrapper>
+        <Grid>
+          <Row>
+            <Col xs={12} md={3} lg={3}>
+              <Grid>
+                <Row>
+                  <Col xs={6} md={12} lg={12} start="xs">
+                    <DropDown>
+                      <Selector name="language">
+                        <option value="en">English</option>
+                        <option value="ru">Russian</option>
+                      </Selector>
+                    </DropDown>
+                  </Col>
+                  <Col xs={6} md={12} lg={12} end="xs">
+                    <DropDown>
+                      <Selector name="currency">
+                        <option value="usd">United States Dollar</option>
+                        <option value="rub">Russian Rouble</option>
+                      </Selector>
+                    </DropDown>
+                  </Col>
+                </Row>
+              </Grid>
+            </Col>
+            <Col xs={2} mdOffset={1} start="xs">
+              <Group>
+                <Title>Airbnb</Title>
+                <Link href="#">About us</Link>
+                <Link href="#">Careers</Link>
+                <Link href="#">Press</Link>
+                <Link href="#">Policies</Link>
+                <Link href="#">Help</Link>
+                <Link href="#">Diversity & Belonging</Link>
+              </Group>
+            </Col>
+            <Col xs={2} mdOffset={1} start="xs">
+              <Group>
+                <Title>Discover</Title>
+                <Link href="#">Trust & Safety</Link>
+                <Link href="#">Travel Credit</Link>
+                <Link href="#">Gift Cards</Link>
+                <Link href="#">Airbnb Citizen</Link>
+                <Link href="#">Business Travel</Link>
+                <Link href="#">Guidebooks</Link>
+                <Link href="#">Airbnbmag</Link>
+              </Group>
+            </Col>
+            <Col xs={2} mdOffset={1} start="xs">
+              <Group>
+                <Title>Hosting</Title>
+                <Link href="#">Why Host</Link>
+                <Link href="#">Hospitality</Link>
+                <Link href="#">Responsible Hosting</Link>
+                <Link href="#">Community Center</Link>
+              </Group>
+            </Col>
+          </Row>
+          <FooterHr />
+          <Row middle="xs">
+            <Col xs={12} md={3} lg={2}>
+              <Credits>
+                <Img src={logo} alt="logo" />
+                <Copyright>© Airbnb Inc.</Copyright>
+              </Credits>
+            </Col>
+            <Col xs={12} md={5} mdOffset={4} lg={4} lgOffset={6}>
+              <Credentials>
+                <NavLink href="#">Terms</NavLink>
+                <NavLink href="#">Privacy</NavLink>
+                <NavLink href="#">Site map</NavLink>
+                <NavLink href="#">
+                  <Img src={facebook} alt="facebook" />
+                </NavLink>
+                <NavLink href="#">
+                  <Img src={twitter} alt="twitter" />
+                </NavLink>
+                <NavLink href="#">
+                  <Img src={instagram} alt="instagram" />
+                </NavLink>
+              </Credentials>
+            </Col>
+          </Row>
+        </Grid>
+      </ContentWrapper>
     </Footer>
   );
 }
