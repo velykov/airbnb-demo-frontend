@@ -6,9 +6,13 @@ const MAX_LG_FIXED_SIZE = 996;
 
 const Wrapper = styled.div`
   @media (min-width: 992px) {
-    margin: -24px 0;
-    height: ${() => window.innerHeight + 72}px;
-    width: ${() => window.innerWidth - MAX_LG_FIXED_SIZE}px;
+    position: fixed;
+    top: 136px;
+    right: 0;
+    height: calc(100% - 136px);
+    width: ${() =>
+      MAX_LG_FIXED_SIZE * 4 / 12 +
+      (window.innerWidth - MAX_LG_FIXED_SIZE) / 2}px;
   }
 `;
 
