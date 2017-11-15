@@ -46,6 +46,7 @@ const Selector = styled.select`
     font: lighter 12px/14px Circular_Air-Light;
     padding: 12px 8px;
     height: 40px;
+    color: #383838;
   }
 
   @media (min-width: 768px) {
@@ -115,6 +116,7 @@ const Link = styled.a`
   @media (min-width: 768px) {
     font: normal 12px/14px Circular_Air-Book;
     margin-bottom: 11px;
+    color: #636363;
   }
 
   @media (min-width: 992px) {
