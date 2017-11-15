@@ -6,7 +6,7 @@ import map from "./map.svg";
 const MapLink = styled.a`
   display: inline-block;
   @media (min-width: 320px) {
-    margin: 24px 0;
+    margin: 24px 0 0;
   }
 
   @media (min-width: 768px) {
@@ -29,7 +29,6 @@ export default function() {
       <Row center="xs" bottom="md">
         <Col xs={12} md={11} lg={12}>
           <Description>
-            {" "}
             Enter dates to see full pricing. Additional fees apply. Taxes may be
             added.
           </Description>
