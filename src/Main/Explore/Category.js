@@ -53,11 +53,23 @@ const Picture = styled(Img)`
   }
 `;
 
+const Link = styled.a`
+  color: ${props => (props.color ? props.color : "inherit")};
+  text-decoration: none;
+  line-height: 0;
+`;
+
 export default function(props) {
   return (
     <Category>
-      <Picture src={props.img} alt={props.alt} width="100%" />
-      <CategoryTitle>{props.title}</CategoryTitle>
+      <Link href={props.href} title={props.title}>
+        <Picture src={props.img} alt={props.alt} width="100%" />
+      </Link>
+      <CategoryTitle>
+        <Link href={props.href} title={props.title}>
+          {props.title}
+        </Link>
+      </CategoryTitle>
     </Category>
   );
 }
