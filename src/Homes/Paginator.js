@@ -1,21 +1,22 @@
 import React from "react";
-import { Grid, Row, Col } from "react-flexbox-grid";
 import styled from "styled-components";
 
 const Group = styled.div`
+  margin-top: 18px;
+  margin-bottom: 15px;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin: 18px 0 15px;
+  flex-direction: row;
 `;
 
 const Link = styled.a`
   font: normal 16px/19px Circular_Air-Book;
-  display: inline-block;
+  display: flex;
+  justify-content: space-around;
   width: 32px;
   height: 32px;
   line-height: 32px;
   text-decoration: none;
+  margin: 0 8px;
   background-color: ${props => (props.active ? "#008489" : "transparent")};
   color: ${props => (props.active ? "#fff" : "#0F7276")};
   border-radius: ${props => (props.active ? 50 : 0)}%;
@@ -31,28 +32,26 @@ const Total = styled.p`
   color: #383838;
 `;
 
+const Nav = styled.nav`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 export default function() {
   return (
-    <Grid>
-      <Row center="xs">
-        <Col xs={12} md={4}>
-          <Group>
-            <Link href="#" active={true}>
-              1
-            </Link>
-            <Link href="#">2</Link>
-            <Link href="#">3</Link>
-            <Link href="#">...</Link>
-            <Link href="#">17</Link>
-            <Link href="#">></Link>
-          </Group>
-        </Col>
-      </Row>
-      <Row center="xs">
-        <Col xs={12}>
-          <Total>1 – 18 of 300+ Rentals</Total>
-        </Col>
-      </Row>
-    </Grid>
+    <Nav>
+      <Group>
+        <Link href="#" active={true}>
+          1
+        </Link>
+        <Link href="#">2</Link>
+        <Link href="#">3</Link>
+        <Link href="#">...</Link>
+        <Link href="#">17</Link>
+        <Link href="#">></Link>
+      </Group>
+      <Total>1 – 18 of 300+ Rentals</Total>
+    </Nav>
   );
 }
