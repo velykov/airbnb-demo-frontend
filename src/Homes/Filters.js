@@ -1,5 +1,6 @@
 import React from "react";
 import { Grid, Row, Col } from "react-flexbox-grid";
+import { ContentWrapper } from "../UI";
 import styled from "styled-components";
 
 const Button = styled.button`
@@ -23,24 +24,29 @@ const Button = styled.button`
 const Filters = styled.div`
   padding: 12px 0;
   box-shadow: 0 0.5px rgba(72, 72, 72, 0.3);
-  margin-bottom: 24px;
+  position: fixed;
+  top: 80px;
+  width: 100%;
+  background-color: #fff;
 `;
 
 export default function() {
   return (
     <Filters>
-      <Grid>
-        <Row>
-          <Col xs={12}>
-            <Button>Dates</Button>
-            <Button>Guests</Button>
-            <Button lgShow={true}>RoomType</Button>
-            <Button lgShow={true}>Price</Button>
-            <Button lgShow={true}>Instant book</Button>
-            <Button>More filters</Button>
-          </Col>
-        </Row>
-      </Grid>
+      <ContentWrapper>
+        <Grid>
+          <Row>
+            <Col xs={12}>
+              <Button>Dates</Button>
+              <Button>Guests</Button>
+              <Button lgShow={true}>RoomType</Button>
+              <Button lgShow={true}>Price</Button>
+              <Button lgShow={true}>Instant book</Button>
+              <Button>More filters</Button>
+            </Col>
+          </Row>
+        </Grid>
+      </ContentWrapper>
     </Filters>
   );
 }
