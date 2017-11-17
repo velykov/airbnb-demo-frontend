@@ -12,14 +12,18 @@ import twitter from "./twitter.svg";
 
 const Title = styled.b`
   color: #383838;
+  font-weight: bold;
+  font-family: Circular_Air-Bold;
 
   @media (min-width: 768px) {
-    font: bold 12px/14px Circular_Air-Bold;
+    font-size: 12px;
+    line-height: 14px;
     margin-bottom: 19px;
   }
 
   @media (min-width: 992px) {
-    font: bold 15px/18px Circular_Air-Bold;
+    font-size: 15px;
+    line-height: 18px;
     margin-bottom: 16px;
   }
 `;
