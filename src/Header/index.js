@@ -4,7 +4,8 @@ import styled from "styled-components";
 import logo from "./logo.svg";
 import search from "./search.svg";
 import arrow from "../UI/arrow.svg";
-import { Img, Link, ContentWrapper } from "../UI";
+import { Img, Link as NavLink, ContentWrapper } from "../UI";
+import { Link } from "react-router-dom";
 
 const Header = styled.header`
   padding: 16px 0;
@@ -80,7 +81,9 @@ export default function(props) {
           <Row start="xs" middle="xs">
             <Col xs={2} md={1} lg={1}>
               <Arrow>
-                <Logo src={logo} alt="logo" />
+                <Link to="/">
+                  <Logo src={logo} alt="logo" />
+                </Link>
               </Arrow>
             </Col>
             <Col xs={10} md={7} lg={5}>
@@ -92,10 +95,10 @@ export default function(props) {
             </Col>
             <Col lgOffset={2} lg={4}>
               <Navigation>
-                <Link href="#">Become a host</Link>
-                <Link href="#">Help</Link>
-                <Link href="#">Sign up</Link>
-                <Link href="#">Log in</Link>
+                <NavLink href="#">Become a host</NavLink>
+                <NavLink href="#">Help</NavLink>
+                <NavLink href="#">Sign up</NavLink>
+                <NavLink href="#">Log in</NavLink>
               </Navigation>
             </Col>
           </Row>
