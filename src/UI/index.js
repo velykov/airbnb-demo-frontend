@@ -1,7 +1,7 @@
 import { Col } from "react-flexbox-grid";
 import styled from "styled-components";
 
-const ContentWrapper = styled.div`
+export const ContentWrapper = styled.div`
   margin: 0 auto;
   @media (min-width: 320px) {
     width: 320px;
@@ -16,13 +16,13 @@ const ContentWrapper = styled.div`
   }
 `;
 
-const Img = styled.img`
+export const Img = styled.img`
   object-fit: fill;
   height: ${props => (props.height ? props.height : "auto")};
   width: ${props => (props.width ? props.width : "auto")};
 `;
 
-const Link = styled.a`
+export const Link = styled.a`
   box-sizing: border-box;
   color: ${props => (props.color ? props.color : "inherit")};
   text-align: center;
@@ -32,7 +32,7 @@ const Link = styled.a`
   line-height: 24px;
 `;
 
-const Section = styled.section`
+export const Section = styled.section`
   @media (min-width: 320px) {
     margin-bottom: 40px;
   }
@@ -41,7 +41,7 @@ const Section = styled.section`
   }
 `;
 
-const SectionTitle = styled.h2`
+export const SectionTitle = styled.h2`
   @media (min-width: 320px) {
     font: bold 24px/28px Circular_Air-Bold;
     margin: 0 0 16px;
@@ -55,19 +55,19 @@ const SectionTitle = styled.h2`
   }
 `;
 
-const Reviews = styled.div`
+export const Reviews = styled.div`
   display: flex;
   flex-direction: row;
   align-items: bottom;
 `;
 
-const Review = styled.div`
+export const Review = styled.div`
   font: normal 12px/14px Circular_Air-Book;
   text-align: left;
   paddin-left: 4px;
 `;
 
-const Slider = styled.div`
+export const Slider = styled.div`
   display: flex;
   position: relative;
   flex-wrap: nowrap;
@@ -80,23 +80,23 @@ const Slider = styled.div`
   }
 `;
 
-const Slide = styled(Col)`
+export const Slide = styled(Col)`
   flex: 0 0 1;
 `;
 
-const Card = styled.div`
+export const Card = styled.div`
   display: flex;
   flex-direction: column;
   background: #fff;
 `;
 
-const CardImg = styled(Img)`
+export const CardImg = styled(Img)`
   @media (min-width: 320px) {
     margin-bottom: 8px;
   }
 `;
 
-const CardTitle = styled.h4`
+export const CardTitle = styled.h4`
   @media (min-width: 320px) {
     font: bold 13px/15px Circular_Air-Bold;
     text-overflow: ellipsis;
@@ -115,7 +115,7 @@ const CardTitle = styled.h4`
   }
 `;
 
-const CardTitleDescription = styled.span`
+export const CardTitleDescription = styled.span`
   @media (min-width: 320px) {
     font: normal 13px/15px Circular_Air-Light;
   }
@@ -124,19 +124,3 @@ const CardTitleDescription = styled.span`
     font: lighter 15px/18px Circular_Air-Light;
   }
 `;
-
-export {
-  ContentWrapper,
-  Slider,
-  Slide,
-  Img,
-  Link,
-  Section,
-  SectionTitle,
-  Reviews,
-  Review,
-  Card,
-  CardImg,
-  CardTitle,
-  CardTitleDescription
-};
