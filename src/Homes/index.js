@@ -28,8 +28,6 @@ const Wrapper = styled.div`
 const Main = styled.main`
   margin-top: 160px;
   padding-bottom: 25px;
-  margin-left: auto;
-  margin-right: auto;
 
   @media (min-width: 992px) {
     width: 627px;
@@ -41,8 +39,8 @@ export default function() {
     <div>
       <HomesHeader value="Anywhere · Homes" />
       <Filters />
-      <Main>
-        <ContentWrapper>
+      <ContentWrapper>
+        <Main>
           <Grid>
             <Row>
               <Col xs={12} md={6}>
@@ -128,9 +126,9 @@ export default function() {
           </Grid>
           <Paginator />
           <Footer />
-        </ContentWrapper>
-        <Map center={{ lat: 47.33333, lng: 13.33333 }} zoom={7} />
-      </Main>
+        </Main>
+      </ContentWrapper>
+      <Map center={{ lat: 47.33333, lng: 13.33333 }} zoom={7} />
     </div>
   );
 }
