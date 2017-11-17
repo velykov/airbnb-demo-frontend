@@ -31,7 +31,7 @@ const Main = styled.main`
   margin-left: auto;
   margin-right: auto;
 
-  @media (min-width: 320px) {
+  @media (min-width: 992px) {
     width: 627px;
   }
 `;
