@@ -29,7 +29,7 @@ const Link = styled.a`
     content: url("${arrow}");
     transform: rotate(-90deg);
     right: -16px;
-  }s
+  }
 `;
 
 export default function(props) {
