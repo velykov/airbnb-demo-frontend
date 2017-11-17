@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Row, Col } from "react-flexbox-grid";
 import { ContentWrapper } from "../UI";
-import HomesHeader from "./HomesHeader";
+import Header from "../Header";
 import Footer from "./Footer";
 import Paginator from "./Paginator";
 import Filters from "./Filters";
@@ -37,7 +37,7 @@ const Main = styled.main`
 export default function() {
   return (
     <div>
-      <HomesHeader value="Anywhere · Homes" />
+      <Header value="Anywhere · Homes" />;
       <Filters />
       <ContentWrapper>
         <Main>
