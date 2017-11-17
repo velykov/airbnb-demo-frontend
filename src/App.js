@@ -5,7 +5,7 @@ import Main from "./Main";
 import Homes from "./Homes";
 import "normalize.css";
 
-const Style = styled.div`
+const BodyStyles = styled.div`
   font-family: Circular_Air-Light, Helvetica Neue, Helvetica, Arial, sans-serif;
   color: #383838;
 `;
@@ -14,10 +14,10 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <Style>
+        <BodyStyles>
           <Route path="/" exact component={Main} />
           <Route path="/homes" component={Homes} />
-        </Style>
+        </BodyStyles>
       </BrowserRouter>
     );
   }
