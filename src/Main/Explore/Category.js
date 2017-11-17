@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import styled from "styled-components";
 import { Img } from "../../UI";
@@ -53,7 +54,7 @@ const Picture = styled(Img)`
   }
 `;
 
-const Link = styled.a`
+const CategoryLink = styled(Link)`
   color: ${props => (props.color ? props.color : "inherit")};
   text-decoration: none;
   line-height: 0;
@@ -62,13 +63,13 @@ const Link = styled.a`
 export default function(props) {
   return (
     <Category>
-      <Link href={props.href} title={props.title}>
+      <CategoryLink to={props.href} title={props.title}>
         <Picture src={props.img} alt={props.alt} width="100%" />
-      </Link>
+      </CategoryLink>
       <CategoryTitle>
-        <Link href={props.href} title={props.title}>
+        <CategoryLink to={props.href} title={props.title}>
           {props.title}
-        </Link>
+        </CategoryLink>
       </CategoryTitle>
     </Category>
   );
