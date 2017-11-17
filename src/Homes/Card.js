@@ -16,13 +16,17 @@ const Description = styled.p`
   }
 `;
 
+const Title = styled(CardTitle)`
+  margin-bottom: 4px;
+`;
+
 export default function(props) {
   return (
     <Card>
       <CardImg src={props.img} alt={props.alt} width="100%" />
-      <CardTitle marginBottom={4}>
+      <Title>
         ${props.price} {props.title}
-      </CardTitle>
+      </Title>
       <Description>
         {props.type} · {props.beds}
       </Description>
