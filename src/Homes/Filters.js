@@ -37,7 +37,7 @@ export default class Filters extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isShowDates: true,
+      isShowDates: false,
       isShowGuests: false,
       isRoomTypes: false,
       isShowPrices: false,

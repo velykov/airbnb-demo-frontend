@@ -11,6 +11,7 @@ import close from "./close.svg";
 import "react-dates/lib/css/_datepicker.css";
 import "./datePicker.css";
 import moment from "moment";
+import { START_DATE, HORIZONTAL_SCROLLABLE } from "react-dates/constants";
 
 const Container = styled.div`
   position: fixed;
@@ -92,7 +93,7 @@ export default class DatesFilter extends React.Component {
             onDatesChange={({ startDate, endDate }) =>
               this.setState({ startDate, endDate })
             }
-            focusedInput={this.state.focusedInput}
+            focusedInput={START_DATE}
             onFocusChange={focusedInput => this.setState({ focusedInput })}
           />
         </Body>
