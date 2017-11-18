@@ -6,7 +6,7 @@ import Footer from "./Footer";
 import Paginator from "./Paginator";
 import Filters from "./Filters";
 import Card from "./Card";
-import Map from "./Map";
+import GoogleMap from "./GoogleMap";
 import styled from "styled-components";
 import img1 from "./home1.png";
 import img2 from "./home2.png";
@@ -37,7 +37,7 @@ const Main = styled.main`
 export default function() {
   return (
     <div>
-      <Header value="Anywhere · Homes" />;
+      <Header value="Anywhere · Homes" />
       <Filters />
       <ContentWrapper>
         <Main>
@@ -128,7 +128,7 @@ export default function() {
           <Footer />
         </Main>
       </ContentWrapper>
-      <Map center={{ lat: 47.33333, lng: 13.33333 }} zoom={7} />
+      <GoogleMap center={{ lat: 47.33333, lng: 13.33333 }} zoom={7} />
     </div>
   );
 }

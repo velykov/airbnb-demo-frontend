@@ -18,7 +18,14 @@ const Wrapper = styled.div`
 export default props => {
   return (
     <Wrapper>
-      <GoogleMapReact defaultCenter={props.center} defaultZoom={props.zoom} />
+      <GoogleMapReact
+        bootstrapURLKeys={{
+          // key: process.env.GOOGLE_MAP_KEY,
+          language: "ru"
+        }}
+        defaultCenter={props.center}
+        defaultZoom={props.zoom}
+      />
     </Wrapper>
   );
 };
