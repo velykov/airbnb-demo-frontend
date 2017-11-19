@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Col } from 'react-flexbox-grid';
+import React from "react";
+import styled from "styled-components";
+import { Col } from "react-flexbox-grid";
 
-import close from './close.svg';
+import close from "./close.svg";
 
 const Actions = styled.div`
   display: none;
@@ -110,7 +110,9 @@ const Content = styled.div`
   }
 `;
 
-const Wrapper = styled.div`position: relative;`;
+const Wrapper = styled.div`
+  position: relative;
+`;
 
 export default props => (
   <Wrapper>

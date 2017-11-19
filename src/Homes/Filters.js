@@ -56,7 +56,7 @@ export default class Filters extends React.Component {
           <Grid>
             <Row>
               <Col xs={12}>
-                <DatesFilter onClose={this.handleDatesClick}/>
+                <DatesFilter onClose={this.handleDatesClick} />
                 <Button>Guests</Button>
                 <Button lgShow={true}>RoomType</Button>
                 <Button lgShow={true}>Price</Button>

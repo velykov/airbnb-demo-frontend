@@ -1,12 +1,10 @@
-import React from 'react';
+import React from "react";
 
-import Filter from './Filter';
-import PickerInfo from './PickerInfo';
-import DatesPicker from './DatesPicker';
-import { toDateLabel } from './labels';
-import {
-    START_DATE
-} from "react-dates/constants";
+import Filter from "./Filter";
+import PickerInfo from "./PickerInfo";
+import DatesPicker from "./DatesPicker";
+import { toDateLabel } from "./labels";
+import { START_DATE } from "react-dates/constants";
 
 export default class extends React.Component {
   state = {
@@ -15,36 +13,39 @@ export default class extends React.Component {
     endDate: null,
     selectedStartDate: null,
     selectedEndDate: null,
-    focusedInput: START_DATE,
+    focusedInput: START_DATE
   };
 
-  onApply = (props) => {
+  onApply = props => {
     this.props.closeDropdown();
     this.setState({
       selected: false,
       startDate: this.state.selectedStartDate,
-      endDate: this.state.selectedEndDate,
+      endDate: this.state.selectedEndDate
     });
-    this.props.onApply(this.state.selectedStartDate, this.state.selectedEndDate);
+    this.props.onApply(
+      this.state.selectedStartDate,
+      this.state.selectedEndDate
+    );
   };
 
-  onCancel = (props) => {
+  onCancel = props => {
     this.props.closeDropdown();
     this.setState({
       selected: false,
       selectedStartDate: this.state.startDate,
-      selectedEndDate: this.state.endDate,
+      selectedEndDate: this.state.endDate
     });
   };
 
-  onToggle = (selected) => {
+  onToggle = selected => {
     this.setState({ selected });
   };
 
   onReset = () => {
     this.setState(() => ({
       selectedStartDate: null,
-      selectedEndDate: null,
+      selectedEndDate: null
     }));
   };
 
@@ -61,18 +62,22 @@ export default class extends React.Component {
         onReset={this.onReset}
         closeDropdown={() => this.props.closeDropdown()}
       >
-        <PickerInfo startDate={this.state.selectedStartDate} endDate={this.state.selectedEndDate} />
+        <PickerInfo
+          startDate={this.state.selectedStartDate}
+          endDate={this.state.selectedEndDate}
+        />
 
         <DatesPicker
           focusedInput={this.state.focusedInput}
           onFocusChange={focusedInput =>
-            this.setState({ focusedInput: focusedInput || START_DATE })}
+            this.setState({ focusedInput: focusedInput || START_DATE })
+          }
           startDate={this.state.selectedStartDate}
           endDate={this.state.selectedEndDate}
           onDatesChange={({ startDate, endDate }) => {
             this.setState({
               selectedStartDate: startDate,
-              selectedEndDate: endDate,
+              selectedEndDate: endDate
             });
           }}
         />

@@ -16,7 +16,7 @@
 .CalendarMonthGrid {
   margin-left: 0;
 }
-.CalendarMonth_caption  {
+.CalendarMonth_caption {
   font: normal 18px/21px Circular_Air-Bold;
 }
 .CalendarMonth_table {
@@ -29,14 +29,14 @@
 }
 
 .DayPicker_weekHeader:nth-child(2) {
-      margin-left: 6px;
+  margin-left: 6px;
 }
 
 .DayPicker_weekHeader_ul {
   width: 282px;
-    display: flex;
-    justify-content: space-around;
-    margin: 1px 0 4px;
+  display: flex;
+  justify-content: space-around;
+  margin: 1px 0 4px;
 }
 .DayPicker__horizontal {
   box-shadow: none;

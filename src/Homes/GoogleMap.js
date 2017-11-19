@@ -10,8 +10,7 @@ const Wrapper = styled.div`
     top: 136px;
     right: 0;
     height: calc(100% - 136px);
-    width: ${() =>
-      336 + (window.innerWidth - maxLgFixedSize) / 2}px;
+    width: ${() => 336 + (window.innerWidth - maxLgFixedSize) / 2}px;
   }
 `;
 

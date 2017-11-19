@@ -1,12 +1,12 @@
-import React from 'react';
-import moment from 'moment';
-import styled from 'styled-components';
-import 'react-dates/initialize';
-import 'react-dates/lib/css/_datepicker.css';
-import { DayPickerRangeController } from 'react-dates';
-import { Row as GRow, Col } from 'react-flexbox-grid';
+import React from "react";
+import moment from "moment";
+import styled from "styled-components";
+import "react-dates/initialize";
+import "react-dates/lib/css/_datepicker.css";
+import { DayPickerRangeController } from "react-dates";
+import { Row as GRow, Col } from "react-flexbox-grid";
 
-import './_datepicker.css';
+import "./_datepicker.css";
 
 const Wrapper = styled.div`
   height: 100%;
@@ -34,7 +34,7 @@ export default props => (
       <Col lg={12} className="hidden-xs hidden-sm hidden-md">
         <DayPickerRangeController
           {...props}
-          isDayBlocked={day => day.isBefore(moment(), 'day')}
+          isDayBlocked={day => day.isBefore(moment(), "day")}
           numberOfMonths={2}
           hideKeyboardShortcutsPanel
         />
@@ -43,7 +43,7 @@ export default props => (
       <Col md={12} className="hidden-xs hidden-lg hidden-xl">
         <DayPickerRangeController
           {...props}
-          isDayBlocked={day => day.isBefore(moment(), 'day')}
+          isDayBlocked={day => day.isBefore(moment(), "day")}
           numberOfMonths={1}
           hideKeyboardShortcutsPanel
         />
@@ -52,7 +52,7 @@ export default props => (
       <Col xs={12} className="hidden-sm hidden-md hidden-lg hidden-xl">
         <DayPickerRangeController
           {...props}
-          isDayBlocked={day => day.isBefore(moment(), 'day')}
+          isDayBlocked={day => day.isBefore(moment(), "day")}
           orientation="verticalScrollable"
           numberOfMonths={3}
           hideKeyboardShortcutsPanel

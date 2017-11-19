@@ -8,7 +8,7 @@ const Wrapper = styled.span`
 `;
 
 const Filter = styled.button`
-font: normal 14px/16px Circular_Air-Book;
+  font: normal 14px/16px Circular_Air-Book;
   text-align: left;
   padding: 7px 16px;
   margin-right: 12px;
@@ -23,7 +23,7 @@ font: normal 14px/16px Circular_Air-Book;
   &:first-child {
     margin-left: 0px;
   }
-  
+
   &:last-child {
     margin-right: 0px;
   }

@@ -12,11 +12,9 @@ export default class DatesFilter extends React.Component {
   render() {
     return (
       <DateFilter
-        closeDropdown={() => this.setState({isShow: false})}
+        closeDropdown={() => this.setState({ isShow: false })}
         isShow={this.state.isShow}
-        onApply={(startDate, endDate) =>
-          this.setState({ startDate, endDate })
-        }
+        onApply={(startDate, endDate) => this.setState({ startDate, endDate })}
       />
     );
   }
