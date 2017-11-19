@@ -37,79 +37,16 @@ export default class Filters extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isShowDates: false,
-      isShowGuests: false,
-      isRoomTypes: false,
-      isShowPrices: false,
-      isShowBooks: false,
-      isShowMoreFilters: false
+      isShowDates: false
     };
 
     this.handleDatesClick = this.handleDatesClick.bind(this);
-    this.handleGuestsClick = this.handleGuestsClick.bind(this);
-    this.handleRoomTypeClick = this.handleRoomTypeClick.bind(this);
-    this.handlePriceClick = this.handlePriceClick.bind(this);
-    this.handleBookClick = this.handleBookClick.bind(this);
-    this.handleMoreFiltersClick = this.handleMoreFiltersClick.bind(this);
-  }
-
-  hideAllFiltersState() {
-    return {
-      isShowDates: false,
-      isShowGuests: false,
-      isRoomTypes: false,
-      isShowPrices: false,
-      isShowBooks: false,
-      isShowMoreFilters: false,
-      startDate: undefined,
-      endDate: undefined
-    };
   }
 
   handleDatesClick() {
     this.setState(prevState => ({
-      ...this.hideAllFiltersState(),
       isShowDates: !prevState.isShowDates
     }));
-  }
-
-  handleGuestsClick() {
-    this.setState(prevState => ({
-      ...this.hideAllFiltersState(),
-      isShowGuests: !prevState.isShowGuests
-    }));
-  }
-
-  handleRoomTypeClick() {
-    this.setState(prevState => ({
-      ...this.hideAllFiltersState(),
-      isShowRoomTypes: !prevState.isHowRoomTypes
-    }));
-  }
-
-  handlePriceClick() {
-    this.setState(prevState => ({
-      ...this.hideAllFiltersState(),
-      isShowPrices: !prevState.isShowPrices
-    }));
-  }
-
-  handleBookClick() {
-    this.setState(prevState => ({
-      ...this.hideAllFiltersState(),
-      isShowBooks: !prevState.isShowBooks
-    }));
-  }
-
-  handleMoreFiltersClick() {
-    this.setState(prevState => ({
-      ...this.hideAllFiltersState(),
-      isShowMoreFilters: !prevState.isShowMoreFilters
-    }));
-  }
-
-  handleDatesChange(startDate, endDate) {
-    ({ startDate, endDate }) => this.setState({ startDate, endDate });
   }
 
   render() {
@@ -119,30 +56,16 @@ export default class Filters extends React.Component {
           <Grid>
             <Row>
               <Col xs={12}>
-                <Button onClick={this.handleDatesClick}>Dates</Button>
-                <Button onClick={this.handleGuestsClick}>Guests</Button>
-                <Button onClick={this.handleRoomTypeClick} lgShow={true}>
-                  RoomType
-                </Button>
-                <Button onClick={this.handlePriceClick} lgShow={true}>
-                  Price
-                </Button>
-                <Button onClick={this.handleBookClick} lgShow={true}>
-                  Instant book
-                </Button>
-                <Button onClick={this.handleMoreFiltersClick}>
-                  More filters
-                </Button>
+                <DatesFilter onClose={this.handleDatesClick}/>
+                <Button>Guests</Button>
+                <Button lgShow={true}>RoomType</Button>
+                <Button lgShow={true}>Price</Button>
+                <Button lgShow={true}>Instant book</Button>
+                <Button>More filters</Button>
               </Col>
             </Row>
           </Grid>
         </ContentWrapper>
-        {this.state.isShowDates && (
-          <DatesFilter
-            onClose={this.handleDatesClick}
-            onDatesChange={this.handleDatesChange}
-          />
-        )}
       </Aside>
     );
   }

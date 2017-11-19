@@ -11,7 +11,7 @@ const Wrapper = styled.div`
     right: 0;
     height: calc(100% - 136px);
     width: ${() =>
-      maxLgFixedSize * 4 / 12 + (window.innerWidth - maxLgFixedSize) / 2}px;
+      336 + (window.innerWidth - maxLgFixedSize) / 2}px;
   }
 `;
 
