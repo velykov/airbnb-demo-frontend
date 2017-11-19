@@ -79,7 +79,7 @@ export default function(props) {
       <ContentWrapper>
         <Grid>
           <Row start="xs" middle="xs">
-            <Col xs={2} md={1} lg={1}>
+            <Col xs={2} md={1}>
               <Arrow>
                 <Link to="/">
                   <Logo src={logo} alt="logo" />
