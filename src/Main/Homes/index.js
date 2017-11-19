@@ -58,7 +58,7 @@ export default function() {
                 reviews={364}
               />
             </Slide>
-            <NextLink top={35} href="/homes" />
+            <NextLink top={30} to="/homes" />
           </Slider>
         </Row>
       </Grid>

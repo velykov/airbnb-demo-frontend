@@ -61,7 +61,7 @@ export default function() {
                 price={70}
               />
             </Slide>
-            <NextLink top={30} />
+            <NextLink to="#" top={25} />
           </Slider>
         </Row>
       </Grid>

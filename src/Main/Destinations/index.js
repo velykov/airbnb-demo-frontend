@@ -36,7 +36,7 @@ export default function() {
             <Slide xs={4} md={3} lg={2}>
               <Card title="Los Angeles" img={la} alt="Los Angeles" />
             </Slide>
-            <NextLink top={40} />
+            <NextLink to="#" top={40} />
           </Slider>
         </Row>
       </Grid>

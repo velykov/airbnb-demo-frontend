@@ -71,12 +71,19 @@ export const Slider = styled.div`
   display: flex;
   position: relative;
   flex-wrap: nowrap;
-  overflow-x: auto;
-  overflow-y: hidden;
   width: 100%;
   height: 100%;
   &::-webkit-scrollbar {
     display: none;
+  }
+
+  @media (min-width: 320px) {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  @media (min-width: 992px) {
+    overflow: initial;
   }
 `;
 
