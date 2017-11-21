@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   margin-top: 0;
   overflow: hidden;
 
-  @media screen and (min-width: 576px) {
+  @media screen and (min-width: 768px) {
     height: calc(100% - 64px);
     width: 100%;
   }
@@ -23,7 +23,7 @@ const Row = styled(GRow)`
   height: 100%;
   padding-bottom: 110px;
 
-  @media screen and (min-width: 576px) {
+  @media screen and (min-width: 768px) {
     padding-bottom: 50px;
   }
 `;
@@ -54,7 +54,7 @@ export default props => (
           {...props}
           isDayBlocked={day => day.isBefore(moment(), "day")}
           orientation="verticalScrollable"
-          numberOfMonths={3}
+          numberOfMonths={2}
           hideKeyboardShortcutsPanel
         />
       </Col>

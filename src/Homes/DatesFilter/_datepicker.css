@@ -10,8 +10,11 @@
 .DayPickerNavigation_svg__horizontal {
   fill: #767676;
 }
-.DayPickerNavigation_button__default {
-  border: 1px solid rgba(118, 118, 118, 0.3);
+.DayPickerNavigation_container {
+  box-shadow: none;
+}
+.DayPickerNavigation_button {
+  display: none;
 }
 .CalendarMonthGrid {
   margin-left: 0;
