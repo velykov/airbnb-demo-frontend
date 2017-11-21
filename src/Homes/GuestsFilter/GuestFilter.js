@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Filter from "./Filter";
-import Counter from "./Counter";
+import GuestCounter from "./GuestCounter";
 
 export default class GuestFilter extends React.Component {
   constructor(props) {
@@ -49,22 +49,24 @@ export default class GuestFilter extends React.Component {
         onReset={this.onReset}
         onCancel={this.onCancel}
       >
-        <Counter
+        <GuestCounter
           title="Adult"
           count={this.state.adults}
           onRemove={this.onRemove.bind(this, "adults")}
           onAdd={this.onAdd.bind(this, "adults")}
         />
 
-        <Counter
+        <GuestCounter
           title="Children"
+          description="Ages 2 — 12"
           count={this.state.childs}
           onRemove={this.onRemove.bind(this, "childs")}
           onAdd={this.onAdd.bind(this, "childs")}
         />
 
-        <Counter
+        <GuestCounter
           title="Infants"
+          description="Under 2"
           count={this.state.infants}
           onRemove={this.onRemove.bind(this, "infants")}
           onAdd={this.onAdd.bind(this, "infants")}

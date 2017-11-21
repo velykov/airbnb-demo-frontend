@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Col } from "react-flexbox-grid";
 
 import close from "./close.svg";
 
@@ -13,12 +12,12 @@ const Actions = styled.div`
   height: 48px;
   margin: 0 8px;
 
-  @media screen and (min-width: 768px) {
+  @media (min-width: 768px) {
     display: flex;
     position: absolute;
     left: 0;
     bottom: 15px;
-    right: 0;
+    width: 304px;
   }
 `;
 
@@ -28,9 +27,8 @@ const Action = styled.button`
   font-size: 16px;
   background: transparent;
   border: none;
-  @media (min-width: 320px) {
-    display: none;
-  }
+  justify-content: center;
+  display: none;
   @media (min-width: 768px) {
     display: flex;
   }
@@ -43,7 +41,6 @@ const Cancel = styled(Action)`
 
 const Apply = styled(Action)`
   font: normal 16px/19px Circular_Air-Book;
-  margin-left: auto;
   color: #0f7276;
 `;
 
@@ -54,6 +51,10 @@ const Save = styled.button`
   border-radius: 4px;
   padding: 12px 132px;
   color: #fff;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 
 const ActionClose = styled.img`
@@ -85,7 +86,7 @@ const OpenedBlock = styled.div`
   bottom: 0;
   right: 0;
 
-  @media screen and (min-width: 768px) {
+  @media (min-width: 768px) {
     position: absolute;
     top: 8px;
     left: 0px;
@@ -94,6 +95,8 @@ const OpenedBlock = styled.div`
     border: 1px solid rgba(72, 72, 72, 0.2);
     box-shadow: 0px 2px 4px rgba(72, 72, 72, 0.08);
     padding-top: 0;
+    height: 291px;
+    width: 326px;
   }
 `;
 
@@ -116,12 +119,10 @@ const Footer = styled.div`
   left: 0;
   box-shadow: 0 -1px #d5d5d5;
   padding: 8px 0;
+  display: block;
 
-  @media (min-width: 320px) {
-    display: block;
-  }
   @media (min-width: 768px) {
-    display: none;
+    height: 64px;
   }
 `;
 
@@ -131,10 +132,11 @@ const ContentWrapper = styled.div`
   width: 100%;
   padding: 0 8px;
 
-  @media screen and (min-width: 768px) {
+  @media (min-width: 768px) {
     position: initial;
     height: initial;
     width: initial;
+    padding-top: 32px;
   }
 `;
 

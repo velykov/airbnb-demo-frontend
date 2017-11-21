@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-
 import Dropdown from "./Dropdown";
 
 const Wrapper = styled.span`
@@ -20,6 +19,10 @@ const Filter = styled.button`
   border: 1px solid
     ${props => (props.selected ? "#008489" : " rgba(72, 72, 72, 0.2);")};
   color: ${props => (props.selected ? "#fff" : "#383838")};
+
+  &:focus {
+    outline: 0;
+  }
 
   &:first-child {
     margin-left: 0px;
@@ -64,7 +67,11 @@ export default class extends React.Component {
   render() {
     return (
       <Wrapper>
-        <Filter onClick={this.onClick} isShow={this.state.isShow}>
+        <Filter
+          selected={this.state.isShow}
+          onClick={this.onClick}
+          isShow={this.state.isShow}
+        >
           Guests
         </Filter>
 
