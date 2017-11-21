@@ -7,7 +7,9 @@ export default class GuestFilter extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      ...props.initialState
+      adults: props.adults,
+      childs: props.childs,
+      infants: props.infants
     };
   }
 

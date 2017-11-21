@@ -11,7 +11,9 @@ export default class GuestsFilter extends React.Component {
   render() {
     return (
       <GuestFilter
-        initialState={this.state}
+        adults={this.state.adults}
+        childs={this.state.childs}
+        infants={this.state.infants}
         onApply={state => this.setState(state)}
       />
     );
