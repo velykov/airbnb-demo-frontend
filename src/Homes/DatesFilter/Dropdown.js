@@ -121,7 +121,7 @@ export default props => (
         <Col xs={12} className="hidden-sm hidden-md hidden-lg hidden-xl">
           <Actions>
             <CancelButton src={close} onClick={props.cancel} />
-            <ActionTitle className="col-xs">{props.mobileLabel}</ActionTitle>
+            <ActionTitle className="col-xs">When</ActionTitle>
             <ResetButton onClick={props.reset}>Reset</ResetButton>
           </Actions>
         </Col>

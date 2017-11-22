@@ -35,6 +35,10 @@ const Filter = styled.button`
   @media screen and (min-width: 768px) {
     font-size: 14px;
   }
+
+  &:focus {
+    outline: 0;
+  }
 `;
 
 export default class extends React.Component {
@@ -61,10 +65,6 @@ export default class extends React.Component {
     this.props.onReset();
   };
 
-  onToggle = () => {
-    this.props.onToggle();
-  };
-
   render() {
     return (
       <Wrapper>
@@ -79,15 +79,10 @@ export default class extends React.Component {
         <Dropdown
           selected={this.state.selected}
           label={this.props.label}
-          mobileLabel={
-            this.props.mobileLabel !== undefined
-              ? this.props.mobileLabel
-              : this.props.label
-          }
           controls={this.props.controls}
-          cancel={this.props.onCancel !== undefined ? this.onCancel : null}
-          reset={this.props.onReset !== undefined ? this.onReset : null}
-          apply={this.props.onApply !== undefined ? this.onApply : null}
+          cancel={this.onCancel}
+          reset={this.onReset}
+          apply={this.onApply}
           content={this.props.children}
         />
       </Wrapper>

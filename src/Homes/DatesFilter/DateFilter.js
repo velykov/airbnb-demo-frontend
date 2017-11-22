@@ -38,8 +38,8 @@ export default class extends React.Component {
     });
   };
 
-  onToggle = selected => {
-    this.setState({ selected });
+  onToggle = () => {
+    this.setState({ selected: !this.state.selected });
   };
 
   onReset = () => {
@@ -52,15 +52,12 @@ export default class extends React.Component {
   render() {
     return (
       <Filter
-        className={this.props.className}
         label={toDateLabel(this.state)}
-        mobileLabel="When"
         controls
         onCancel={this.onCancel}
-        onToggle={this.onToggle}
         onApply={this.onApply}
         onReset={this.onReset}
-        closeDropdown={() => this.props.closeDropdown()}
+        closeDropdown={() => this.onToggle()}
       >
         <PickerInfo
           startDate={this.state.selectedStartDate}
