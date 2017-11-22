@@ -63,10 +63,6 @@ const Selector = styled.select`
     font: lighter 18px/21px Circular_Air-Light;
     padding: 12px 16px;
   }
-  
-  &:focus {
-    outline: 0;
-  }
 `;
 
 const Credits = styled.div`

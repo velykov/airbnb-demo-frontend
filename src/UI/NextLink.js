@@ -13,10 +13,6 @@ const Link = styled(RouterLink)`
     width: 40px;
     height: 40px;
   }
-
-  &:focus {
-    outline: 0;
-  }
 `;
 
 export default function(props) {

@@ -35,10 +35,6 @@ const Filter = styled.button`
   @media screen and (min-width: 768px) {
     font-size: 14px;
   }
-
-  &:focus {
-    outline: 0;
-  }
 `;
 
 export default class extends React.Component {

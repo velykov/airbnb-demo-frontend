@@ -59,9 +59,6 @@ const LocationInput = styled.input`
   box-shadow: 0px 2px 4px rgba(72, 72, 72, 0.08);
   border-radius: 4px;
   box-sizing: border-box;
-  &:focus {
-   outline: 0;
-  }
 `;
 
 const Navigation = styled.nav`

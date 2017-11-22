@@ -14,10 +14,6 @@ const Link = styled.a`
   @media (min-width: 768px) {
     font: normal 14px/24px Circular_Air-Book;
   }
-
-  &:focus {
-    outline: 0;
-  }
   
   display: flex;
   flex-direction: row;

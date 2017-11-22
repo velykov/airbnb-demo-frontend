@@ -20,10 +20,6 @@ const Filter = styled.button`
     ${props => (props.selected ? "#008489" : " rgba(72, 72, 72, 0.2);")};
   color: ${props => (props.selected ? "#fff" : "#383838")};
 
-  &:focus {
-    outline: 0;
-  }
-
   &:first-child {
     margin-left: 0px;
   }
