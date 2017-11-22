@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import arrow from "./arrow.svg";
 
 const Group = styled.div`
   margin-top: 18px;
@@ -20,10 +21,6 @@ const Link = styled.a`
   background-color: ${props => (props.active ? "#008489" : "transparent")};
   color: ${props => (props.active ? "#fff" : "#0F7276")};
   border-radius: ${props => (props.active ? 50 : 0)}%;
-  &:last-child {
-    border: 1px solid #008489;
-    border-radius: 50%;
-  }
 `;
 
 const Total = styled.p`
@@ -49,7 +46,9 @@ export default function() {
         <Link href="#">3</Link>
         <Link href="#">...</Link>
         <Link href="#">17</Link>
-        <Link href="#">></Link>
+        <Link href="#">
+          <img src={arrow} alt="Next page" />
+        </Link>
       </Group>
       <Total>1 – 18 of 300+ Rentals</Total>
     </Nav>
