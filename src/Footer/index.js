@@ -166,26 +166,24 @@ export default function() {
         <Grid>
           <Row>
             <Col xs={12} md={3} lg={3}>
-              <Grid>
-                <Row>
-                  <Col xs={6} md={12} lg={12} start="xs">
-                    <DropDown>
-                      <Selector name="language">
-                        <option value="en">English</option>
-                        <option value="ru">Russian</option>
-                      </Selector>
-                    </DropDown>
-                  </Col>
-                  <Col xs={6} md={12} lg={12} end="xs">
-                    <DropDown>
-                      <Selector name="currency">
-                        <option value="usd">United States Dollar</option>
-                        <option value="rub">Russian Rouble</option>
-                      </Selector>
-                    </DropDown>
-                  </Col>
-                </Row>
-              </Grid>
+              <Row>
+                <Col xs={6} md={12} lg={12} start="xs">
+                  <DropDown>
+                    <Selector name="language">
+                      <option value="en">English</option>
+                      <option value="ru">Russian</option>
+                    </Selector>
+                  </DropDown>
+                </Col>
+                <Col xs={6} md={12} lg={12} end="xs">
+                  <DropDown>
+                    <Selector name="currency">
+                      <option value="usd">United States Dollar</option>
+                      <option value="rub">Russian Rouble</option>
+                    </Selector>
+                  </DropDown>
+                </Col>
+              </Row>
             </Col>
             <Col xs={2} mdOffset={1} start="xs">
               <Group>
