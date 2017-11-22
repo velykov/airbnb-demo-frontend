@@ -57,7 +57,7 @@ export default class extends React.Component {
         onCancel={this.onCancel}
         onApply={this.onApply}
         onReset={this.onReset}
-        closeDropdown={() => this.onToggle()}
+        closeDropdown={this.onToggle}
       >
         <PickerInfo
           startDate={this.state.selectedStartDate}
