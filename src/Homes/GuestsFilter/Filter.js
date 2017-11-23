@@ -15,10 +15,10 @@ const Filter = styled.button`
   margin-left: 6px;
   border-radius: 4px;
   display: inline-block;
-  background: ${props => (props.selected ? "#008489" : "transparent")};
+  background: ${props => (props.isShow ? "#008489" : "transparent")};
   border: 1px solid
-    ${props => (props.selected ? "#008489" : " rgba(72, 72, 72, 0.2);")};
-  color: ${props => (props.selected ? "#fff" : "#383838")};
+    ${props => (props.isShow ? "#008489" : " rgba(72, 72, 72, 0.2);")};
+  color: ${props => (props.isShow ? "#fff" : "#383838")};
 
   &:first-child {
     margin-left: 0px;
@@ -28,55 +28,25 @@ const Filter = styled.button`
     margin-right: 0px;
   }
 
-  @media screen and (min-width: 576px) {
-    font-size: 14px;
-  }
-
   @media screen and (min-width: 768px) {
     font-size: 14px;
   }
 `;
 
 export default class extends React.Component {
-  state = {
-    isShow: false
-  };
-
-  onClick = () => {
-    this.setState({ isShow: !this.state.isShow });
-  };
-
-  onCancel = () => {
-    this.props.onCancel();
-    this.setState({ isShow: false });
-  };
-
-  onApply = () => {
-    this.setState({ isShow: false });
-    this.props.onApply();
-  };
-
-  onReset = () => {
-    this.props.onReset();
-  };
-
   render() {
     return (
       <Wrapper>
-        <Filter
-          selected={this.state.isShow}
-          onClick={this.onClick}
-          isShow={this.state.isShow}
-        >
+        <Filter onClick={this.props.onToggle} isShow={this.props.isShow}>
           Guests
         </Filter>
 
         <Dropdown
-          isShow={this.state.isShow}
           title="Guests"
-          cancel={this.onCancel}
-          reset={this.onReset}
-          apply={this.onApply}
+          isShow={this.props.isShow}
+          cancel={this.props.onCancel}
+          reset={this.props.onReset}
+          apply={this.props.onApply}
           content={this.props.children}
         />
       </Wrapper>
@@ -86,6 +56,9 @@ export default class extends React.Component {
 
 Filter.propTypes = {
   controls: PropTypes.object,
+  isShow: PropTypes.boolean,
+  onToggle: PropTypes.func,
   onApply: PropTypes.func,
-  onReset: PropTypes.func
+  onReset: PropTypes.func,
+  onCancel: PropTypes.func
 };

@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Filter from "./Filter";
 import GuestCounter from "./GuestCounter";
+import filters from "../constants";
 
 export default class GuestFilter extends React.Component {
   constructor(props) {
@@ -13,11 +14,11 @@ export default class GuestFilter extends React.Component {
     };
   }
 
-  onApply = () => {
+  apply = () => {
     this.props.onApply(this.state);
   };
 
-  onReset = () => {
+  reset = () => {
     this.setState({
       adults: 0,
       childs: 0,
@@ -25,21 +26,25 @@ export default class GuestFilter extends React.Component {
     });
   };
 
-  onCancel = () => {
+  cancel = () => {
+    this.props.onToggle(filters.guests);
     this.setState({
-      ...this.props.initialState
+      adults: this.props.adults,
+      childs: this.props.childs,
+      infants: this.props.infants
     });
   };
 
-  onRemove = guestType => {
+  remove = guestType => {
+    let guests = this.state[guestType];
     this.setState({
-      [guestType]: this.state[guestType] > 0 ? --this.state[guestType] : 0
+      [guestType]: guests > 0 ? --guests : 0
     });
   };
 
-  onAdd = guestType => {
+  add = guestType => {
     this.setState({
-      [guestType]: ++this.state[guestType]
+      [guestType]: this.state[guestType] + 1
     });
   };
 
@@ -47,31 +52,33 @@ export default class GuestFilter extends React.Component {
     return (
       <Filter
         controls
-        onApply={this.onApply}
-        onReset={this.onReset}
-        onCancel={this.onCancel}
+        isShow={this.props.isShow}
+        onToggle={this.props.onToggle}
+        onApply={this.apply}
+        onReset={this.reset}
+        onCancel={this.cancel}
       >
         <GuestCounter
           title="Adult"
           count={this.state.adults}
-          onRemove={this.onRemove.bind(this, "adults")}
-          onAdd={this.onAdd.bind(this, "adults")}
+          onRemove={this.remove.bind(this, "adults")}
+          onAdd={this.add.bind(this, "adults")}
         />
 
         <GuestCounter
           title="Children"
           description="Ages 2 — 12"
           count={this.state.childs}
-          onRemove={this.onRemove.bind(this, "childs")}
-          onAdd={this.onAdd.bind(this, "childs")}
+          onRemove={this.remove.bind(this, "childs")}
+          onAdd={this.add.bind(this, "childs")}
         />
 
         <GuestCounter
           title="Infants"
           description="Under 2"
           count={this.state.infants}
-          onRemove={this.onRemove.bind(this, "infants")}
-          onAdd={this.onAdd.bind(this, "infants")}
+          onRemove={this.remove.bind(this, "infants")}
+          onAdd={this.add.bind(this, "infants")}
         />
       </Filter>
     );
@@ -79,8 +86,10 @@ export default class GuestFilter extends React.Component {
 }
 
 GuestFilter.propTypes = {
-  initialState: PropTypes.object,
+  adults: PropTypes.number,
+  childs: PropTypes.number,
+  infants: PropTypes.number,
   isShow: PropTypes.boolean,
-  onClose: PropTypes.func,
+  onToggle: PropTypes.func,
   onApply: PropTypes.func
 };
