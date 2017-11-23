@@ -22,7 +22,7 @@ const Wrapper = styled.div`
   align-items: center;
   margin-top: 24px;
 
-  @media screen and (min-width: 576px) {
+  @media (min-width: 768px) {
     display: none;
   }
 `;

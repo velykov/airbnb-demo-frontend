@@ -3,7 +3,9 @@ import { Grid, Row, Col } from "react-flexbox-grid";
 import { ContentWrapper } from "../UI";
 import DatesFilter from "./DatesFilter";
 import GuestsFilter from "./GuestsFilter";
+import MoreFilters from "./MoreFilters";
 import styled from "styled-components";
+import constants from "./constants";
 
 const Button = styled.button`
   font: normal 14px/16px Circular_Air-Book;
@@ -35,6 +37,18 @@ const Aside = styled.aside`
 `;
 
 export default class Filters extends React.Component {
+  state = {
+    activeFilter: undefined,
+    startDate: undefined,
+    endDate: undefined
+  };
+
+  handleFilterChange = activeFilter => {
+    let isOpen = activeFilter !== this.state.activeFilter;
+    this.setState({
+      activeFilter: isOpen ? activeFilter : undefined
+    });
+  };
 
   render() {
     return (
@@ -43,12 +57,26 @@ export default class Filters extends React.Component {
           <Grid>
             <Row>
               <Col xs={12}>
-                <DatesFilter />
-                <GuestsFilter />
-                <Button lgShow={true}>RoomType</Button>
+                <DatesFilter
+                  isShow={this.state.activeFilter === constants.dates}
+                  startDate={this.state.startDate}
+                  endDate={this.state.endDate}
+                  onToggle={this.handleFilterChange}
+                  onApply={(startDate, endDate) =>
+                    this.setState({ startDate, endDate })
+                  }
+                />
+                <GuestsFilter
+                  isShow={this.state.activeFilter === constants.guests}
+                  onToggle={this.handleFilterChange}
+                />
+                <Button lgShow={true}>Room type</Button>
                 <Button lgShow={true}>Price</Button>
                 <Button lgShow={true}>Instant book</Button>
-                <Button>More filters</Button>
+                <MoreFilters
+                  isShow={this.state.activeFilter === constants.more}
+                  onToggle={this.handleFilterChange}
+                />
               </Col>
             </Row>
           </Grid>

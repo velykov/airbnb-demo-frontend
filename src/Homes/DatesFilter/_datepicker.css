@@ -13,15 +13,15 @@
 .DayPickerNavigation_container {
   box-shadow: none;
 }
-.DayPickerNavigation_button {
-  display: none;
+
+.CalendarMonth {
+  padding: 0;
+  /*padding: 0 19px;*/
 }
 .CalendarMonthGrid {
   margin-left: 0;
 }
-.CalendarMonth_caption {
-  font: normal 18px/21px Circular_Air-Bold;
-}
+
 .CalendarMonth_table {
   margin-top: 4px;
 }
@@ -36,7 +36,6 @@
 }
 
 .DayPicker_weekHeader_ul {
-  width: 282px;
   display: flex;
   justify-content: space-around;
   margin: 1px 0 4px;
@@ -48,18 +47,65 @@
   font: normal 12px/14px Circular_Air-Book;
 }
 .CalendarDay_button {
-  font: normal 12px/14px Circular_Air-Book;
-  width: 39px;
-  height: 39px;
+}
+
+@media (min-width: 320px) {
+  .DayPicker_weekHeader {
+    width: 320px;
+    padding: 0;
+    margin: 0;
+  }
+  .DayPicker_weekHeader_ul {
+    padding: 0 23px;
+  }
+  .DayPickerNavigation_button {
+    display: none;
+  }
+  .CalendarMonth {
+    width: 274px;
+    padding-left: 23px;
+  }
+  .CalendarMonth_caption {
+    font: normal 18px/21px Circular_Air-Bold;
+    width: 274px;
+    color: #383838;
+  }
+
+  .CalendarDay_button {
+    font: normal 12px/14px Circular_Air-Book;
+    width: 38px;
+    height: 38px;
+  }
 }
 
 @media (min-width: 768px) {
   .DayPickerNavigation_rightButton__horizontal {
     right: 16px;
   }
+  .DayPickerNavigation_button {
+    display: inline-block;
+  }
+  .DayPicker_weekHeaders {
+    margin-left: 0;
+  }
+  .CalendarMonth {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .DayPickerNavigation_rightButton__horizontal {
+    margin-right: 8px;
+  }
 }
 
 @media (min-width: 992px) {
+  .CalendarMonthGrid__horizontal {
+    left: 18px;
+  }
+
+  .CalendarMonth {
+    margin-right: 36px;
+    padding: 0;
+  }
   .DayPickerNavigation_rightButton__horizontal {
     right: 8px;
   }

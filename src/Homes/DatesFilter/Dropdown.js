@@ -6,12 +6,12 @@ import close from "./close.svg";
 
 const Actions = styled.div`
   display: none;
-  background: white;
+  background: #fff;
   height: 48px;
   display: flex;
   font-size: 14px;
 
-  @media screen and (min-width: 576px) {
+  @media screen and (min-width: 768px) {
     display: flex;
     position: absolute;
     left: 0;
@@ -74,7 +74,7 @@ const OpenedBlock = styled.div`
   bottom: 0;
   right: 0;
 
-  @media screen and (min-width: 576px) {
+  @media (min-width: 768px) {
     position: absolute;
     top: 8px;
     left: 0px;
@@ -91,7 +91,7 @@ const ContentWrapper = styled.div`
   height: calc(100% - 18px);
   width: 100%;
 
-  @media screen and (min-width: 576px) {
+  @media (min-width: 768px) {
     position: initial;
     height: initial;
     width: initial;
@@ -105,7 +105,7 @@ const Content = styled.div`
   bottom: 0;
   left: 0;
 
-  @media screen and (min-width: 576px) {
+  @media (min-width: 768px) {
     position: initial;
   }
 `;
@@ -116,27 +116,25 @@ const Wrapper = styled.div`
 
 export default props => (
   <Wrapper>
-    {props.selected && (
-      <OpenedBlock>
-        <Col xs={12} className="hidden-sm hidden-md hidden-lg hidden-xl">
+    <OpenedBlock>
+      <Col xs={12} className="hidden-sm hidden-md hidden-lg hidden-xl">
+        <Actions>
+          <CancelButton src={close} onClick={props.cancel} />
+          <ActionTitle className="col-xs">When</ActionTitle>
+          <ResetButton onClick={props.reset}>Reset</ResetButton>
+        </Actions>
+      </Col>
+      <ContentWrapper>
+        <Content>{props.content}</Content>
+      </ContentWrapper>
+      {props.controls && (
+        <Col sm={12} className="hidden-xs">
           <Actions>
-            <CancelButton src={close} onClick={props.cancel} />
-            <ActionTitle className="col-xs">When</ActionTitle>
-            <ResetButton onClick={props.reset}>Reset</ResetButton>
+            <Cancel onClick={props.cancel}>Cancel</Cancel>
+            <Apply onClick={props.apply}>Apply</Apply>
           </Actions>
         </Col>
-        <ContentWrapper>
-          <Content>{props.content}</Content>
-        </ContentWrapper>
-        {props.controls && (
-          <Col sm={12} className="hidden-xs">
-            <Actions>
-              <Cancel onClick={props.cancel}>Cancel</Cancel>
-              <Apply onClick={props.apply}>Apply</Apply>
-            </Actions>
-          </Col>
-        )}
-      </OpenedBlock>
-    )}
+      )}
+    </OpenedBlock>
   </Wrapper>
 );
