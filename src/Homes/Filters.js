@@ -44,7 +44,7 @@ export default class Filters extends React.Component {
   };
 
   handleFilterChange = activeFilter => {
-    let isOpen = activeFilter !== this.state.activeFilter;
+    const isOpen = activeFilter !== this.state.activeFilter;
     this.setState({
       activeFilter: isOpen ? activeFilter : undefined
     });
