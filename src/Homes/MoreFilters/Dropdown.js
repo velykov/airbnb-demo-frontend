@@ -162,7 +162,7 @@ export default props => (
       <OpenedBlock>
         <Header>
           <Actions>
-            <ActionClose src={close} onClick={props.cancel} />
+            <ActionClose src={close} onClick={props.handleCancel} />
             <ActionTitle>{props.title}</ActionTitle>
             <ActionReset onClick={props.reset}>Reset</ActionReset>
           </Actions>
@@ -172,7 +172,7 @@ export default props => (
         </ContentWrapper>
         <Footer>
           <Actions>
-            <Cancel onClick={props.cancel}>Cancel</Cancel>
+            <Cancel onClick={props.handleCancel}>Cancel</Cancel>
             <Apply onClick={props.apply}>Apply</Apply>
             <Save onClick={props.apply}>Save</Save>
           </Actions>

@@ -38,11 +38,11 @@ export default class extends React.Component {
     return (
       <Wrapper>
         <Filter onClick={this.props.onToggle} isShow={this.props.isShow}>
-          Guests
+          {this.props.label}
         </Filter>
 
         <Dropdown
-          title="Guests"
+          title={this.props.label}
           isShow={this.props.isShow}
           cancel={this.props.onCancel}
           reset={this.props.onReset}

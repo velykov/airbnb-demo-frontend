@@ -15,6 +15,7 @@ export default class extends React.Component {
   };
 
   handleApply = () => {
+    debugger;
     this.props.onApply(
       this.state.selectedStartDate,
       this.state.selectedEndDate
@@ -72,7 +73,7 @@ export default class extends React.Component {
         label={toDateLabel(this.state)}
         isShow={this.props.isShow}
         controls
-        onCancel={this.handleCancel}
+        onCancel={this.handleCancel.bind(this)}
         onApply={this.handleApply}
         onReset={this.handleReset}
         onToggle={this.handleToggle}

@@ -4,6 +4,7 @@ import { ContentWrapper } from "../UI";
 import DatesFilter from "./DatesFilter";
 import GuestsFilter from "./GuestsFilter";
 import MoreFilters from "./MoreFilters";
+import RoomsFilter from "./RoomsFilter";
 import styled from "styled-components";
 import constants from "./constants";
 
@@ -40,7 +41,15 @@ export default class Filters extends React.Component {
   state = {
     activeFilter: undefined,
     startDate: undefined,
-    endDate: undefined
+    endDate: undefined,
+
+    adults: 0,
+    childs: 0,
+    infants: 0,
+
+    entireHome: false,
+    privateRoom: false,
+    sharedRoom: false
   };
 
   handleFilterChange = activeFilter => {
@@ -68,7 +77,20 @@ export default class Filters extends React.Component {
                 />
                 <GuestsFilter
                   isShow={this.state.activeFilter === constants.guests}
+                  adults={this.state.adults}
+                  childs={this.state.childs}
+                  infants={this.state.infants}
                   onToggle={this.handleFilterChange}
+                  onApply={guests => this.setState(guests)}
+                />
+                <RoomsFilter
+                  label="Room type"
+                  entireHome={this.state.entireHome}
+                  privateRoom={this.state.privateRoom}
+                  sharedRoom={this.state.sharedRoom}
+                  isShow={this.state.activeFilter === constants.rooms}
+                  onToggle={this.handleFilterChange}
+                  onApply={rooms => this.setState(rooms)}
                 />
                 <Button lgShow={true}>Room type</Button>
                 <Button lgShow={true}>Price</Button>
