@@ -37,6 +37,8 @@ const Aside = styled.aside`
   z-index: 200;
 `;
 
+const isLargeScreen = window.innerWidth > 992;
+
 export default class Filters extends React.Component {
   state = {
     activeFilter: undefined,
@@ -83,16 +85,19 @@ export default class Filters extends React.Component {
                   onToggle={this.handleFilterChange}
                   onApply={guests => this.setState(guests)}
                 />
-                <RoomsFilter
-                  label="Room type"
-                  entireHome={this.state.entireHome}
-                  privateRoom={this.state.privateRoom}
-                  sharedRoom={this.state.sharedRoom}
-                  isShow={this.state.activeFilter === constants.rooms}
-                  onToggle={this.handleFilterChange}
-                  onApply={rooms => this.setState(rooms)}
-                />
-                <Button lgShow={true}>Room type</Button>
+                {isLargeScreen && (
+                  <RoomsFilter
+                    lgShow={true}
+                    label="Room type"
+                    entireHome={this.state.entireHome}
+                    privateRoom={this.state.privateRoom}
+                    sharedRoom={this.state.sharedRoom}
+                    isShow={this.state.activeFilter === constants.rooms}
+                    onToggle={this.handleFilterChange}
+                    onApply={rooms => this.setState(rooms)}
+                  />
+                )}
+
                 <Button lgShow={true}>Price</Button>
                 <Button lgShow={true}>Instant book</Button>
                 <MoreFilters
