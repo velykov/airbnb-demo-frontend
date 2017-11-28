@@ -54,7 +54,13 @@ export default props => {
         <Title>{props.title}</Title>
         <Description>{props.description}</Description>
       </Info>
-      <Icon src={props.icon} alt="Room type" />
+      {props.icon && (
+        <Icon
+          className={props.iconClassName}
+          src={props.icon}
+          alt={props.title}
+        />
+      )}
     </Wrapper>
   );
 };

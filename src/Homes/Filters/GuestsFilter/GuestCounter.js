@@ -58,6 +58,7 @@ export default class GuestCounter extends React.Component {
         <Content>
           <Title>{this.props.title}</Title>
           <Description>{this.props.description}</Description>
+          {this.props.children}
         </Content>
         <Actions>
           <Action src={minus} onClick={this.props.onRemove} />

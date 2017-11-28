@@ -44,6 +44,10 @@ export default class Filters extends React.Component {
     childs: 0,
     infants: 0,
 
+    bedrooms: 0,
+    beds: 0,
+    bathrooms: 0,
+
     entireHome: false,
     privateRoom: false,
     sharedRoom: false,
@@ -72,6 +76,10 @@ export default class Filters extends React.Component {
   };
 
   isSelectedPrice = state => {
+    return state.startPrice > minPrice || state.endPrice < maxPrice;
+  };
+
+  isSelectedMore = state => {
     return state.startPrice > minPrice || state.endPrice < maxPrice;
   };
 
@@ -118,8 +126,8 @@ export default class Filters extends React.Component {
                   className="hidden-xs hidden-md"
                   isSelected={this.isSelectedPrice(this.state)}
                   isShow={this.state.activeFilter === constants.price}
-                  min={minPrice}
-                  max={maxPrice}
+                  minPrice={minPrice}
+                  maxPrice={maxPrice}
                   startPrice={this.state.startPrice}
                   endPrice={this.state.endPrice}
                   onToggle={this.handleFilterChange}
@@ -128,7 +136,7 @@ export default class Filters extends React.Component {
 
                 <InstantBookFilter
                   className="hidden-xs hidden-md"
-                  // isSelected={this.isSelectedInstant(this.state)}
+                  isSelected={this.state.instantBook}
                   isShow={this.state.activeFilter === constants.instant}
                   instantBook={this.state.instantBook}
                   onToggle={this.handleFilterChange}
@@ -136,8 +144,13 @@ export default class Filters extends React.Component {
                 />
 
                 <MoreFilters
+                  isSelected={this.isSelectedMore(this.state)}
                   isShow={this.state.activeFilter === constants.more}
+                  minPrice={minPrice}
+                  maxPrice={maxPrice}
+                  filters={this.state}
                   onToggle={this.handleFilterChange}
+                  onApply={filters => this.setState(filters)}
                 />
               </Col>
             </Row>

@@ -7,8 +7,6 @@ const Wrapper = styled.div`
   position: relative;
 `;
 
-const isLargeScreen = window.innerWidth > 768;
-
 const Dropdown = styled.div`
   border-radius: 4px;
   background: #fff;
@@ -94,7 +92,8 @@ const Save = styled.button`
   background: #ff5a5f;
   border: none;
   border-radius: 4px;
-  padding: 12px 132px;
+  padding: 12px 0;
+  width: 320px;
   color: #fff;
 
   @media (min-width: 768px) {
@@ -154,18 +153,20 @@ export default props => (
           <Actions>
             <Close src={close} onClick={props.cancel} />
             <Title>{props.title}</Title>
-            <Reset onClick={props.reset}>Reset</Reset>
+            <Reset onClick={props.reset}>
+              {props.resetBtnTitle ? props.resetBtnTitle : "Reset"}
+            </Reset>
           </Actions>
         </Header>
         <ContentWrapper>
           <Content>{props.content}</Content>
         </ContentWrapper>
         <Footer hideXsFooter={props.hideXsFooter}>
-          {/*<Actions>*/}
           <Cancel onClick={props.cancel}>Cancel</Cancel>
           <Apply onClick={props.apply}>Apply</Apply>
-          <Save onClick={props.apply}>Save</Save>
-          {/*</Actions>*/}
+          <Save onClick={props.apply}>
+            {props.saveBtnTitle ? props.saveBtnTitle : "Save"}
+          </Save>
         </Footer>
       </Dropdown>
     )}

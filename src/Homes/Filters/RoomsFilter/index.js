@@ -1,10 +1,7 @@
 import React from "react";
 import Filter from "../Filter";
-import RoomType from "./RoomType";
+import RoomFilter from "./RoomFilter";
 import filters from "../filterNames";
-import privat from "./private.svg";
-import shared from "./shared.svg";
-import home from "./home.svg";
 import styled from "styled-components";
 
 const Content = styled.div`
@@ -63,29 +60,11 @@ export default class extends React.Component {
         mdHeight={274}
       >
         <Content>
-          <RoomType
-            isActive={this.state.entireHome}
-            type="home"
-            title="Entire home"
-            description="Have a place to yourself"
-            icon={home}
-            onChange={this.handleChange.bind(this, "entireHome")}
-          />
-          <RoomType
-            isActive={this.state.privateRoom}
-            type="private"
-            title="Private room"
-            description="Have your own room and share move common spaces"
-            icon={privat}
-            onChange={this.handleChange.bind(this, "privateRoom")}
-          />
-          <RoomType
-            isActive={this.state.sharedRoom}
-            type="shared"
-            title="SharedRoom"
-            description="Stay in a shared space, like a common room"
-            icon={shared}
-            onChange={this.handleChange.bind(this, "sharedRoom")}
+          <RoomFilter
+            entireHome={this.state.entireHome}
+            privateRoom={this.state.privateRoom}
+            sharedRoom={this.state.sharedRoom}
+            onChange={this.handleChange}
           />
         </Content>
       </Filter>

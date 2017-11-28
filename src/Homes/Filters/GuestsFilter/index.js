@@ -6,9 +6,12 @@ import filters from "../filterNames";
 import styled from "styled-components";
 
 const Content = styled.div`
-  padding: 44px 8px 0;
+  padding: 28px 8px 0;
+  margin-top: 16px;
+  box-shadow: 0 -0.5px rgba(72, 72, 72, 0.3);
   @media (min-width: 768px) {
-    padding: 32px 16px 0 24px;
+    padding: 16px 16px 0 24px;
+    box-shadow: none;
   }
 `;
 
@@ -114,4 +117,3 @@ export default class extends React.Component {
     );
   }
 }
-
