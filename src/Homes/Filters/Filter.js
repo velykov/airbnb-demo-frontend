@@ -45,6 +45,8 @@ export default class extends React.Component {
 
         <Dropdown
           title={this.props.label}
+          resetBtnTitle={this.props.resetBtnTitle}
+          saveBtnTitle={this.props.saveBtnTitle}
           isShow={this.props.isShow}
           cancel={this.props.onCancel}
           reset={this.props.onReset}
