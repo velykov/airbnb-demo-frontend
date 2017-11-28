@@ -40,7 +40,6 @@ const CategoryTitle = styled.h2`
 `;
 
 const Picture = styled(Img)`
-  // display: flex;
   box-sizing: border-box;
   border-radius: 4px 0 0 0;
   @media (min-width: 320px) {
