@@ -1,7 +1,10 @@
 import React from "react";
-import Filter from "../GuestsFilter/Filter";
+import Filter from "./Filter";
 import RoomType from "./RoomType";
 import filters from "../constants";
+import privat from "./private.svg";
+import shared from "./shared.svg";
+import home from "./home.svg";
 
 export default class extends React.Component {
   state = {
@@ -13,14 +16,6 @@ export default class extends React.Component {
   handleApply = () => {
     this.props.onApply(this.state);
     this.handleToggle();
-  };
-
-  handleReset = () => {
-    this.setState({
-      entireHome: false,
-      privateRoom: false,
-      sharedRoom: false
-    });
   };
 
   handleCancel = () => {
@@ -42,15 +37,22 @@ export default class extends React.Component {
     });
   };
 
+    getLabel = state => {
+        const count = Object.keys(state).reduce((result, filter) => {
+            return result += state[filter] ? 1 : 0
+        }, 0);
+        return `Room type ${count > 0 ? '· ' + count : ''}`;
+    };
+
   render() {
     return (
       <Filter
-        controls
-        label={this.props.label}
+        label={this.getLabel(this.state)}
+        className={this.props.className}
         isShow={this.props.isShow}
+        isSelected={this.props.isSelected}
         onToggle={this.handleToggle}
         onApply={this.handleApply.bind(this)}
-        onReset={this.handleReset}
         onCancel={this.handleCancel.bind(this)}
       >
         <RoomType
@@ -58,6 +60,7 @@ export default class extends React.Component {
           type="home"
           title="Entire home"
           description="Have a place to yourself"
+          icon={home}
           onChange={this.handleChange.bind(this, "entireHome")}
         />
         <RoomType
@@ -65,6 +68,7 @@ export default class extends React.Component {
           type="private"
           title="Private room"
           description="Have your own room and share move common spaces"
+          icon={privat}
           onChange={this.handleChange.bind(this, "privateRoom")}
         />
         <RoomType
@@ -72,6 +76,7 @@ export default class extends React.Component {
           type="shared"
           title="SharedRoom"
           description="Stay in a shared space, like a common room"
+          icon={shared}
           onChange={this.handleChange.bind(this, "sharedRoom")}
         />
       </Filter>

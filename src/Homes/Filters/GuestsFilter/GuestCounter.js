@@ -9,6 +9,10 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   margin-bottom: 30px;
+  
+  @media (min-width: 768px) {
+  margin-bottom: 24px;
+  }
 `;
 const Content = styled.div`
     display: flex:
@@ -49,25 +53,25 @@ const Count = styled.span`
 `;
 
 export default class GuestCounter extends React.Component {
-  render() {
-    return (
-      <Wrapper>
-        <Content>
-          <Title>{this.props.title}</Title>
-          <Description>{this.props.description}</Description>
-        </Content>
-        <Actions>
-          <Action src={minus} onClick={this.props.onRemove} />
-          <Count>{this.props.count}</Count>
-          <Action src={plus} onClick={this.props.onAdd} />
-        </Actions>
-      </Wrapper>
-    );
-  }
+    render() {
+        return (
+            <Wrapper>
+                <Content>
+                    <Title>{this.props.title}</Title>
+                    <Description>{this.props.description}</Description>
+                </Content>
+                <Actions>
+                    <Action src={minus} onClick={this.props.onRemove}/>
+                    <Count>{this.props.count}</Count>
+                    <Action src={plus} onClick={this.props.onAdd}/>
+                </Actions>
+            </Wrapper>
+        );
+    }
 }
 
 GuestCounter.propTypes = {
-  count: PropTypes.number,
-  onRemove: PropTypes.func,
-  onAdd: PropTypes.func
+    count: PropTypes.number,
+    onRemove: PropTypes.func,
+    onAdd: PropTypes.func
 };

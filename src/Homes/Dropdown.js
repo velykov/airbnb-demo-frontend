@@ -16,8 +16,10 @@ const Actions = styled.div`
     display: flex;
     position: absolute;
     left: 0;
-    bottom: 15px;
-    width: 304px;
+    right: 0;
+    margin: 0;
+    bottom: 0;
+    height: 64px;
   }
 `;
 
@@ -28,6 +30,8 @@ const Action = styled.button`
   background: transparent;
   border: none;
   justify-content: center;
+  margin: 0;
+  padding: 0;
   display: none;
   @media (min-width: 768px) {
     display: flex;
@@ -117,12 +121,14 @@ const Footer = styled.div`
   position: absolute;
   bottom: 0;
   left: 0;
+  right: 0;
   box-shadow: 0 -1px #d5d5d5;
   padding: 8px 0;
   display: block;
 
   @media (min-width: 768px) {
-    height: 64px;
+    padding: 0;
+    box-shadow: none;
   }
 `;
 
@@ -130,7 +136,7 @@ const ContentWrapper = styled.div`
   position: relative;
   height: calc(100% - 18px);
   width: 100%;
-  padding: 0 8px;
+  padding: 0 8px 0 16px;
 
   @media (min-width: 768px) {
     position: initial;

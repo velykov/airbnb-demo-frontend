@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Dropdown from "./Dropdown";
 
-const Wrapper = styled.span`
+const Wrapper = styled.div`
   display: inline-block;
 `;
 
@@ -14,11 +14,12 @@ const Filter = styled.button`
   margin-right: 12px;
   margin-left: 6px;
   border-radius: 4px;
-  display: inline-block;
-  background: ${props => (props.isShow ? "#008489" : "transparent")};
+  background: ${props =>
+    props.isShow || props.isSelected ? "#008489" : "transparent"};
   border: 1px solid
-    ${props => (props.isShow ? "#008489" : " rgba(72, 72, 72, 0.2);")};
-  color: ${props => (props.isShow ? "#fff" : "#383838")};
+    ${props =>
+      props.isShow || props.isSelected ? "#008489" : " rgba(72, 72, 72, 0.2);"};
+  color: ${props => (props.isShow || props.isSelected ? "#fff" : "#383838")};
 
   &:first-child {
     margin-left: 0px;
@@ -27,17 +28,18 @@ const Filter = styled.button`
   &:last-child {
     margin-right: 0px;
   }
-
-  @media screen and (min-width: 768px) {
-    font-size: 14px;
-  }
 `;
 
 export default class extends React.Component {
   render() {
     return (
       <Wrapper>
-        <Filter onClick={this.props.onToggle} isShow={this.props.isShow}>
+        <Filter
+          className={this.props.className}
+          onClick={this.props.onToggle}
+          isShow={this.props.isShow}
+          isSelected={this.props.isSelected}
+        >
           {this.props.label}
         </Filter>
 
@@ -48,6 +50,13 @@ export default class extends React.Component {
           reset={this.props.onReset}
           apply={this.props.onApply}
           content={this.props.children}
+          hideXsFooter={this.props.hideXsFooter}
+          mdWidth={this.props.mdWidth}
+          mdHeight={this.props.mdHeight}
+          lgWidth={this.props.lgWidth ? this.props.lgWidth : this.props.mdWidth}
+          lgHeight={
+            this.props.lgHeight ? this.props.lgHeight : this.props.mdHeight
+          }
         />
       </Wrapper>
     );
@@ -55,7 +64,6 @@ export default class extends React.Component {
 }
 
 Filter.propTypes = {
-  controls: PropTypes.object,
   isShow: PropTypes.boolean,
   onToggle: PropTypes.func,
   onApply: PropTypes.func,
