@@ -5,7 +5,8 @@
 .rheostat-background {
   border-top: 6px solid #008489;
   position: relative;
-  width: 206px;
+  width: 258px;
+  margin-left: 16px;
 }
 
 .rheostat-progress {
@@ -14,10 +15,11 @@
 }
 
 .rheostat-handle {
-  background: url('./pit.svg') 0 0 transparent;
+  background: url("pit.svg") 0 0 transparent;
   height: 32px;
   /*outline: none;*/
   /*z-index: 2;*/
+  top: -12px;
   width: 32px;
   border: none;
   appearance: none;
@@ -25,7 +27,7 @@
 
 .rheostat-handle:before,
 .rheostat-handle:after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   background-color: yellow;
