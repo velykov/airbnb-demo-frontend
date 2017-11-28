@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import checked from './checked.svg';
-import uncheked from './unchecked.svg';
+import checked from "./checked.svg";
+import uncheked from "./unchecked.svg";
 
 const Wrapper = styled.div`
   display: flex;
@@ -20,7 +20,8 @@ const Checkbox = styled.input`
   height: 24px;
   margin-right: 12px;
   margin-left: 8px;
-  background: ${props => (props.checked ? `url(${checked})` : `url(${uncheked})` )};
+  background: ${props =>
+    props.checked ? `url(${checked})` : `url(${uncheked})`};
   appearance: none;
 `;
 
@@ -35,25 +36,25 @@ const Description = styled(Title)`
 `;
 
 const Icon = styled.img`
-    position: absolute;
-    right: 16px;
+  position: absolute;
+  right: 16px;
   height: 32px;
 `;
 
 export default props => {
-    return (
-        <Wrapper>
-            <Checkbox
-                type="checkbox"
-                checked={props.isActive}
-                onChange={props.onChange}
-            />
-            <Info>
-                {props.isActive}
-                <Title>{props.title}</Title>
-                <Description>{props.description}</Description>
-            </Info>
-            <Icon src={props.icon} alt="Room type"/>
-        </Wrapper>
-    );
+  return (
+    <Wrapper>
+      <Checkbox
+        type="checkbox"
+        checked={props.isActive}
+        onChange={props.onChange}
+      />
+      <Info>
+        {props.isActive}
+        <Title>{props.title}</Title>
+        <Description>{props.description}</Description>
+      </Info>
+      <Icon src={props.icon} alt="Room type" />
+    </Wrapper>
+  );
 };
