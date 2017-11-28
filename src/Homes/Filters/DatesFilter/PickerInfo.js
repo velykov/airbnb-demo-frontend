@@ -6,7 +6,7 @@ import arrow from "./arrowRight.svg";
 const PickedDate = styled.span`
   font-size: 18px;
   color: ${props => (props.selected ? "#0F7276;" : "#636363")};
-  margin: 8px;
+  margin: 8px 8px 0;
   padding-bottom: 2px;
   border-bottom: 1px solid ${props => (props.selected ? "#008489" : "#ffffff")};
   font-family: inherit;
@@ -20,7 +20,7 @@ const ArrowIcon = styled.img`
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 24px;
+  margin-bottom: 12px;
 
   @media (min-width: 768px) {
     display: none;

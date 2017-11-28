@@ -1,22 +1,19 @@
 export const toCheckinLabel = state =>
-  state.selectedStartDate
-    ? state.selectedStartDate.format("MMM Do")
-    : "Check in";
+    state.selectedStartDate
+        ? state.selectedStartDate.format("MMM Do")
+        : "Check in";
 
 export const toCheckoutLabel = state =>
-  state.selectedEndDate ? state.selectedEndDate.format("MMM Do") : "Check out";
+    state.selectedEndDate ? state.selectedEndDate.format("MMM Do") : "Check out";
 
-export const toDateLabel = state => {
-  if (state.selectedStartDate && state.selectedEndDate)
-    return `${toCheckinLabel(state)} — ${toCheckoutLabel(state)}`;
+export const toDateLabel = (state, isShow) => {
+    if (window.innerWidth < 768 && isShow) return "When";
 
-  if (state.selectedStartDate) return toCheckinLabel(state);
+    if (state.selectedStartDate && state.selectedEndDate)
+        return `${toCheckinLabel(state)} — ${toCheckoutLabel(state)}`;
 
-  return "Dates";
+    if (state.selectedStartDate) return toCheckinLabel(state);
+
+
+    return "Dates";
 };
-
-export const priceLabel = () => "Price";
-export const instantLabel = () => "Instant booking";
-export const guestsLabel = () => "Guests";
-export const roomLabel = () => "Room type";
-export const moreLabel = () => "More filters";

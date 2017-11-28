@@ -1,11 +1,24 @@
 import React from "react";
 
-import Filter from "./Filter";
+import Filter from "../Filter";
 import PickerInfo from "./PickerInfo";
 import DatesPicker from "./DatesPicker";
 import { toDateLabel } from "./labels";
 import { START_DATE } from "react-dates/constants";
-import filters from "../constants";
+import filters from "../filterNames";
+import styled from 'styled-components';
+
+const Wrapper = styled.div`
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  @media(min-width: 768px) {
+    top: 0;
+  }
+`;
 
 export default class extends React.Component {
   state = {
@@ -69,15 +82,21 @@ export default class extends React.Component {
   render() {
     return (
       <Filter
-        label={toDateLabel(this.state)}
+        label={toDateLabel(this.state, this.props.isShow)}
         isShow={this.props.isShow}
         isSelected={this.props.isSelected}
-        controls
+        controls={true}
         onCancel={this.handleCancel}
         onApply={this.handleApply}
         onReset={this.handleReset}
         onToggle={this.handleToggle}
+        hideXsFooter={true}
+        mdWidth={326}
+        mdHeight={368}
+        lgWidth={632}
+        lgHeight={406}
       >
+        <Wrapper>
         <PickerInfo
           startDate={this.state.selectedStartDate}
           endDate={this.state.selectedEndDate}
@@ -92,6 +111,7 @@ export default class extends React.Component {
           endDate={this.state.selectedEndDate}
           onDatesChange={this.handleChange}
         />
+        </Wrapper>
       </Filter>
     );
   }

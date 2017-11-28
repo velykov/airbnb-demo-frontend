@@ -5,7 +5,6 @@ import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
 import { DayPickerRangeController, DateRangePicker } from "react-dates";
 import { Row as GRow, Col } from "react-flexbox-grid";
-import left from "./left.svg";
 import "./_datepicker.css";
 
 const Wrapper = styled.div`
