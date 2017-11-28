@@ -1,17 +1,57 @@
 import React from "react";
-import MoreFilter from "./MoreFilter";
+import Filter from "../Filter";
+import filters from "../filterNames";
+import styled from "styled-components";
 
-export default class RoomsFilter extends React.Component {
+const Wrapper = styled.div`
+  padding: 24px 16px;
+`;
+
+export default class extends React.Component {
   state = {};
+
+  handleApply = () => {
+    this.props.onApply(this.state);
+    this.handleToggle();
+  };
+
+  handleReset = () => {
+    this.setState({});
+  };
+
+  handleCancel = () => {
+    this.setState({});
+    this.handleToggle();
+  };
+
+  handleToggle = () => {
+    this.props.onToggle(filters.more);
+  };
+
+  handleChangePrices = result => {
+    this.setState({});
+  };
+
+  getLabel = () => {
+    return "More";
+  };
 
   render() {
     return (
-      <MoreFilter
-        adults={this.state.adults}
-        childs={this.state.childs}
-        infants={this.state.infants}
-        onApply={state => this.setState(state)}
-      />
+      <Filter
+        label={this.getLabel()}
+        className={this.props.className}
+        isShow={this.props.isShow}
+        isSelected={this.props.isSelected}
+        onToggle={this.handleToggle}
+        onApply={this.handleApply.bind(this)}
+        onReset={this.handleReset}
+        onCancel={this.handleCancel.bind(this)}
+        mdWidth={326}
+        mdHeight={274}
+      >
+        <Wrapper>More will be here</Wrapper>
+      </Filter>
     );
   }
 }
