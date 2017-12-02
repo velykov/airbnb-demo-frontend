@@ -1,5 +1,5 @@
 import React from "react";
-import RoomType from "./RoomType";
+import RoomType from "../TypeCheckbox";
 import roomTypes from "./types";
 import privat from "./private.svg";
 import shared from "./shared.svg";

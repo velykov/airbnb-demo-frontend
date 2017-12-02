@@ -6,7 +6,7 @@ import DatesPicker from "./DatesPicker";
 import { toDateLabel } from "./labels";
 import { START_DATE } from "react-dates/constants";
 import filters from "../filterNames";
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Wrapper = styled.div`
   position: absolute;
@@ -14,8 +14,8 @@ const Wrapper = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  
-  @media(min-width: 768px) {
+
+  @media (min-width: 768px) {
     top: 0;
   }
 `;
@@ -95,22 +95,23 @@ export default class extends React.Component {
         mdHeight={368}
         lgWidth={632}
         lgHeight={406}
+        tabindex={this.props.tabindex}
       >
         <Wrapper>
-        <PickerInfo
-          startDate={this.state.selectedStartDate}
-          endDate={this.state.selectedEndDate}
-        />
+          <PickerInfo
+            startDate={this.state.selectedStartDate}
+            endDate={this.state.selectedEndDate}
+          />
 
-        <DatesPicker
-          focusedInput={this.state.focusedInput}
-          onFocusChange={focusedInput =>
-            this.setState({ focusedInput: focusedInput || START_DATE })
-          }
-          startDate={this.state.selectedStartDate}
-          endDate={this.state.selectedEndDate}
-          onDatesChange={this.handleChange}
-        />
+          <DatesPicker
+            focusedInput={this.state.focusedInput}
+            onFocusChange={focusedInput =>
+              this.setState({ focusedInput: focusedInput || START_DATE })
+            }
+            startDate={this.state.selectedStartDate}
+            endDate={this.state.selectedEndDate}
+            onDatesChange={this.handleChange}
+          />
         </Wrapper>
       </Filter>
     );

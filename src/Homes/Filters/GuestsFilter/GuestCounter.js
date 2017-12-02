@@ -16,7 +16,6 @@ const Wrapper = styled.div`
 const Content = styled.div`
   display: flex;
   flex-direction: column;
-  width: 192px;
 `;
 const Title = styled.div`
   font: normal 18px/21px Circular_Air-Book;
@@ -41,10 +40,19 @@ const Actions = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 112px;
+  position: absolute;
+  right: 8px;
+
+  @media (min-width: 768px) {
+    right: 16px;
+  }
 `;
-const Action = styled.img`
+const Action = styled.button`
   width: 32px;
   height: 32px;
+  background: url(${prop => prop.src}) transparent;
+  appearance: none;
+  border: none;
 `;
 const Count = styled.span`
   font: normal 18px/21px Circular_Air-Light;
@@ -61,9 +69,12 @@ export default class GuestCounter extends React.Component {
           {this.props.children}
         </Content>
         <Actions>
-          <Action src={minus} onClick={this.props.onRemove} />
-          <Count>{this.props.count}</Count>
-          <Action src={plus} onClick={this.props.onAdd} />
+          <Action src={minus} onClick={this.props.onRemove} tabindex={1} />
+          <Count>
+            {this.props.count}
+            {this.props.showPlus && this.props.count === 0 ? "+" : ""}
+          </Count>
+          <Action src={plus} onClick={this.props.onAdd} tabindex={2} />
         </Actions>
       </Wrapper>
     );

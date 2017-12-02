@@ -18,7 +18,6 @@ const Description = styled.div`
 `;
 
 const Container = styled.div`
-  padding-right: 32px;
   background: url(${price}) 32px center no-repeat;
   padding-top: 78px;
 `;
