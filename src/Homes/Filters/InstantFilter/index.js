@@ -6,6 +6,23 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   padding: 24px 16px;
+  width: calc(100% - 48px);
+  position: relative;
+`;
+
+const Content = styled.div`
+  width: 200px;
+`;
+
+const Title = styled.div`
+  color: #383838;
+  font: normal 18px/21px Circular_Air-Book;
+  margin-bottom: 4px;
+`;
+
+const Description = styled.div`
+  color: #383838;
+  font: lighter 14px/16px Circular_Air-Light;
 `;
 
 export default class extends React.Component {
@@ -49,15 +66,22 @@ export default class extends React.Component {
       >
         <Wrapper>
           <Checkbox
-            title={this.getLabel()}
-            description="Listings you can book without waiting for host approval."
+            // title={this.getLabel()}
+            // description="Listings you can book without waiting for host approval."
             onChange={() =>
               this.setState({
                 instantBook: !this.state.instantBook
               })
             }
             isChecked={this.state.instantBook}
-          />
+          >
+            <Content>
+              <Title>{this.getLabel()}</Title>
+              <Description>
+                Listings you can book without waiting for host approval.
+              </Description>
+            </Content>
+          </Checkbox>
         </Wrapper>
       </Filter>
     );
