@@ -5,6 +5,11 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   margin-bottom: 32px;
+  position: relative;
+
+  @media (min-width: 768px) {
+    width: 50%;
+  }
 `;
 
 const Title = styled.div`
@@ -12,7 +17,7 @@ const Title = styled.div`
   color: #383838;
   margin-bottom: 4px;
   @media (min-width: 768px) {
-    // font-size: 20px;
+    width: 290px;
   }
 `;
 
@@ -33,9 +38,11 @@ export default props => {
   return (
     <Wrapper>
       <Checkbox onChange={props.onChange} isChecked={props.isChecked}>
-        <Title>{props.title}</Title>
-        <Description>{props.description}</Description>
-        <Link to={props.linkTo}>{props.link}</Link>
+        <div>
+          <Title>{props.title}</Title>
+          <Description>{props.description}</Description>
+          <Link to={props.linkTo}>{props.link}</Link>
+        </div>
       </Checkbox>
     </Wrapper>
   );
