@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import checked from "./checked.svg";
-import uncheked from "./unchecked.svg";
+import checked from "./RoomsFilter/checked.svg";
+import uncheked from "./RoomsFilter/unchecked.svg";
 
-const Wrapper = styled.div`
-  display: flex;
+const Wrapper = styled.label`
+  display: ${props => (props.inlineMode ? "inline-flex" : "flex")};
   flex-direction: row;
   margin-bottom: 16px;
 `;
@@ -43,7 +43,7 @@ const Icon = styled.img`
 
 export default props => {
   return (
-    <Wrapper>
+    <Wrapper inlineMode={props.inlineMode}>
       <Checkbox
         type="checkbox"
         checked={props.isActive}

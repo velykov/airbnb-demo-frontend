@@ -20,6 +20,7 @@ const Filter = styled.button`
     ${props =>
       props.isShow || props.isSelected ? "#008489" : " rgba(72, 72, 72, 0.2);"};
   color: ${props => (props.isShow || props.isSelected ? "#fff" : "#383838")};
+  cursor: pointer;
 
   &:first-child {
     margin-left: 0px;
@@ -39,6 +40,7 @@ export default class extends React.Component {
           onClick={this.props.onToggle}
           isShow={this.props.isShow}
           isSelected={this.props.isSelected}
+          tabindex={this.props.tabindex}
         >
           {this.props.label}
         </Filter>
