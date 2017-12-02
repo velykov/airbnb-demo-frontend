@@ -9,17 +9,7 @@ import PriceFilter from "./PriceFilter";
 import InstantBookFilter from "./InstantFilter";
 import styled from "styled-components";
 import constants from "./filterNames";
-
-const Button = styled.button`
-  font: normal 14px/16px Circular_Air-Book;
-  color: #383838;
-  text-align: left;
-  padding: 7px 16px;
-  border-radius: 4px;
-  border: 1px solid rgba(72, 72, 72, 0.2);
-  background-color: transparent;
-  margin-right: 12px;
-`;
+import activeFiltersCount from "./MoreFilters/activeFiltersCount";
 
 const Aside = styled.aside`
   padding: 12px 0;
@@ -53,7 +43,57 @@ export default class Filters extends React.Component {
     sharedRoom: false,
 
     startPrice: minPrice,
-    endPrice: maxPrice
+    endPrice: maxPrice,
+
+    amenities: {
+      kitchen: {
+        value: false,
+        name: "Kitchen"
+      },
+      shampoo: {
+        value: false,
+        name: "Shampoo"
+      },
+      heating: {
+        value: false,
+        name: "Heating"
+      },
+      condition: {
+        value: false,
+        name: "Air condition"
+      },
+      tv: {
+        value: false,
+        name: "Television"
+      },
+      wifi: {
+        value: false,
+        name: "Wireless network"
+      }
+    },
+
+    facilities: {
+      elevator: {
+        value: false,
+        name: "Elevator"
+      },
+      gym: {
+        value: false,
+        name: "Gym"
+      },
+      parking: {
+        value: false,
+        name: "Free parking on premises"
+      },
+      pool: {
+        value: false,
+        name: "Pool"
+      },
+      wheelchair: {
+        value: false,
+        name: "Wheelchair accessible"
+      }
+    }
   };
 
   handleFilterChange = activeFilter => {
@@ -80,7 +120,7 @@ export default class Filters extends React.Component {
   };
 
   isSelectedMore = state => {
-    return state.startPrice > minPrice || state.endPrice < maxPrice;
+    return activeFiltersCount(state) > 0;
   };
 
   render() {
@@ -99,6 +139,7 @@ export default class Filters extends React.Component {
                   onApply={(startDate, endDate) =>
                     this.setState({ startDate, endDate })
                   }
+                  tabindex={1}
                 />
 
                 <GuestsFilter
@@ -109,6 +150,7 @@ export default class Filters extends React.Component {
                   infants={this.state.infants}
                   onToggle={this.handleFilterChange}
                   onApply={guests => this.setState(guests)}
+                  tabindex={2}
                 />
 
                 <RoomsFilter
@@ -120,6 +162,7 @@ export default class Filters extends React.Component {
                   sharedRoom={this.state.sharedRoom}
                   onToggle={this.handleFilterChange}
                   onApply={rooms => this.setState(rooms)}
+                  tabindex={3}
                 />
 
                 <PriceFilter
@@ -132,6 +175,7 @@ export default class Filters extends React.Component {
                   endPrice={this.state.endPrice}
                   onToggle={this.handleFilterChange}
                   onApply={prices => this.setState(prices)}
+                  tabindex={4}
                 />
 
                 <InstantBookFilter
@@ -141,6 +185,7 @@ export default class Filters extends React.Component {
                   instantBook={this.state.instantBook}
                   onToggle={this.handleFilterChange}
                   onApply={isBook => this.setState(isBook)}
+                  tabindex={5}
                 />
 
                 <MoreFilters
@@ -151,6 +196,7 @@ export default class Filters extends React.Component {
                   filters={this.state}
                   onToggle={this.handleFilterChange}
                   onApply={filters => this.setState(filters)}
+                  tabindex={6}
                 />
               </Col>
             </Row>
