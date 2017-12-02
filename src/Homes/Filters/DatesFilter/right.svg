@@ -1,0 +1,27 @@
+<svg width="40" height="32" viewBox="0 0 40 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>left copy</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-4356 -1756)">
+<g id="left copy">
+<g id="Rectangle 4">
+<use xlink:href="#path0_fill" transform="translate(4356 1756)" fill="#FFFFFF"/>
+<mask id="mask0_outline_ins">
+<use xlink:href="#path0_fill" fill="white" transform="translate(4356 1756)"/>
+</mask>
+<g mask="url(#mask0_outline_ins)">
+<use xlink:href="#path1_stroke_2x" transform="translate(4356 1756)" fill="#484848" fill-opacity="0.3"/>
+</g>
+</g>
+<g id="close">
+<g id="Shape">
+<use xlink:href="#path2_fill" transform="matrix(-1 -1.22465e-16 1.22465e-16 -1 4383.98 1776.99)" fill="#767676"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" fill-rule="evenodd" d="M 0 2C 0 0.895431 0.895431 0 2 0L 38 0C 39.1046 0 40 0.895431 40 2L 40 30C 40 31.1046 39.1046 32 38 32L 2 32C 0.895431 32 0 31.1046 0 30L 0 2Z"/>
+<path id="path1_stroke_2x" d="M 2 1L 38 1L 38 -1L 2 -1L 2 1ZM 39 2L 39 30L 41 30L 41 2L 39 2ZM 38 31L 2 31L 2 33L 38 33L 38 31ZM 1 30L 1 2L -1 2L -1 30L 1 30ZM 2 31C 1.44772 31 1 30.5523 1 30L -1 30C -1 31.6569 0.343147 33 2 33L 2 31ZM 39 30C 39 30.5523 38.5523 31 38 31L 38 33C 39.6569 33 41 31.6569 41 30L 39 30ZM 38 1C 38.5523 1 39 1.44772 39 2L 41 2C 41 0.343145 39.6569 -1 38 -1L 38 1ZM 2 -1C 0.343146 -1 -1 0.343146 -1 2L 1 2C 1 1.44772 1.44772 1 2 1L 2 -1Z"/>
+<path id="path2_fill" d="M 5.09307 0.713959L 1.39494 4.56717L 15.5714 4.56717C 15.8002 4.56717 15.9762 4.75066 15.9762 4.98919C 15.9762 5.22772 15.8002 5.41121 15.5714 5.41121L 1.39494 5.41121L 5.09307 9.26625C 5.28669 9.46809 5.28669 9.65157 5.09307 9.85341C 5.00506 9.94515 4.91705 9.98185 4.81144 9.98185C 4.70583 9.98185 4.61782 9.94515 4.52981 9.85341L 0.145215 5.2846C -0.0484048 5.08277 -0.0484048 4.89928 0.145215 4.69745L 4.52981 0.126803C 4.89945 -0.260352 5.46271 0.326803 5.09307 0.713959Z"/>
+</defs>
+</svg>

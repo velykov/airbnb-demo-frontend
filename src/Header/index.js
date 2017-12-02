@@ -3,11 +3,19 @@ import { Grid, Row, Col } from "react-flexbox-grid";
 import styled from "styled-components";
 import logo from "./logo.svg";
 import search from "./search.svg";
-import arrow from "./../commons/arrow.svg";
-import { Img, Hr, Link } from "../commons/styled";
+import arrow from "../UI/arrow.svg";
+import { Img, Link as NavLink, ContentWrapper } from "../UI";
+import { Link } from "react-router-dom";
 
 const Header = styled.header`
   padding: 16px 0;
+  border-bottom: 0.5px solid rgba(72, 72, 72, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 100;
 `;
 
 const Logo = styled(Img)`
@@ -36,26 +44,21 @@ const Arrow = styled.a`
     }
 `;
 
-const Location = styled.div`
-  border: 1px solid rgba(72, 72, 72, 0.2);
-  box-shadow: 0px 2px 4px rgba(72, 72, 72, 0.08);
-  border-radius: 4px;
-`;
-
 const LocationInput = styled.input`
-  padding: 0.5em;
+  padding: 11px 0;
   border-radius: 4px;
   font-size: 16px;
   line-height: 24px;
   border: 0px;
   width: 100%;
-  opacity: 0.64;
+  color: #383838;
   font-family: Circular_Air-Book;
   padding-left: 54px;
   background: url('${search}') 16px center no-repeat;
-  &:focus {
-   outline: 0;
-  }
+  border: 1px solid rgba(72, 72, 72, 0.2);
+  box-shadow: 0px 2px 4px rgba(72, 72, 72, 0.08);
+  border-radius: 4px;
+  box-sizing: border-box;
 `;
 
 const Navigation = styled.nav`
@@ -67,32 +70,37 @@ const Navigation = styled.nav`
   }
 `;
 
-export default function() {
+export default function(props) {
   return (
     <Header>
-      <Grid>
-        <Row start="xs" middle="xs">
-          <Col xs={2} md={1} lg={1}>
-            <Arrow>
-              <Logo src={logo} alt="logo" />
-            </Arrow>
-          </Col>
-          <Col xs={10} md={7} lg={5}>
-            <Location>
-              <LocationInput type="text" placeholder="Try “Miami”" />
-            </Location>
-          </Col>
-          <Col lgOffset={2} lg={4}>
-            <Navigation>
-              <Link href="#">Become a host</Link>
-              <Link href="#">Help</Link>
-              <Link href="#">Sign up</Link>
-              <Link href="#">Log in</Link>
-            </Navigation>
-          </Col>
-        </Row>
-      </Grid>
-      <Hr marginTop={16} marginBottom={16} />
+      <ContentWrapper>
+        <Grid>
+          <Row start="xs" middle="xs">
+            <Col xs={2} md={1}>
+              <Arrow>
+                <Link to="/">
+                  <Logo src={logo} alt="logo" />
+                </Link>
+              </Arrow>
+            </Col>
+            <Col xs={10} md={7} lg={5}>
+              <LocationInput
+                type="text"
+                placeholder="Try “Miami”"
+                value={props.value}
+              />
+            </Col>
+            <Col lgOffset={2} lg={4}>
+              <Navigation>
+                <NavLink href="#">Become a host</NavLink>
+                <NavLink href="#">Help</NavLink>
+                <NavLink href="#">Sign up</NavLink>
+                <NavLink href="#">Log in</NavLink>
+              </Navigation>
+            </Col>
+          </Row>
+        </Grid>
+      </ContentWrapper>
     </Header>
   );
 }

@@ -2,7 +2,7 @@ import React from "react";
 import { Grid, Row, Col } from "react-flexbox-grid";
 import styled from "styled-components";
 
-import { Img, Hr } from "../commons/styled";
+import { Img, ContentWrapper } from "../UI";
 
 import arrow from "./arrow.svg";
 import logo from "./logo.svg";
@@ -11,8 +11,21 @@ import instagram from "./instagram.svg";
 import twitter from "./twitter.svg";
 
 const Title = styled.b`
-  font: bold 15px/18px Circular_Air-Bold;
-  margin-bottom: 8px;
+  color: #383838;
+  font-weight: bold;
+  font-family: Circular_Air-Bold;
+
+  @media (min-width: 768px) {
+    font-size: 12px;
+    line-height: 14px;
+    margin-bottom: 19px;
+  }
+
+  @media (min-width: 992px) {
+    font-size: 15px;
+    line-height: 18px;
+    margin-bottom: 16px;
+  }
 `;
 
 const DropDown = styled.div`
@@ -37,6 +50,7 @@ const Selector = styled.select`
     font: lighter 12px/14px Circular_Air-Light;
     padding: 12px 8px;
     height: 40px;
+    color: #383838;
   }
 
   @media (min-width: 768px) {
@@ -48,10 +62,6 @@ const Selector = styled.select`
   @media (min-width: 992px) {
     font: lighter 18px/21px Circular_Air-Light;
     padding: 12px 16px;
-  }
-  
-  &:focus {
-    outline: 0;
   }
 `;
 
@@ -68,10 +78,16 @@ const Copyright = styled.span`
   color: #636363;
 `;
 
-const FooterNav = styled.nav`
+const Credentials = styled.div`
   display: flex;
-  margin-top: 12px;
+  align-items: center;
   font: normal 15px/18px Circular_Air-Book;
+  @media (min-width: 320px) {
+    margin-top: 12px;
+  }
+  @media (min-width: 768px) {
+    margin: 0;
+  }
 `;
 
 const Group = styled.div`
@@ -82,6 +98,13 @@ const Group = styled.div`
   @media (min-width: 768px) {
     display: flex;
     flex-direction: column;
+    margin-bottom: 38px;
+  }
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 48px;
   }
 `;
 
@@ -93,6 +116,7 @@ const Link = styled.a`
   @media (min-width: 768px) {
     font: normal 12px/14px Circular_Air-Book;
     margin-bottom: 11px;
+    color: #636363;
   }
 
   @media (min-width: 992px) {
@@ -101,35 +125,43 @@ const Link = styled.a`
   }
 `;
 
-const FooterHr = styled(Hr)`
+const FooterHr = styled.div`
+  border-bottom: 1px solid #484848;
+  opacity: 0.08;
+  mix-blend-mode: normal;
   @media (min-width: 320px) {
-    margin-top: 24px;
     margin-bottom: 18px;
   }
-
   @media (min-width: 768px) {
-    margin-top: 38px;
-    margin-bottom: 36px;
+    margin-bottom: 32px;
   }
-
   @media (min-width: 992px) {
-    margin-top: 38px;
-    margin-bottom: 36px;
+    margin-bottom: 34px;
   }
 `;
 
 const NavLink = styled(Link)`
-  margin-right: 12px;
+  margin: 0 12px 0 0;
+`;
+
+const Footer = styled.footer`
+  box-shadow: 0 -0.5px rgba(72, 72, 72, 0.3);
+  @media (min-width: 320px) {
+    padding: 16px 0;
+  }
+
+  @media (min-width: 768px) {
+    padding: 48px 0 44px;
+  }
 `;
 
 export default function() {
   return (
-    <footer>
-      <Hr marginTop={64} marginBottom={48} />
-      <Grid>
-        <Row>
-          <Col xs={12} md={3} lg={3}>
-            <Grid>
+    <Footer>
+      <ContentWrapper>
+        <Grid>
+          <Row>
+            <Col xs={12} md={3} lg={3}>
               <Row>
                 <Col xs={6} md={12} lg={12} start="xs">
                   <DropDown>
@@ -148,69 +180,67 @@ export default function() {
                   </DropDown>
                 </Col>
               </Row>
-            </Grid>
-          </Col>
-          <Col xs={2} mdOffset={1} start="xs">
-            <Group>
-              <Title>Airbnb</Title>
-              <Link href="#">About us</Link>
-              <Link href="#">Careers</Link>
-              <Link href="#">Press</Link>
-              <Link href="#">Policies</Link>
-              <Link href="#">Help</Link>
-              <Link href="#">Diversity & Belonging</Link>
-            </Group>
-          </Col>
-          <Col xs={2} mdOffset={1} start="xs">
-            <Group>
-              <Title>Discover</Title>
-              <Link href="#">Trust & Safety</Link>
-              <Link href="#">Travel Credit</Link>
-              <Link href="#">Gift Cards</Link>
-              <Link href="#">Airbnb Citizen</Link>
-              <Link href="#">Business Travel</Link>
-              <Link href="#">Guidebooks</Link>
-              <Link href="#">Airbnbmag</Link>
-            </Group>
-          </Col>
-          <Col xs={2} mdOffset={1} start="xs">
-            <Group>
-              <Title>Hosting</Title>
-              <Link href="#">Why Host</Link>
-              <Link href="#">Hospitality</Link>
-              <Link href="#">Responsible Hosting</Link>
-              <Link href="#">Community Center</Link>
-            </Group>
-          </Col>
-        </Row>
-      </Grid>
-      <FooterHr />
-      <Grid>
-        <Row middle="xs">
-          <Col xs={12} md={3} lg={2}>
-            <Credits>
-              <Img src={logo} alt="logo" />
-              <Copyright>© Airbnb Inc.</Copyright>
-            </Credits>
-          </Col>
-          <Col xs={12} md={5} mdOffset={4} lg={4} lgOffset={6}>
-            <FooterNav>
-              <NavLink href="#">Terms</NavLink>
-              <NavLink href="#">Privacy</NavLink>
-              <NavLink href="#">Site map</NavLink>
-              <NavLink href="#">
-                <Img src={facebook} alt="facebook" />
-              </NavLink>
-              <NavLink href="#">
-                <Img src={twitter} alt="twitter" />
-              </NavLink>
-              <NavLink href="#">
-                <Img src={instagram} alt="instagram" />
-              </NavLink>
-            </FooterNav>
-          </Col>
-        </Row>
-      </Grid>
-    </footer>
+            </Col>
+            <Col xs={2} mdOffset={1} start="xs">
+              <Group>
+                <Title>Airbnb</Title>
+                <Link href="#">About us</Link>
+                <Link href="#">Careers</Link>
+                <Link href="#">Press</Link>
+                <Link href="#">Policies</Link>
+                <Link href="#">Help</Link>
+                <Link href="#">Diversity & Belonging</Link>
+              </Group>
+            </Col>
+            <Col xs={2} mdOffset={1} start="xs">
+              <Group>
+                <Title>Discover</Title>
+                <Link href="#">Trust & Safety</Link>
+                <Link href="#">Travel Credit</Link>
+                <Link href="#">Gift Cards</Link>
+                <Link href="#">Airbnb Citizen</Link>
+                <Link href="#">Business Travel</Link>
+                <Link href="#">Guidebooks</Link>
+                <Link href="#">Airbnbmag</Link>
+              </Group>
+            </Col>
+            <Col xs={2} mdOffset={1} start="xs">
+              <Group>
+                <Title>Hosting</Title>
+                <Link href="#">Why Host</Link>
+                <Link href="#">Hospitality</Link>
+                <Link href="#">Responsible Hosting</Link>
+                <Link href="#">Community Center</Link>
+              </Group>
+            </Col>
+          </Row>
+          <FooterHr />
+          <Row middle="xs">
+            <Col xs={12} md={3} lg={2}>
+              <Credits>
+                <Img src={logo} alt="logo" />
+                <Copyright>© Airbnb Inc.</Copyright>
+              </Credits>
+            </Col>
+            <Col xs={12} md={5} mdOffset={4} lg={4} lgOffset={6}>
+              <Credentials>
+                <NavLink href="#">Terms</NavLink>
+                <NavLink href="#">Privacy</NavLink>
+                <NavLink href="#">Site map</NavLink>
+                <NavLink href="#">
+                  <Img src={facebook} alt="facebook" />
+                </NavLink>
+                <NavLink href="#">
+                  <Img src={twitter} alt="twitter" />
+                </NavLink>
+                <NavLink href="#">
+                  <Img src={instagram} alt="instagram" />
+                </NavLink>
+              </Credentials>
+            </Col>
+          </Row>
+        </Grid>
+      </ContentWrapper>
+    </Footer>
   );
 }

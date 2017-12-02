@@ -1,0 +1,40 @@
+import React from "react";
+import { Grid, Row } from "react-flexbox-grid";
+import { Slider, Slide, Section, SectionTitle } from "../../UI";
+import Card from "./Category";
+import homes from "./homes2.png";
+import experiences from "./experiences2.png";
+import restaurants from "./restaurants2.png";
+
+export default function() {
+  return (
+    <Section>
+      <Grid>
+        <SectionTitle>Explore Airbnb</SectionTitle>
+        <Row>
+          <Slider>
+            <Slide xs={6} md={5} lg={4}>
+              <Card title="Homes" img={homes} alt="Homes image" href="/homes" />
+            </Slide>
+            <Slide xs={6} md={5} lg={4}>
+              <Card
+                title="Experiences"
+                img={experiences}
+                alt="Experiences image"
+                href="#"
+              />
+            </Slide>
+            <Slide xs={6} md={5} lg={4}>
+              <Card
+                title="Restaurants"
+                img={restaurants}
+                alt="Restaurants image"
+                href="#"
+              />
+            </Slide>
+          </Slider>
+        </Row>
+      </Grid>
+    </Section>
+  );
+}

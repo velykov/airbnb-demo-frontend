@@ -1,0 +1,35 @@
+.rheostat {
+  overflow: visible;
+}
+
+.rheostat-horizontal {
+  width: calc(100% - 32px);
+}
+
+.rheostat-background {
+  border-top: 6px solid #008489;
+  position: relative;
+  margin-right: -32px;
+}
+
+.rheostat-progress {
+  background-color: green;
+  position: absolute;
+}
+
+.rheostat-handle {
+  background: url("pit.svg") 0 0 transparent;
+  height: 32px;
+  top: -12px;
+  width: 32px;
+  border: none;
+  appearance: none;
+}
+
+.rheostat-handle:before,
+.rheostat-handle:after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: yellow;
+}

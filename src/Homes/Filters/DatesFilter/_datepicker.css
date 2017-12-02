@@ -1,0 +1,123 @@
+.DayPicker_weekHeader_li small {
+  font: normal 12px/14px Circular_Air-Book;
+}
+
+.CalendarMonth_caption {
+  font: normal 18px/21px Circular_Air-Bold;
+  color: #383838;
+}
+
+.CalendarDay_button {
+  font: normal 12px/14px Circular_Air-Book;
+}
+
+.CalendarDay_container {
+  border: 1px solid #d5d5d5;
+  color: #383838;
+}
+
+.CalendarDay__selected {
+  color: #fff;
+  background: #008489;
+}
+
+.CalendarDay__selected_span {
+  background-color: rgba(0, 132, 137, 0.1);
+  border-color: #9cd9d9;
+}
+
+.CalendarDay__blocked_calendar {
+  background: transparent;
+  border: 1px solid #d5d5d5;
+  color: #cbcbcb;
+}
+
+.DayPickerNavigation_container {
+  box-shadow: none;
+  display: none;
+}
+
+@media (min-width: 320px) {
+  .DayPicker_weekHeader {
+    padding: 0;
+  }
+
+  .DayPicker_weekHeader_ul {
+    margin: 0 0 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 16px;
+  }
+
+  .CalendarMonth_caption {
+    padding-top: 16px;
+  }
+
+  .CalendarMonth {
+    margin-top: 4px;
+    padding: 0 6px;
+  }
+
+  .CalendarDay_button {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (min-width: 768px) {
+  .CalendarDay_button {
+    font: normal 14px/16px Circular_Air-Book;
+  }
+
+  .DayPicker {
+    padding-top: 0;
+    margin-top: 12px;
+  }
+
+  .DayPicker__horizontal {
+    box-shadow: none;
+  }
+
+  .DayPickerNavigation_container {
+    display: inherit;
+  }
+
+  .DayPicker_weekHeader_ul {
+    margin: 0 0 4px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0;
+    width: 286px;
+  }
+
+  .CalendarMonth_caption {
+    padding-top: 16px;
+  }
+
+  .CalendarMonth {
+    margin-top: 8px;
+    padding: 0 12px;
+  }
+
+  .CalendarDay_button {
+    width: 39px;
+    height: 39px;
+  }
+
+  .DayPickerNavigation_rightButton__horizontal {
+    right: 16px;
+  }
+}
+
+@media (min-width: 992px) {
+  .DayPickerNavigation_rightButton__horizontal {
+    right: 12px;
+  }
+
+  .DayPicker_weekHeader_ul {
+    margin-left: 16px;
+    width: 280px;
+  }
+}
