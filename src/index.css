@@ -1,17 +1,23 @@
 @font-face {
-    font-family: 'Circular_Air-Book';
-    src: local('Circular_Air-Book'),
-    url(./fonts/Circular_Air-Book.woff) format('woff');
+  font-family: "Circular_Air-Book";
+  src: local("Circular_Air-Book"),
+    url(./fonts/Circular_Air-Book.woff) format("woff");
 }
 
 @font-face {
-    font-family: 'Circular_Air-Bold';
-    src: local('Circular_Air-Bold'),
-    url(./fonts/Circular_Air-Bold.woff) format('woff');
+  font-family: "Circular_Air-Bold";
+  src: local("Circular_Air-Bold"),
+    url(./fonts/Circular_Air-Bold.woff) format("woff");
 }
 
 @font-face {
-    font-family: 'Circular_Air-Light';
-    src: local('Circular_Air-Light'),
-    url(./fonts/Circular_Air-Light.woff) format('woff');
+  font-family: "Circular_Air-Light";
+  src: local("Circular_Air-Light"),
+    url(./fonts/Circular_Air-Light.woff) format("woff");
+}
+
+body {
+  font-family: Circular_Air-Light, Helvetica Neue, Helvetica, Roboto, Arial,
+    sans-serif;
+  color: #383838;
 }
