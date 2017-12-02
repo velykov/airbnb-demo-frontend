@@ -22,7 +22,10 @@ const Dropdown = styled.div`
   }
 
   @media (min-width: 992px) {
-    width: 700px;
+    left: 0;
+    right: 0;
+    padding-left: calc((100% - 966px) / 2);
+    padding-right: ${300 + (window.innerWidth - 966) / 2}px;
   }
 `;
 
@@ -139,7 +142,6 @@ const Footer = styled.div`
   }
 
   @media (min-width: 992px) {
-    justify-content: flex-end;
     padding-right: 16px;
   }
 `;
